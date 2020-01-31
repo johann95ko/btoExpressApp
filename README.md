@@ -1,4 +1,4 @@
-# btoExpressApp
+# BtoExpressApp
 This project aims to assist newly-wed/young couples in Singapore with their BTO (build-to-order) application by providing them with a one-stop-shop of all relevant and important information about purchasing a BTO flat in Singapore.
 
 # Run
