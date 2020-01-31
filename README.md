@@ -4,5 +4,6 @@ This project aims to assist newly-wed/young couples in Singapore with their BTO 
 # Run
 1. Set up Node.js on local machine (https://nodejs.org/en/download/)
 2. Open terminal/command prompt and `cd` to folder
-2. Run `npm install` to download dependencies
-2. Run `npm start`
+3. Run `npm install` to download dependencies
+4. Run `npm start`
+5. Open https://localhost:3000
