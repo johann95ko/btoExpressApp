@@ -55,7 +55,7 @@ mongoose.connect('mongodb+srv://BTOAdmin:BTOAdmin@cluster0-bwpyl.mongodb.net/tes
 
     }
 )
-    .then(()=> console.log('MongoDB Connected Successfully!')) //Display message when databased is connected
+    .then(()=> console.log('MongoDB Connected Successfully!')) //Display message when database is connected
     .catch(err=>console.log(err));
 
 module.exports = app;
