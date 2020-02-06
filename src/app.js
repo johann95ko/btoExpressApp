@@ -4,17 +4,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+var app = express();
+
+//Bodyparser Middleware
+app.use(bodyParser.json());
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
-app.set('port', process.env.PORT || 3000);
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -24,6 +27,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+const port = process.env.port || 5000; //Means either deploy to an external host like Heroku or deploy on local host 5000
+  app.listen(port,()=>console.log(`Server started on port: ${port}`)); 
+
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
@@ -42,5 +48,14 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// Connecting to MongoDB via Mongoose
+mongoose.connect('mongodb+srv://BTOAdmin:BTOAdmin@cluster0-bwpyl.mongodb.net/test?retryWrites=true&w=majority', { 
+        useNewUrlParser: true
+    }, function(err, db) {
+
+    }
+)
+    .then(()=> console.log('MongoDB Connected Successfully!')) //Display message when databased is connected
+    .catch(err=>console.log(err));
 
 module.exports = app;
