@@ -1,0 +1,24 @@
+.flexBoxDiv {
+  height: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.pageContainer {
+  height: 800px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
