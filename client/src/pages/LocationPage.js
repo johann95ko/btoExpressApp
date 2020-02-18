@@ -7,7 +7,7 @@ function Map(){
   const[selectedBto , setSelectedBto] = useState(null);
   return (
     <GoogleMap
-    defaultZoom={12.5}
+    defaultZoom={12}
     defaultCenter={{ lat:1.352083, lng:103.819839 }}
     >
       {btoData.features.map(bto=>( 
@@ -67,9 +67,9 @@ export const LocationPage = () => {
       <WrappedMap 
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCSaiP0qZRojgI9mRvYSpOrIg4MZsJ0f3M
         `} 
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `100%` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
+        loadingElement={<div style={{ height: `80%` }} />}
+        containerElement={<div style={{ height: `80%` }} />}
+        mapElement={<div style={{ height: `80%` }} />}
         />
     </div>
   );
