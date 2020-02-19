@@ -7,6 +7,7 @@ import PlacesAutoComplete, {
   getLatLng
 
 } from "react-places-autocomplete";
+import mapStyles from "./mapStyles";
 
 function Map(){
   const[selectedBto , setSelectedBto] = useState(null);
@@ -29,6 +30,7 @@ function Map(){
     <GoogleMap
     defaultZoom={12}
     defaultCenter={{ lat:1.352083, lng:103.819839 }}
+    defaultOptions = {{styles: mapStyles}}
     >
       {btoData.features.map(bto=>( 
         <Marker 
@@ -82,8 +84,10 @@ onSelect={handleSelect}
           lat: coordinates.lat,
           lng: coordinates.lng
         }}
-        /> 
-      
+      />
+
+
+
   <input {...getInputProps({ placeholder: "Type address" })} />
 
   <div>
