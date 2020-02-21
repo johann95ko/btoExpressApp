@@ -93,7 +93,7 @@
 			},
 			"geometry": {
 				"type": "Point",
-				"coordinates": [103.834690, 1.302570]
+				"coordinates": [108.834690, 3.302570]
 			}
 		},
 		{
@@ -131,7 +131,7 @@
 			"properties": {
 				"PARK_ID": 1160,
 				"FACILITYID": 28007,
-				"NAME": "Seletar",
+				"NAME": "Punggol",
 				"NAME_FR": "Lieu de planchodrome itinérant",
 				"ADDRESS": "10 Warner Colpitts Lane",
 				"ADDRESS_FR": "10, ruelle Warner Colpitts",
@@ -153,7 +153,7 @@
 			},
 			"geometry": {
 				"type": "Point",
-				"coordinates": [103.858772, 1.409080]
+				"coordinates": [103.907921, 1.398490]
 			}
 		},
 		{
