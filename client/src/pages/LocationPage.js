@@ -27,7 +27,6 @@ import { defaultProps } from "recompose";
 
 
 export const LocationPage = () => {
-
   return (
     <div style={{width:'100vw',height:'200vh'}}>
   
@@ -38,8 +37,8 @@ export const LocationPage = () => {
         containerElement={<div style={{ height: `80%` }} />}
         mapElement={<div style={{ height: `80%` }} />}
         /> */}
-// <MapWithADirectionsRenderer/>
-
+      <MapWithADirectionsRenderer/>
+      
     </div>
   )
 }

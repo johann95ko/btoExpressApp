@@ -7,28 +7,22 @@ const {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
+  InfoWindow,
   DirectionsRenderer,
   Marker
 } = require("react-google-maps");
 
-var destination="Bukit Panjang, Singapore";
-
+var destination="Wild Wild Wet, Singapore";
 var jalan_dist;
 var jalan_time;
-
 var geylang_dist;
 var geylang_time;
-
 var punggol_dist;
 var punggol_time;
-
 var tampines_dist;
 var tampines_time;
-
 var NTU_dist;
 var NTU_time;
-
-var detailed;
 
 export const MapWithADirectionsRenderer = compose(
     withProps({
@@ -44,16 +38,12 @@ export const MapWithADirectionsRenderer = compose(
         // const map = new window.google.maps.Map(document.getElementById('map'));
         const DirectionsService = new window.google.maps.DirectionsService();
         // const DirectionDisplay = new window.google.maps.DirectionsRenderer();
-        const directionsDisplay = new window.google.maps.DirectionsRenderer({
-            polylineOptions: {
-              strokeColor: "red"
-            }})
 
             //Jalan Membina 
             DirectionsService.route({
                 origin: new window.google.maps.LatLng(1.283460,103.826710),
                 destination:destination,
-                travelMode: window.google.maps.TravelMode.DRIVING,
+                travelMode: window.google.maps.TravelMode.TRANSIT,
       
               }, (result, status) => {
                   jalan_dist=result.routes[0].legs[0].distance.text
@@ -73,7 +63,7 @@ export const MapWithADirectionsRenderer = compose(
         DirectionsService.route({
             origin: new window.google.maps.LatLng(1.321780,103.870910),
             destination: destination,
-            travelMode: window.google.maps.TravelMode.DRIVING,
+            travelMode: window.google.maps.TravelMode.TRANSIT,
   
           }, (result, status) => {
             geylang_dist=result.routes[0].legs[0].distance.text
@@ -94,11 +84,8 @@ export const MapWithADirectionsRenderer = compose(
           DirectionsService.route({
             origin: new window.google.maps.LatLng(1.398490,103.907921),
             destination: destination,
-            travelMode: window.google.maps.TravelMode.DRIVING,
-  
+            travelMode: window.google.maps.TravelMode.TRANSIT,
           }, (result, status) => {
-            detailed=result.routes[0].legs[0].steps
-            
             punggol_dist=result.routes[0].legs[0].distance.text
             punggol_time=result.routes[0].legs[0].duration.text
             console.log(result)
@@ -107,61 +94,58 @@ export const MapWithADirectionsRenderer = compose(
             if (status === window.google.maps.DirectionsStatus.OK) {
               this.setState({
                 punggol: result,
-
               });
             } else {
               console.error(`error fetching directions ${result}`);
             }
-          })        //Tampines 
-                    DirectionsService.route({
-                        origin: new window.google.maps.LatLng(1.349591,103.956787),
-                        destination: destination,
-                        travelMode: window.google.maps.TravelMode.DRIVING,
-              
-                      }, (result, status) => {
-                        tampines_dist=result.routes[0].legs[0].distance.text
-                        tampines_time=result.routes[0].legs[0].duration.text
-                        console.log("From Tampines to Destination: " + result.routes[0].legs[0].distance.text);
-                        console.log("From Tampines to Destination: " + result.routes[0].legs[0].duration.text);
-                        if (status === window.google.maps.DirectionsStatus.OK) {
-                          this.setState({
-                            tampines: result,
-                          });
-                        } else {
-                          console.error(`error fetching directions ${result}`);
-                        }
-                      })
+          })        
+          
+          //Tampines 
+          DirectionsService.route({
+          origin: new window.google.maps.LatLng(1.349591,103.956787),
+          destination: destination,
+          travelMode: window.google.maps.TravelMode.TRANSIT,
+          }, (result, status) => {
+          tampines_dist=result.routes[0].legs[0].distance.text
+          tampines_time=result.routes[0].legs[0].duration.text
+          console.log("From Tampines to Destination: " + result.routes[0].legs[0].distance.text);
+          console.log("From Tampines to Destination: " + result.routes[0].legs[0].duration.text);
+          if (status === window.google.maps.DirectionsStatus.OK) {
+                 this.setState({
+                  tampines: result,
+          });
+          } else {
+            console.error(`error fetching directions ${result}`);
+                 }
+          })
 
-                                    //Nanyang Technological University 
-                                    DirectionsService.route({
-                                        origin: new window.google.maps.LatLng(1.349850,103.682450),
-                                        destination: destination,
-                                        travelMode: window.google.maps.TravelMode.DRIVING,
-                              
-                                      }, (result, status) => {
-                                        NTU_dist=result.routes[0].legs[0].distance.text
-                                        NTU_time=result.routes[0].legs[0].duration.text
-                                        console.log("From NTU to Destination: " + result.routes[0].legs[0].distance.text);
-                                        console.log("From NTU to Destination: " + result.routes[0].legs[0].duration.text);
-                                        if (status === window.google.maps.DirectionsStatus.OK) {
-                                        //   console.log(result2)
-                                          this.setState({
-                                            NTU: result,
-                                          });
-                                        } else {
-                                          console.error(`error fetching directions ${result}`);
-                                        }
-                                      })
-
+         //Nanyang Technological University 
+          DirectionsService.route({
+          origin: new window.google.maps.LatLng(1.349850,103.682450),
+          destination: destination,
+          travelMode: window.google.maps.TravelMode.TRANSIT,
+          }, (result, status) => {
+          NTU_dist=result.routes[0].legs[0].distance.text
+          NTU_time=result.routes[0].legs[0].duration.text
+          console.log("From NTU to Destination: " + result.routes[0].legs[0].distance.text);
+          console.log("From NTU to Destination: " + result.routes[0].legs[0].duration.text);
+          if (status === window.google.maps.DirectionsStatus.OK) {
+          this.setState({
+              NTU: result,
+          });
+          } else {
+          console.error(`error fetching directions ${result}`);
+                }
+          })
     }
     })
   ) (props =>
     // return this 
     <div>
-      
-     <GoogleMap
+   
+     {/* <GoogleMap
       defaultZoom={10.5}
-      defaultCenter={new window.google.maps.LatLng(1.32083,102.819839)}>
+      defaultCenter={new window.google.maps.LatLng(1.32083,102.819839)}>  */}
 
         {btoData.features.map(bto=>( 
           <Marker 
@@ -175,15 +159,14 @@ export const MapWithADirectionsRenderer = compose(
             url:'/home.svg',
             scaledSize: new window.google.maps.Size(40,40)
           }}
-          /> 
+          />  
         ))}
     <DirectionsRenderer directions={props.jalanmembina} suppressMarkers={false}/> 
     <DirectionsRenderer directions={props.geylangbahru} suppressMarkers={false} />  
     <DirectionsRenderer directions={props.punggol} suppressMarkers={true}/>  
     <DirectionsRenderer directions={props.tampines} suppressMarkers={true}/>  
     <DirectionsRenderer directions={props.NTU} suppressMarkers={true}/>  
-    </GoogleMap>
-
+    {/* </GoogleMap> */}
 
     <h2>Distance and Duration to {destination}</h2>
     <p>Jalan Membina: {jalan_dist} and {jalan_time}</p>
