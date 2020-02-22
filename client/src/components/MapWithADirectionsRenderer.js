@@ -12,7 +12,6 @@ const {
   Marker
 } = require("react-google-maps");
 
-var destination="Wild Wild Wet, Singapore";
 var jalan_dist;
 var jalan_time;
 var geylang_dist;
@@ -38,11 +37,11 @@ export const MapWithADirectionsRenderer = compose(
         // const map = new window.google.maps.Map(document.getElementById('map'));
         const DirectionsService = new window.google.maps.DirectionsService();
         // const DirectionDisplay = new window.google.maps.DirectionsRenderer();
-
+        
             //Jalan Membina 
             DirectionsService.route({
                 origin: new window.google.maps.LatLng(1.283460,103.826710),
-                destination:destination,
+                destination:this.props.destination,
                 travelMode: window.google.maps.TravelMode.TRANSIT,
       
               }, (result, status) => {
@@ -62,7 +61,7 @@ export const MapWithADirectionsRenderer = compose(
             //Geylang Bahru
         DirectionsService.route({
             origin: new window.google.maps.LatLng(1.321780,103.870910),
-            destination: destination,
+            destination: this.props.destination,
             travelMode: window.google.maps.TravelMode.TRANSIT,
   
           }, (result, status) => {
@@ -83,7 +82,7 @@ export const MapWithADirectionsRenderer = compose(
           //Punggol 
           DirectionsService.route({
             origin: new window.google.maps.LatLng(1.398490,103.907921),
-            destination: destination,
+            destination: this.props.destination,
             travelMode: window.google.maps.TravelMode.TRANSIT,
           }, (result, status) => {
             punggol_dist=result.routes[0].legs[0].distance.text
@@ -103,7 +102,7 @@ export const MapWithADirectionsRenderer = compose(
           //Tampines 
           DirectionsService.route({
           origin: new window.google.maps.LatLng(1.349591,103.956787),
-          destination: destination,
+          destination: this.props.destination,
           travelMode: window.google.maps.TravelMode.TRANSIT,
           }, (result, status) => {
           tampines_dist=result.routes[0].legs[0].distance.text
@@ -119,16 +118,15 @@ export const MapWithADirectionsRenderer = compose(
                  }
           })
 
-         //Nanyang Technological University 
+        //  Nanyang Technological University 
           DirectionsService.route({
-          origin: new window.google.maps.LatLng(1.349850,103.682450),
-          destination: destination,
+          origin: "Nanyang Technological University,Singapore",
+          destination: this.props.destination,
           travelMode: window.google.maps.TravelMode.TRANSIT,
           }, (result, status) => {
           NTU_dist=result.routes[0].legs[0].distance.text
           NTU_time=result.routes[0].legs[0].duration.text
-          console.log("From NTU to Destination: " + result.routes[0].legs[0].distance.text);
-          console.log("From NTU to Destination: " + result.routes[0].legs[0].duration.text);
+
           if (status === window.google.maps.DirectionsStatus.OK) {
           this.setState({
               NTU: result,
@@ -137,9 +135,14 @@ export const MapWithADirectionsRenderer = compose(
           console.error(`error fetching directions ${result}`);
                 }
           })
+
+
+
     }
     })
-  ) (props =>
+  ) 
+
+  (props =>
     // return this 
     <div>
    
@@ -166,15 +169,15 @@ export const MapWithADirectionsRenderer = compose(
     <DirectionsRenderer directions={props.punggol} suppressMarkers={true}/>  
     <DirectionsRenderer directions={props.tampines} suppressMarkers={true}/>  
     <DirectionsRenderer directions={props.NTU} suppressMarkers={true}/>  
+    {/* <p>{props.destination}</p> */}
     {/* </GoogleMap> */}
 
-    <h2>Distance and Duration to {destination}</h2>
+    <h2>Distance and Duration to {props.destination}</h2>
     <p>Jalan Membina: {jalan_dist} and {jalan_time}</p>
     <p>Geylang Bahru: {geylang_dist} and {geylang_time}</p>
     <p>Punggol: {punggol_dist} and {punggol_time}</p>
     <p>Tampines: {tampines_dist} and {tampines_time}</p>
     <p>NTU: {NTU_dist} and {NTU_time}</p>
-
 
     </div>
     );

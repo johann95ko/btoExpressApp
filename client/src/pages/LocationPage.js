@@ -16,17 +16,19 @@ import {
   map
 
 } from "react-google-maps";
-
-
-
 import PlacesAutoComplete, { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 import Map from "./Map"
 import {  MapWithADirectionsRenderer  } from "../components/MapWithADirectionsRenderer"
 import { defaultProps } from "recompose";
-
+// import { TextInput } from 'react-native-paper';
+import TextField from '@material-ui/core/TextField';
+import MyForm from "../components/Form"
 
 
 export const LocationPage = () => {
+
+  var name="Bukit Timah,Singapore"
+
   return (
     <div style={{width:'100vw',height:'200vh'}}>
   
@@ -37,8 +39,19 @@ export const LocationPage = () => {
         containerElement={<div style={{ height: `80%` }} />}
         mapElement={<div style={{ height: `80%` }} />}
         /> */}
-      <MapWithADirectionsRenderer/>
+
+  <MyForm/>
+      <MapWithADirectionsRenderer destination={name}/>
+      <MapWithADirectionsRenderer destination={"National University of Singapore"}/>
+
+      <div>
+
       
+        
+
+    </div>
+
     </div>
   )
 }
+
