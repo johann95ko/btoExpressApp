@@ -29,6 +29,7 @@ var NTU_dist;
 var NTU_time;
 
 var detailed;
+
 export const MapWithADirectionsRenderer = compose(
     withProps({
       googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCSaiP0qZRojgI9mRvYSpOrIg4MZsJ0f3M&v=3.exp&libraries=geometry,drawing,places",
@@ -154,11 +155,12 @@ export const MapWithADirectionsRenderer = compose(
 
     }
     })
-  )(props =>
+  ) (props =>
+    // return this 
     <div>
       
      <GoogleMap
-      defaultZoom={5}
+      defaultZoom={10.5}
       defaultCenter={new window.google.maps.LatLng(1.32083,102.819839)}>
 
         {btoData.features.map(bto=>( 
