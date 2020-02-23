@@ -28,14 +28,13 @@ import {NavBar} from "../components/NavBar"
 
 export const LocationPage = () => {
   return (
-    <div style={{ height: `500px`,width:`1000px` }} >
+    <div style={{ height: `200px`,width:`1300px` }} >
  
-<h1> Address </h1>
-<h1> Address </h1>
-<h1> Address </h1>
+<h1> Spacer </h1>
+<h1> Spacer</h1>
+<h1> Spacer</h1>
 
-<NavBar/>
-        <AddressForm />
+<AddressForm />
   
     </div>
   )
