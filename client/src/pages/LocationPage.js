@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import ReactDOM from "react-dom";
 import "./pages.css";
 // import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow, DirectionsRenderer} from "react-google-maps";
+import { render } from 'react-dom';
 
 import * as btoData from "../data/btoData.json";
 import {
@@ -18,40 +19,24 @@ import {
 } from "react-google-maps";
 import PlacesAutoComplete, { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 import Map from "./Map"
-import {  MapWithADirectionsRenderer  } from "../components/MapWithADirectionsRenderer"
+import   MapWithADirectionsRenderer   from "../components/MapWithADirectionsRenderer"
 import { defaultProps } from "recompose";
 // import { TextInput } from 'react-native-paper';
 import TextField from '@material-ui/core/TextField';
-import MyForm from "../components/Form"
-
+import AddressForm from "../components/Form"
+import {NavBar} from "../components/NavBar"
 
 export const LocationPage = () => {
-
-  var name="Bukit Timah,Singapore"
-
   return (
-    <div style={{width:'100vw',height:'200vh'}}>
+    <div style={{ height: `500px`,width:`1000px` }} >
+ 
+<h1> Address </h1>
+<h1> Address </h1>
+<h1> Address </h1>
+
+<NavBar/>
+        <AddressForm />
   
-      {/* <WrappedMap 
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyCSaiP0qZRojgI9mRvYSpOrIg4MZsJ0f3M&v=3.exp&libraries=geometry,drawing,places
-        `} 
-        loadingElement={<div style={{ height: `80%` }} />}
-        containerElement={<div style={{ height: `80%` }} />}
-        mapElement={<div style={{ height: `80%` }} />}
-        /> */}
-
-  <MyForm/>
-      <MapWithADirectionsRenderer destination={name}/>
-      <MapWithADirectionsRenderer destination={"National University of Singapore"}/>
-
-      <div>
-
-      
-        
-
-    </div>
-
     </div>
   )
 }
-

@@ -1,156 +1,148 @@
-import React, {Component} from "react";
-import useState from "react";
-import PlacesAutoComplete, { geocodeByAddress, getLatLng } from "react-places-autocomplete";
+/*global google*/
+import React, { Component } from 'react';
+import { compose, withProps, lifecycle } from "recompose";
+import { withScriptjs,
+    withGoogleMap,
+    GoogleMap,
+    Marker,
+    DirectionsRenderer } from 'react-google-maps';
 import * as btoData from "../data/btoData.json";
-const { compose, withProps, lifecycle } = require("recompose");
-const {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  InfoWindow,
-  DirectionsRenderer,
-  Marker
-} = require("react-google-maps");
 
-var jalan_dist;
-var jalan_time;
-var geylang_dist;
-var geylang_time;
-var punggol_dist;
-var punggol_time;
-var tampines_dist;
-var tampines_time;
-var NTU_dist;
-var NTU_time;
-
-export const MapWithADirectionsRenderer = compose(
+const MapWithADirectionsRenderer = compose(
     withProps({
-      googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCSaiP0qZRojgI9mRvYSpOrIg4MZsJ0f3M&v=3.exp&libraries=geometry,drawing,places",
-      loadingElement: <div style={{ height: `100%` }} />,
-      containerElement: <div style={{ height: `800px` }} />,
-      mapElement: <div style={{ height: `100%` }} />,
+        googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyA_WObUiYD7YpoYufR84re1LZHAJeAGXkY",
+        loadingElement: <div style={{ height: `100%` }} />,
+        containerElement: <div style={{ height: `500px`,width:`1000px` }} />,
+        mapElement: <div style={{ height: `100%` }} />,
     }),
     withScriptjs,
     withGoogleMap,
     lifecycle({
-      componentDidMount() {
-        // const map = new window.google.maps.Map(document.getElementById('map'));
-        const DirectionsService = new window.google.maps.DirectionsService();
-        // const DirectionDisplay = new window.google.maps.DirectionsRenderer();
-        
-            //Jalan Membina 
+        componentWillMount() {
+            this.setState({
+                newDirections: [],
+            });
+        },
+        componentDidUpdate(prevProps, prevState) {
+            if (prevProps.origin !== this.props.origin) {
+                this.setState({
+                    directions: null,
+                    directions1: null,
+                    directions2: null,
+                    directions3: null,
+                    newDirections: []
+                });
+                this.drawRoutes();
+            }
+        },
+        componentDidMount() {
+            this.drawRoutes();
+        },
+
+        drawRoutes() {
+            // let destinations = ['Dover,Singapore', 'Jalan Membina, Singapore', 'Tampines,Singapore', 'Pasir Ris, Singapore']
+            let destinations = ['Jalan Membina,Singapore', 'Geylang Bahru, Singapore', 'Seletar,Singapore', 'Punggol, Singapore','Tampines, Singapore','Nanyang Technological University, Singapore']
+
+            const DirectionsService = new google.maps.DirectionsService();
             DirectionsService.route({
-                origin: new window.google.maps.LatLng(1.283460,103.826710),
-                destination:this.props.destination,
-                travelMode: window.google.maps.TravelMode.TRANSIT,
-      
-              }, (result, status) => {
-                  jalan_dist=result.routes[0].legs[0].distance.text
-                  jalan_time=result.routes[0].legs[0].duration.text
-                   console.log("From Jalan Membina to Destination: " + result.routes[0].legs[0].distance.text);
-                   console.log("From Jalan Membina to Destination: " + result.routes[0].legs[0].duration.text);
-                if (status === window.google.maps.DirectionsStatus.OK) {
-                  this.setState({
-                    jalanmembina: result,
-                  });
+                origin: this.props.origin,
+                destination: destinations[0],
+                travelMode: google.maps.TravelMode.TRANSIT,
+            }, (result, status) => {
+                if (status === google.maps.DirectionsStatus.OK) {
+                    this.setState({
+                        directions: result,
+                        newDirections: this.state.newDirections.concat([result])
+                    });
                 } else {
+                    console.error(`error fetching directions ${result}`);
+                }
+            });
+
+            DirectionsService.route({
+                origin: this.props.origin,
+                destination: destinations[1],
+                travelMode: google.maps.TravelMode.TRANSIT,
+            }, (result, status) => {
+                if (status === google.maps.DirectionsStatus.OK) {
+                    this.setState({
+                        directions1: result,
+                        newDirections: this.state.newDirections.concat([result])
+                    });
+                } else {
+                    console.error(`error fetching directions ${result}`);
+                }
+            });
+
+            DirectionsService.route({
+                origin: this.props.origin,
+                destination: destinations[2],
+                travelMode: google.maps.TravelMode.TRANSIT,
+            }, (result, status) => {
+                if (status === google.maps.DirectionsStatus.OK) {
+                    this.setState({
+                        directions2: result,
+                        newDirections: this.state.newDirections.concat([result])
+                    });
+                } else {
+                    console.error(`error fetching directions ${result}`);
+                }
+            });
+
+            DirectionsService.route({
+                origin: this.props.origin,
+                destination: destinations[3],
+                travelMode: google.maps.TravelMode.TRANSIT,
+            }, (result, status) => {
+                if (status === google.maps.DirectionsStatus.OK) {
+                    this.setState({
+                        directions3: result,
+                        newDirections: this.state.newDirections.concat([result])
+                    });
+                } else {
+                    console.error(`error fetching directions ${result}`);
+                }
+            });
+
+            DirectionsService.route({
+              origin: this.props.origin,
+              destination: destinations[4],
+              travelMode: google.maps.TravelMode.TRANSIT,
+          }, (result, status) => {
+              if (status === google.maps.DirectionsStatus.OK) {
+                  this.setState({
+                      directions3: result,
+                      newDirections: this.state.newDirections.concat([result])
+                  });
+              } else {
                   console.error(`error fetching directions ${result}`);
-                }
-              })
-        
-            //Geylang Bahru
-        DirectionsService.route({
-            origin: new window.google.maps.LatLng(1.321780,103.870910),
-            destination: this.props.destination,
-            travelMode: window.google.maps.TravelMode.TRANSIT,
-  
-          }, (result, status) => {
-            geylang_dist=result.routes[0].legs[0].distance.text
-            geylang_time=result.routes[0].legs[0].duration.text
-            console.log("From Geylang Bahru to Destination: " + result.routes[0].legs[0].distance.text);
-            console.log("From Geylang Bahru to Destination: " + result.routes[0].legs[0].duration.text);
-            console.log(result)
-            if (status === window.google.maps.DirectionsStatus.OK) {
-              this.setState({
-                geylangbahru: result,
-              });
-            } else {
-              console.error(`error fetching directions ${result}`);
-            }
-          })
-
-          //Punggol 
-          DirectionsService.route({
-            origin: new window.google.maps.LatLng(1.398490,103.907921),
-            destination: this.props.destination,
-            travelMode: window.google.maps.TravelMode.TRANSIT,
-          }, (result, status) => {
-            punggol_dist=result.routes[0].legs[0].distance.text
-            punggol_time=result.routes[0].legs[0].duration.text
-            console.log(result)
-            console.log("From Punggol to Destination: " + result.routes[0].legs[0].distance.text);
-            console.log("From Punggol to Destination: " + result.routes[0].legs[0].duration.text);
-            if (status === window.google.maps.DirectionsStatus.OK) {
-              this.setState({
-                punggol: result,
-              });
-            } else {
-              console.error(`error fetching directions ${result}`);
-            }
-          })        
-          
-          //Tampines 
-          DirectionsService.route({
-          origin: new window.google.maps.LatLng(1.349591,103.956787),
-          destination: this.props.destination,
-          travelMode: window.google.maps.TravelMode.TRANSIT,
-          }, (result, status) => {
-          tampines_dist=result.routes[0].legs[0].distance.text
-          tampines_time=result.routes[0].legs[0].duration.text
-          console.log("From Tampines to Destination: " + result.routes[0].legs[0].distance.text);
-          console.log("From Tampines to Destination: " + result.routes[0].legs[0].duration.text);
-          if (status === window.google.maps.DirectionsStatus.OK) {
-                 this.setState({
-                  tampines: result,
+              }
           });
-          } else {
-            console.error(`error fetching directions ${result}`);
-                 }
-          })
 
-        //  Nanyang Technological University 
+
           DirectionsService.route({
-          origin: "Nanyang Technological University,Singapore",
-          destination: this.props.destination,
-          travelMode: window.google.maps.TravelMode.TRANSIT,
-          }, (result, status) => {
-          NTU_dist=result.routes[0].legs[0].distance.text
-          NTU_time=result.routes[0].legs[0].duration.text
-
-          if (status === window.google.maps.DirectionsStatus.OK) {
-          this.setState({
-              NTU: result,
-          });
-          } else {
-          console.error(`error fetching directions ${result}`);
-                }
-          })
-
-
-
-    }
+            origin: this.props.origin,
+            destination: destinations[5],
+            travelMode: google.maps.TravelMode.TRANSIT,
+        }, (result, status) => {
+            if (status === google.maps.DirectionsStatus.OK) {
+                this.setState({
+                    directions3: result,
+                    newDirections: this.state.newDirections.concat([result])
+                });
+            } else {
+                console.error(`error fetching directions ${result}`);
+            }
+        });
+        }
     })
-  ) 
+)(props =>
+    <GoogleMap
+        defaultZoom={7}
+        defaultCenter={new google.maps.LatLng(1.32083,102.819839)}
+        >
 
-  (props =>
-    // return this 
-    <div>
-   
-     {/* <GoogleMap
-      defaultZoom={10.5}
-      defaultCenter={new window.google.maps.LatLng(1.32083,102.819839)}>  */}
-
-        {btoData.features.map(bto=>( 
+           {btoData.features.map(bto=>( 
           <Marker 
           key = {bto.properties.PARK_ID} 
           position={{ 
@@ -164,21 +156,16 @@ export const MapWithADirectionsRenderer = compose(
           }}
           />  
         ))}
-    <DirectionsRenderer directions={props.jalanmembina} suppressMarkers={false}/> 
-    <DirectionsRenderer directions={props.geylangbahru} suppressMarkers={false} />  
-    <DirectionsRenderer directions={props.punggol} suppressMarkers={true}/>  
-    <DirectionsRenderer directions={props.tampines} suppressMarkers={true}/>  
-    <DirectionsRenderer directions={props.NTU} suppressMarkers={true}/>  
-    {/* <p>{props.destination}</p> */}
-    {/* </GoogleMap> */}
+       <DirectionsRenderer directions={props.newDirections[0]} />
+       <DirectionsRenderer directions={props.newDirections[1]} />
+       <DirectionsRenderer directions={props.newDirections[2]} />
+       <DirectionsRenderer directions={props.newDirections[3]} />
+       <DirectionsRenderer directions={props.newDirections[4]} />
+       <DirectionsRenderer directions={props.newDirections[5]} />
+      
+      }
 
-    <h2>Distance and Duration to {props.destination}</h2>
-    <p>Jalan Membina: {jalan_dist} and {jalan_time}</p>
-    <p>Geylang Bahru: {geylang_dist} and {geylang_time}</p>
-    <p>Punggol: {punggol_dist} and {punggol_time}</p>
-    <p>Tampines: {tampines_dist} and {tampines_time}</p>
-    <p>NTU: {NTU_dist} and {NTU_time}</p>
+    </GoogleMap>
+);
 
-    </div>
-    );
-    
+export default MapWithADirectionsRenderer;
