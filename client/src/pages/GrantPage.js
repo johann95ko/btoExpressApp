@@ -1,10 +1,12 @@
 import React from "react";
 import "./pages.css";
+import { useFetch } from "../customHooks/useFetch";
 
-export const GrantPage = () => {
+function GrantPage(){
   return (
-    <div className="pageContainer">
-      <p>Grants here</p>
+    <div className="flexBoxDiv">
+      This is the Grant Page
     </div>
   );
 };
+export default GrantPage;
