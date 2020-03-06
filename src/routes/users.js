@@ -1,10 +1,36 @@
-var express = require("express");
-var router = express.Router();
+const router = require('express').Router();
+let User = require('../models/user.model')
 
-/* GET users listing. */
-router.get("/", function(req, res, next) {
-  res.send("respond with a resource");
-  // res.render("users", { title: "Express" });
+router.route('/').get((req, res) => {
+  User.find()
+    .then(users => res.json(users))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/add').post((req, res) => {
+  const username = req.body.username;
+  const grant = req.body.grant;
+  const newUser = new User({
+    username, 
+    grant
+  });
+
+  newUser.save()
+    .then(() => res.json('User added'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/update/:id').post((req, res) => {
+  User.findById(req.params.id)
+  .then(User => {
+    User.username = req.body.username;
+    User.grant = req.body.grant
+
+    User.save()
+    .then(() => res.json('User updated'))
+    .catch(err => res.status(400).json('Error ' + err));
+  })
+  .catch(err => res.status(400).json('Error: ' + err));
 });
 
 module.exports = router;

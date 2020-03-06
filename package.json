@@ -23,9 +23,33 @@
     "mongoose": "^5.8.11",
     "morgan": "~1.9.1",
     "react-bootstrap": "^1.0.0-beta.16",
+<<<<<<< Updated upstream
     "react-router-dom": "^5.1.2"
+=======
+    "react-geocode": "^0.2.1",
+    "react-google-autocomplete": "^1.1.2",
+    "react-google-maps": "^9.4.5",
+    "react-native-maps-directions": "^1.7.3",
+    "react-native-paper": "^3.6.0",
+    "react-places-autocomplete": "^7.2.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.4.0",
+    "swr": "^0.1.17",
+    "use-supercluster": "^0.2.5"
+>>>>>>> Stashed changes
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "@types/googlemaps": "^3.39.3",
+    "@types/markerclustererplus": "^2.1.33",
+    "jquery": "^3.4.1",
+    "nodemon": "^2.0.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.8.0",
+    "react-native": "^0.61.5",
+    "react-native-maps": "^0.12.1",
+    "react-native-vector-icons": "^6.6.0",
+    "react-test-renderer": "^16.9.0",
+    "supercluster": "^6.0.2",
+    "webpack-dev-server": "^3.10.2"
   }
 }
