@@ -1,12 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import "./pages.css";
 import { useFetch } from "../customHooks/useFetch";
+import GrantCalculator from '../components/GrantCalculator'
 
-function GrantPage(){
+
+const GrantPage = () => {
+  const [grant, setGrant] = useState(0);
+  // const calculateGrant;
   return (
     <div className="flexBoxDiv">
-      This is the Grant Page
+      Grant Calculator
+      <GrantCalculator />
     </div>
   );
 };
+
 export default GrantPage;
