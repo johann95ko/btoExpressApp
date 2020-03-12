@@ -30,9 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-
 app.use("/home", indexRouter);
-app.use("/users", usersRouter);
 app.use("/api/btoDescription", btoDescRouter);
 app.use("/api/housing", housingRouter);
 app.use("/api/grants", grantRouter);
