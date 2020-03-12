@@ -1,5 +1,5 @@
 var express = require("express");
-let housingData = require("../DB/BtoDb");
+let housingData = require("../models/BtoDb");
 var router = express.Router();
 const BtoDao = require("../DAO/BtoDao");
 const btoDao = new BtoDao(housingData);
