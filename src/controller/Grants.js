@@ -1,12 +1,13 @@
 var express = require("express");
-let housingData = require("../models/Housing.model");
+let housingData = require("../models/BtoDb");
 var router = express.Router();
+
 
 /* GET users listing. */
 router.route("/").get((req, res) => {
   housingData
     .find()
-    .then(eachHouse => res.send(eachHouse))
+    .then(eachHouse => res.send(grants.studentGrant().toString()))
     .catch(err => res.status(400).json("Error: " + err));
 });
 

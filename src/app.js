@@ -7,11 +7,11 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var btoDescRouter = require("./routes/btoDescription");
-var grantRouter = require("./routes/Grants");
-var housingRouter = require("./routes/Housing");
+var indexRouter = require("./controller/index");
+var usersRouter = require("./controller/users");
+var btoDescRouter = require("./controller/btoDescription");
+var grantRouter = require("./controller/Grants");
+var housingRouter = require("./controller/BtoController");
 
 var app = express();
 app.use(cors());
