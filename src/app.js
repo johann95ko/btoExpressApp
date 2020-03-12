@@ -7,11 +7,20 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 
+<<<<<<< Updated upstream
 var indexRouter = require("./controller/index");
 var usersRouter = require("./controller/users");
 var btoDescRouter = require("./controller/btoDescription");
 var grantRouter = require("./controller/GrantsController");
 var housingRouter = require("./controller/BtoController");
+=======
+
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
+var btoDescRouter = require("./routes/btoDescription");
+var grantRouter = require("./routes/Grants");
+var housingRouter = require("./routes/Housing");
+>>>>>>> Stashed changes
 
 var app = express();
 app.use(cors());
@@ -29,6 +38,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
