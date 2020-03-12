@@ -10,7 +10,7 @@ var cors = require("cors");
 var indexRouter = require("./controller/index");
 var usersRouter = require("./controller/users");
 var btoDescRouter = require("./controller/btoDescription");
-var grantRouter = require("./controller/Grants");
+var grantRouter = require("./controller/GrantsController");
 var housingRouter = require("./controller/BtoController");
 
 var app = express();
