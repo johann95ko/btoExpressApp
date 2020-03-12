@@ -6,10 +6,11 @@ import { useFetch } from "../customHooks/useFetch";
 
 export const HomePage = () => {
   const { data, loading } = useFetch("/api/btoDescription");
-  // console.log(data);
+  // console.log(data); 
+  // input your logic here
 
   if (loading) return null;
-  return (
+  return ( // printed on screen
     <div className="flexBoxDiv">
       {data.map(eachHousing => (
         <BTOCard
