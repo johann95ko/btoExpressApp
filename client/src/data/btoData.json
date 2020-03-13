@@ -11,7 +11,7 @@
 			"properties": {
 				"PARK_ID": 960,
 				"FACILITYID": 28014,
-				"NAME": "Jalan membina",
+				"NAME": "Bukit Batok",
 				"NAME_FR": "Planchodrome Bearbrook",
 				"ADDRESS": "8720 Russell Road",
 				"ADDRESS_FR": "8720, chemin Russell",
@@ -33,7 +33,7 @@
 			},
 			"geometry": {
 				"type": "Point",
-				"coordinates": [103.826710, 1.283460]
+				"coordinates": [103.74338,1.36242]
 			}
 		},
 		{
@@ -41,7 +41,7 @@
 			"properties": {
 				"PARK_ID": 1219,
 				"FACILITYID": 28001,
-				"NAME": "Geylang Bahru",
+				"NAME": "Choa Chu Kang",
 				"NAME_FR": "Planchodrome Bob-MacQuarrie (Parc SK8 Extreme)",
 				"ADDRESS": "1490 Youville Drive",
 				"ADDRESS_FR": "1490, promenade Youville",
@@ -63,7 +63,7 @@
 			},
 			"geometry": {
 				"type": "Point",
-				"coordinates": [103.870910, 1.321780]
+				"coordinates": [103.74646, 1.37549]
 			}
 		},
 		{
@@ -71,7 +71,7 @@
 			"properties": {
 				"PARK_ID": 1157,
 				"FACILITYID": 28002,
-				"NAME": "Orchard Road",
+				"NAME": "Tengah",
 				"NAME_FR": "Planchodrome Walter-Baker",
 				"ADDRESS": "100 Charlie Rogers Place",
 				"ADDRESS_FR": "100, place Charlie Rogers",
@@ -93,7 +93,7 @@
 			},
 			"geometry": {
 				"type": "Point",
-				"coordinates": [108.834690, 3.302570]
+				"coordinates": [103.74252, 1.35849]
 			}
 		},
 		{
@@ -101,7 +101,7 @@
 			"properties": {
 				"PARK_ID": 9,
 				"FACILITYID": 28006,
-				"NAME": "Jurong West",
+				"NAME": "Paris Ris",
 				"NAME_FR": "Lieu de planchodrome itinérant",
 				"ADDRESS": "2785 8th Line Road",
 				"ADDRESS_FR": "2785, chemin 8th Line",
@@ -123,7 +123,7 @@
 			},
 			"geometry": {
 				"type": "Point",
-				"coordinates": [103.682450, 1.349850]
+				"coordinates": [103.95163, 1.37487]
 			}
 		},
 		{
@@ -131,7 +131,7 @@
 			"properties": {
 				"PARK_ID": 1160,
 				"FACILITYID": 28007,
-				"NAME": "Punggol",
+				"NAME": "Tampines",
 				"NAME_FR": "Lieu de planchodrome itinérant",
 				"ADDRESS": "10 Warner Colpitts Lane",
 				"ADDRESS_FR": "10, ruelle Warner Colpitts",
@@ -153,7 +153,7 @@
 			},
 			"geometry": {
 				"type": "Point",
-				"coordinates": [103.907921, 1.398490]
+				"coordinates": [103.94502, 1.35004]
 			}
 		},
 		{
@@ -161,7 +161,7 @@
 			"properties": {
 				"PARK_ID": 1693,
 				"FACILITYID": 28016,
-				"NAME": "Tampines",
+				"NAME": "Woodlands",
 				"NAME_FR": "Planchodrome Legacy",
 				"ADDRESS": "101 Centrepointe Drive",
 				"ADDRESS_FR": "101, promenade Centrepointe",
@@ -183,7 +183,7 @@
 			},
 			"geometry": {
 				"type": "Point",
-				"coordinates": [103.956787, 1.349591]
+				"coordinates": [103.785979, 1.431902]
 			}
 		},
 		{
@@ -191,7 +191,7 @@
 			"properties": {
 				"PARK_ID": 1717,
 				"FACILITYID": 28018,
-				"NAME": "Greenboro Skateboard Park",
+				"NAME": "Ang Mo Kio",
 				"NAME_FR": "Planchodrome de Greenboro",
 				"ADDRESS": "3142 Conroy Road",
 				"ADDRESS_FR": "3142, chemin Conroy",
@@ -213,7 +213,7 @@
 			},
 			"geometry": {
 				"type": "Point",
-				"coordinates": [-75.625996131485707, 45.375401587496128]
+				"coordinates": [103.834968,1.369091]
 			}
 		},
 		{
@@ -221,7 +221,7 @@
 			"properties": {
 				"PARK_ID": 137,
 				"FACILITYID": 28019,
-				"NAME": "Bridlewood Skateboard Park",
+				"NAME": "Bishan",
 				"NAME_FR": "Planchodrome Bridlewood",
 				"ADDRESS": "65 Stonehaven Drive",
 				"ADDRESS_FR": "65, promenade Stonehaven",
@@ -243,7 +243,7 @@
 			},
 			"geometry": {
 				"type": "Point",
-				"coordinates": [-75.857009812435976, 45.290758029776626]
+				"coordinates": [103.856581, 1.337919]
 			}
 		},
 		{
@@ -251,7 +251,7 @@
 			"properties": {
 				"PARK_ID": 1133,
 				"FACILITYID": 28020,
-				"NAME": "Roving Skateboard Park Location",
+				"NAME": "Geylang",
 				"NAME_FR": "Lieu de planchodrome itinérant",
 				"ADDRESS": "100 Clifford Campbell Street",
 				"ADDRESS_FR": "100, rue Clifford-Campbell",
@@ -273,7 +273,7 @@
 			},
 			"geometry": {
 				"type": "Point",
-				"coordinates": [-76.206087708136721, 45.470459866077654]
+				"coordinates": [103.888044, 1.311025]
 			}
 		},
 		{
