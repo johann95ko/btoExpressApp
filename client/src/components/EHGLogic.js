@@ -1,6 +1,6 @@
 class EhgLogic{
     constructor(income){
-        this.income = income
+        this.income = parseInt(income)
     }
 
     ehg(income) {
