@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.mapplace {
+  margin:30;
+  height: 10;
+}
+
+.this {
+
+  margin:30;
+  height: 10;
+  width:30;
+
+}
