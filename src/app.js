@@ -12,6 +12,8 @@ var usersRouter = require("./controller/users");
 var btoDescRouter = require("./controller/btoDescription");
 var grantRouter = require("./controller/GrantsController");
 var housingRouter = require("./controller/BtoController");
+var loginRouter = require("./controller/LoginController");
+var mapRouter = require("./controller/MapsController");
 
 var app = express();
 app.use(cors());
@@ -35,6 +37,8 @@ app.use("/users", usersRouter);
 app.use("/api/btoDescription", btoDescRouter);
 app.use("/api/housing", housingRouter);
 app.use("/api/grants", grantRouter);
+app.use("/api/login", loginRouter);
+app.use("/api/map", mapRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
