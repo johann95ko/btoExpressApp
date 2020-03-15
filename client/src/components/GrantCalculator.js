@@ -6,10 +6,10 @@ class GrantCalculator extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            FTA: 'true',
-            spouseFTA: 'true',
-            incomeLevel: '1500',
-            employmentStatus: "employed",
+            FTA: true,
+            spouseFTA: true,
+            incomeLevel: 1500,
+            employmentStatus: true,
             grant: 0
             };
 
@@ -20,55 +20,59 @@ class GrantCalculator extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // getGrant = (income) => {
-    //     try {
-    //         const response = axios.get("http://localhost:5000/api/grants/bto");
-    //         console.log(response)
-
-    //     } catch (e) {
-    //       console.log(e);
-    //     }
-    // };
-
     handleFTA(event) {
-        this.setState({FTA: event.target.value});
+        if(event.target.value === "true"){
+            this.setState({FTA: true});
+        } else {
+            this.setState({FTA: false});
+        }
     }
 
     handleSpouseFTA(event) {
-        this.setState({spouseFTA: event.target.value});
+        if(event.target.value === "true"){
+            this.setState({spouseFTA: true});
+        } else {
+            this.setState({spouseFTA: false});
+        }
     }
   
     handleIncome(event) {
-        this.setState({incomeLevel: event.target.value});
+        this.setState({incomeLevel: parseInt(event.target.value)});
     }
 
     handleEmployed(event) {
-        this.setState({employmentStatus: event.target.value});
+        if(event.target.value === "employed"){
+            this.setState({employmentStatus: true});
+        } else {
+            this.setState({employmentStatus: false});
+        }
     }
   
     handleSubmit(event) {
     event.preventDefault();
     // console.log(this.state.incomeLevel)
-    console.log(typeof(this.state.FTA))
-    console.log(this.state.spouseFTA)
-    console.log(this.state)
-        axios.post('http://localhost:5000/api/grants/bto', {
-            incomeLevel: this.state.incomeLevel,
-            FTA: this.state.FTA,
-            spouseFTA: this.state.spouseFTA,
-            employmentStatus: this.state.employmentStatus,
-            })
-            .then((response) => {
-                console.log(response.data);
-                this.setState({grant: response.data})
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+    // console.log(typeof(this.state.incomeLevel))
+    console.log(this.state.FTA)
+    // console.log(this.state)
+
+    axios.post('http://localhost:5000/api/grants/bto', {
+        incomeLevel: this.state.incomeLevel,
+        FTA: this.state.FTA,
+        spouseFTA: this.state.spouseFTA,
+        employmentStatus: this.state.employmentStatus,
+        })
+        .then((response) => {
+            console.log(response);
+            console.log(this.state)
+            this.setState({grant: response.data})
+        })
+        .catch((error) => {
+            console.log(error);
+        });
     }
   
     render() {
-      return (
+    return (
         <div>
             <form onSubmit={this.handleSubmit}>
                 <div>
@@ -125,9 +129,10 @@ class GrantCalculator extends React.Component {
                 grant: {this.state.grant}
             </div>
         </div>
-      );
+    );
+
     }
-  }
+}
 
 
 // const GrantCalculator = () => {
