@@ -2,25 +2,22 @@ import React, { useState } from 'react';
 import {Button, Form} from 'react-bootstrap';
 import axios from "axios";
 
-const EhgLogic = require("./EHGLogic");
-const Ehg = new EhgLogic();
-
 class GrantCalculator extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstTimers: 'true',
+            FTA: 'true',
+            spouseFTA: 'true',
             incomeLevel: '1500',
             employmentStatus: "employed",
             grant: 0
             };
 
         this.handleFTA = this.handleFTA.bind(this);
+        this.handleSpouseFTA = this.handleSpouseFTA.bind(this);
         this.handleIncome = this.handleIncome.bind(this);
         this.handleEmployed = this.handleEmployed.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
-        const grant = 0;
     }
 
     // getGrant = (income) => {
@@ -34,7 +31,11 @@ class GrantCalculator extends React.Component {
     // };
 
     handleFTA(event) {
-        this.setState({firstTimers: event.target.value});
+        this.setState({FTA: event.target.value});
+    }
+
+    handleSpouseFTA(event) {
+        this.setState({spouseFTA: event.target.value});
     }
   
     handleIncome(event) {
@@ -46,11 +47,24 @@ class GrantCalculator extends React.Component {
     }
   
     handleSubmit(event) {
-    //   alert('Income is: ' + this.state.income);
     event.preventDefault();
-    this.setState({grant: (Ehg.ehg(this.state.incomeLevel))})
-    console.log(this.state.incomeLevel)
+    // console.log(this.state.incomeLevel)
+    console.log(typeof(this.state.FTA))
+    console.log(this.state.spouseFTA)
     console.log(this.state)
+        axios.post('http://localhost:5000/api/grants/bto', {
+            incomeLevel: this.state.incomeLevel,
+            FTA: this.state.FTA,
+            spouseFTA: this.state.spouseFTA,
+            employmentStatus: this.state.employmentStatus,
+            })
+            .then((response) => {
+                console.log(response.data);
+                this.setState({grant: response.data})
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
   
     render() {
@@ -58,7 +72,7 @@ class GrantCalculator extends React.Component {
         <div>
             <form onSubmit={this.handleSubmit}>
                 <div>
-                    <label>First time applicant?</label>
+                    <label>Are you a first time applicant?</label>
                     <select onChange={this.handleFTA}>
                         <option value='true'>Yes</option>
                         <option value='false'>No</option>
@@ -66,8 +80,16 @@ class GrantCalculator extends React.Component {
                 </div>
 
                 <div>
+                    <label>Is your spouse a first time applicant?</label>
+                    <select onChange={this.handleSpouseFTA}>
+                        <option value='true'>Yes</option>
+                        <option value='false'>No</option>
+                    </select>
+                </div>
+
+                <div>
                     <label>Combined Monthly Income for the past 12 months:</label>
-                    <select incomeLevel={this.state.value} onChange={this.handleIncome}>
+                    <select onChange={this.handleIncome}>
                         <option value='1500'>$1,500 or below</option>
                         <option value='2000'>$1,501 to $2,000</option>
                         <option value='2500'>$2,001 to $2,500</option>
