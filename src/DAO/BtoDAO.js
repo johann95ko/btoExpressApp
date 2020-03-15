@@ -1,6 +1,6 @@
-let housingData = require("../DB/BtoDb");
+let housingData = require("../models/BtoDb");
 
-class BtoDao {
+class BtoController {
   constructor(modelData) {
     this.modelData = modelData;
   }
@@ -27,9 +27,9 @@ class BtoDao {
 
     newHousing
       .save()
-      .then(() => res.json("Housing added"))
+      .then(() => res.json("User added"))
       .catch(err => res.status(400).json("Error: " + err));
   }
 }
 
-module.exports = BtoDao;
+module.exports = BtoController;
