@@ -3,7 +3,7 @@ const GrantCalculatorInterface = require("./GrantCalculatorInterface");
 class BtoGrantCalculator extends GrantCalculatorInterface {
   constructor(incomeLevel, firstTimers, employmentStatus) {
     super();
-    this.incomeLevel = incomeLevel;
+    this.incomeLevel = parseInt(incomeLevel);
     this.firstTimers = firstTimers;
     this.employmentStatus = employmentStatus;
   }
