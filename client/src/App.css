@@ -37,16 +37,15 @@
   }
 }
 
-.mapplace {
-  margin:30;
-  height: 10;
-  width:30;
-}
-
 .this {
 
   margin:30;
   height: 10000;
   width:30;
 
+}
+
+.mapplace {
+  text-align: center;
+  left: 50%;
 }

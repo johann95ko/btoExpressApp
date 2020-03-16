@@ -65,7 +65,6 @@ function Map() {
           </div>
         </InfoWindow>
       )}
-      {/* <DirectionsRenderer directions="Singapore"/> */}
     </GoogleMap>
   );
 }
@@ -74,7 +73,7 @@ const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 export default function StaticMap() {
   return (
-    <div style={{ width: "100vw", height: "50vh" }}>
+    <div id='mapplace' style={{ width: "50vw", height: "50vh", align:"right" }}>
       <MapWrapped
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyA_WObUiYD7YpoYufR84re1LZHAJeAGXkY`}
         loadingElement={<div style={{ height: `100%` }} />}

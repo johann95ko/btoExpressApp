@@ -13,14 +13,6 @@ code {
 }
 
 .mapplace {
-  margin:30;
-  height: 10;
-}
-
-.this {
-
-  margin:30;
-  height: 10;
-  width:30;
-
+  text-align: center;
+  left: 50%;
 }
