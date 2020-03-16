@@ -1,6 +1,6 @@
 class GrantCalculatorInterface {
   constructor() {}
-  calulateGrant() {}
+  calculateGrant() {}
 }
 
 module.exports = GrantCalculatorInterface;
