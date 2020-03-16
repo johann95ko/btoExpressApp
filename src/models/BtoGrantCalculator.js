@@ -3,12 +3,12 @@ const GrantCalculatorInterface = require("./GrantCalculatorInterface");
 class BtoGrantCalculator extends GrantCalculatorInterface {
   constructor(incomeLevel, firstTimers, employmentStatus) {
     super();
-    this.incomeLevel = incomeLevel;
+    this.incomeLevel = parseInt(incomeLevel);
     this.firstTimers = firstTimers;
     this.employmentStatus = employmentStatus;
   }
 
-  calulateGrant() {
+  calculateGrant() {
     if (this.incomeLevel > 9000) {
       return 0;
     } else if (this.incomeLevel < 1501) {

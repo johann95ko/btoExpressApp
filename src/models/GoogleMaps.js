@@ -1,6 +1,17 @@
 const axios = require("axios");
 const googleApiKey = "AIzaSyA_WObUiYD7YpoYufR84re1LZHAJeAGXkY";
 
+let btoLocations = [
+  "Choa Chu Kang Grove, Keat Hong Link",
+  "Bukit Batok Road, Tegah Park Avenue",
+  "Pasir Ris Drive, Pasir Ris Green",
+  "Tampines Street 96, Tampines Street 92",
+  "Woodlands Avenue 5, Woodlands Avenue 2",
+  "Ang Mo Kio Avenue 2, Ang Mo Kio Street 21",
+  "Bishan Street 11, Braddell Road",
+  "Cassia Link, Jalan Dua, Old Airport Road"
+];
+
 const geocode = async () => {
   var location = "22 Main st Boston MA";
   try {
@@ -19,9 +30,9 @@ const geocode = async () => {
 };
 
 const distance = async () => {
-  var originLoc = "Nanyang Technological University";
-  var destinationLoc = "510442";
-  var travelMode = "walking";
+  var originLoc = "Choa Chu Kang Grove, Keat Hong Link";
+  var destinationLoc = "Bukit Batok Road, Tegah Park Avenue";
+  var travelMode = "driving";
   try {
     return await axios.get(
       "https://maps.googleapis.com/maps/api/directions/json",
