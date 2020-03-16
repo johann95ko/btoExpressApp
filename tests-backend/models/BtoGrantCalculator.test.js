@@ -21,3 +21,8 @@ test('BtoGrantCalculator calculates grant properly', () => {
     expect(btoGrantCalculator_midincome.calculateGrant()).toBe(45000);
     expect(btoGrantCalculator_highincome.calculateGrant()).toBe(0);
 });
+
+// test('BtoGrantCalculator calculates grant properly', () => {
+//     btoGrantCalculator = new BtoGrantCalculator(-500,true,false);
+//     expect(btoGrantCalculator_lowincome.calculateGrant()).toThrow(error);
+// });

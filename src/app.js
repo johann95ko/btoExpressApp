@@ -7,8 +7,6 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 
-var indexRouter = require("./controller/index");
-var usersRouter = require("./controller/users");
 var btoDescRouter = require("./controller/btoDescription");
 var grantRouter = require("./controller/GrantsController");
 var housingRouter = require("./controller/BtoController");
@@ -32,8 +30,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
 app.use("/api/btoDescription", btoDescRouter);
 app.use("/api/housing", housingRouter);
 app.use("/api/grants", grantRouter);
