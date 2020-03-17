@@ -14,6 +14,7 @@ export const LocationPage = () => {
       <MapWithADirectionsRenderer origin={formValue} />,
       document.getElementById("mapplace")
     );
+
     event.preventDefault();
   };
   return (

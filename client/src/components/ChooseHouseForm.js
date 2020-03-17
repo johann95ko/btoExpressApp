@@ -26,34 +26,45 @@ export const ChooseHouseForm = props => {
           <FormControlLabel
             control={
               <Checkbox
-                checked={props.jurong}
-                onChange={props.handleChange("jurong")}
-                value="Jurong West Jewel"
+                checked={props.cck}
+                onChange={props.handleChange("cck")}
+                value="cck"
               />
             }
-            label="Jurong West Jewel"
+            label="cck"
           />
 
           <FormControlLabel
             control={
               <Checkbox
-                checked={props.woodlands}
-                onChange={props.handleChange("woodlands")}
-                value="Champions Greens Woodlands"
+                checked={props.Tengah}
+                onChange={props.handleChange("Tengah")}
+                value="Tengah"
               />
             }
-            label="Champions Greens Woodlands"
+            label="Tengah"
           />
 
           <FormControlLabel
             control={
               <Checkbox
-                checked={props.sengkang}
-                onChange={props.handleChange("sengkang")}
-                value="Fernvale Vines"
+                checked={props.Pasir}
+                onChange={props.handleChange("Pasir")}
+                value="Pasir"
               />
             }
-            label="Fernvale Vines"
+            label="Pasir"
+          />
+
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={props.Tampines}
+                onChange={props.handleChange("Tampines")}
+                value="Tampines"
+              />
+            }
+            label="Tampines"
           />
         </FormGroup>
       </FormControl>

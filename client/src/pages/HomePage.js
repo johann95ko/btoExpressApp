@@ -2,7 +2,6 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import "./pages.css";
 import { useFetch } from "../customHooks/useFetch";
-import Landing from "../components/Landing";
 import Carousel from "../components/frontCarousel";
 import Card from "../components/bCard";
 import { CardDeck } from "react-bootstrap";

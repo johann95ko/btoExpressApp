@@ -29,9 +29,8 @@ const geocode = async () => {
   }
 };
 
-const distance = async () => {
-  var originLoc = "Choa Chu Kang Grove, Keat Hong Link";
-  var destinationLoc = "Bukit Batok Road, Tegah Park Avenue";
+const distance = async (originLoc, destinationLoc) => {
+  
   var travelMode = "driving";
   try {
     return await axios.get(

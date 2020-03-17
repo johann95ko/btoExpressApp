@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 const BTOSchema = new Schema(
   {
+    KeyName: {
+      type: String,
+      required: true
+    },
     Name: {
       type: String,
       required: true

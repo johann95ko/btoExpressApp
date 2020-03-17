@@ -13,6 +13,7 @@ class BtoDAO {
   }
 
   setBto(req, res) {
+    const KeyName = req.body.KeyName;
     const Name = req.body.Name;
     const Address = req.body.Address;
     const MonthOfLaunch = req.body.MonthOfLaunch;
@@ -27,6 +28,7 @@ class BtoDAO {
     const LongestDesc = req.body.LongestDesc;
 
     const newBTO = new this.modelData({
+      KeyName,
       Name,
       Address,
       MonthOfLaunch,
