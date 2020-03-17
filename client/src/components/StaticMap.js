@@ -43,8 +43,8 @@ function Map() {
             setSelectedPark(park);
           }}
           icon={{
-            url: `/home.svg`,
-            scaledSize: new window.google.maps.Size(30, 30)
+            url: `/Building.svg`,
+            scaledSize: new window.google.maps.Size(40, 40)
           }}
         />
       ))}

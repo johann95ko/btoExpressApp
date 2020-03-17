@@ -22,7 +22,7 @@ const frontCarousel = () => {
     <Carousel.Caption>
       <div>
       
-      <Button id="BTOCaption" variant="outline-danger" href="#section2" className="float-left"> View All BTOs
+      <Button id="BTOCaption" variant="outline-danger" href="#section2" > View All BTOs
 
       </Button>
       </div>

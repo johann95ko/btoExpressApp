@@ -352,8 +352,8 @@ const MapWithADirectionsRenderer = compose(
             lng: bto.geometry.coordinates[0]
           }}
           icon={{
-            url: "/home.svg",
-            scaledSize: new window.google.maps.Size(30, 30)
+            url: "/Building.svg",
+            scaledSize: new window.google.maps.Size(40, 40)
           }}
         />
       ))}
@@ -387,7 +387,7 @@ const MapWithADirectionsRenderer = compose(
       <Table id="locationTable" style={{ width: "70vw" }}>
         <TableHead>
           <TableRow>
-            <TableCell align="center">Houses</TableCell>
+            <TableCell align="center">BTO</TableCell>
             <TableCell align="center">Distance</TableCell>
             <TableCell align="center">Duration</TableCell>
           </TableRow>

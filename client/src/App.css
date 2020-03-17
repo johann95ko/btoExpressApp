@@ -50,6 +50,7 @@
   background-color: firebrick;
 }
 
+
 .carousel-caption p {
   font-family:    'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size:      1em;
@@ -76,10 +77,6 @@
   padding-top: 35px;
 }
 
-#searchButton{
-  margin-top: 15px;
-}
-
 #mapplace{
   width: 70vw;
   height: 50vh;
@@ -99,4 +96,9 @@
 
 #locationTable{
   
+}
+
+#BTOCaption{
+    float: left;
+    transform: translateX(-29%);
 }

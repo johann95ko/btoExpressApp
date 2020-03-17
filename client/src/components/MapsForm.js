@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from "react";
+
 import "./components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Nav } from "react-bootstrap";
-import Logo from "../Images/BTOLogo.png";
+import { Button } from "react-bootstrap";
 
-const MapsForm = () => {
-  const [formValue, setFormValue] = useState("");
-  const handleChange = event => {
-    setFormValue(event.target.value);
-  };
-  const handleSubmit = event => {
-    event.preventDefault();
-  };
+export const MapsForm = (props) => {
+  
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div id="searchBar">
+      <form onSubmit={props.handleSubmit}>
         <label>
-          Name:
-          <input type="text" value={formValue} onChange={handleChange} />
+          Enter Your Preferred Location:
+          <input type="text" value={props.formValue} onChange={props.handleChange} 
+          placeholder="Toa Payoh"
+          />
         </label>
-        <input type="submit" value="Submit" />
+        <Button variant="danger" type="submit" value="submit">
+            Search
+          </Button>
       </form>
     </div>
   );
