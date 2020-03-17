@@ -10,3 +10,6 @@ This project aims to assist newly-wed/young couples in Singapore with their BTO 
 4. Run `npm run dev`
 5. Open https://localhost:3000 for front end
 6. Open https://localhost:5000 for back end
+
+# Test
+1. Run `npm run test`
