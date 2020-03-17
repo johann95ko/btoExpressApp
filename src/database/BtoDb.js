@@ -1,30 +1,38 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const housingSchema = new Schema(
+const BTOSchema = new Schema(
   {
-    key: {
-      type: String,
-      required: true
-    },
     name: {
       type: String,
       required: true
     },
-    location: {
+    Address: {
       type: String,
       required: true
     },
-    flatTypeAndCost: {
+    MonthOfLaunch: {
+      type: String,
+      required: true
+    },
+    TypeOfFlats: {
       type: Array,
       required: true
+    },
+    LatAndLng: {
+      type: Array,
+      required: true
+    },
+    NearestMrt: {
+      
     }
+
   },
   {
     timestamps: true
   }
 );
 
-const housingData = mongoose.model("Housing", housingSchema);
+const BTOData = mongoose.model("BTOData", BTOSchema);
 
-module.exports = housingData;
+module.exports = BTOData;
