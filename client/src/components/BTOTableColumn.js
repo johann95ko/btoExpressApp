@@ -18,10 +18,10 @@ export const BTOTableColumn = props => {
   const classes = useStyles();
 
   return (
-    <TableContainer style={{ width: 300 }} component={Paper}>
-      <Table style={{ width: 300 }}>
+    <TableContainer style={{ width: "18.75vw" }} component={Paper}>
+      <Table style={{ width: "18.75vw" }}>
         <TableBody>
-          <TableCell align="center" component="th" scope="row">
+          <TableCell style={{backgroundColor:"#D9E3F0"}} align="center" component="th" scope="row">
             {props.name}
           </TableCell>
         </TableBody>

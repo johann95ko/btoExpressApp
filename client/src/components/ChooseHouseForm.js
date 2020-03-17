@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
 export const ChooseHouseForm = props => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div className={classes.root} style={{width:"23vw"}}>
       <FormControl component="fieldset" className={classes.formControl}>
         <FormLabel component="legend">Select BTO For Comparison</FormLabel>
         <FormGroup>

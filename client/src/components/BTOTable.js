@@ -5,6 +5,7 @@ import { LoadSpinners } from "./LoadSpinners";
 import axios from "axios";
 import "./components.css";
 
+
 export const BTOTable = props => {
   const [house, setHouse] = useState([]);
 
@@ -43,8 +44,9 @@ export const BTOTable = props => {
     return <LoadSpinners />;
   }
   return (
-    <div className="flexRowDiv">
+    <div className="flexRowDiv" style={{ marginTop: "200px" }}>
       <div className="flexRowBTO">
+        
         {house.map(eachBTO => {
           for (const [eachHouseKey, eachHouseVal] of Object.entries(
             props.displayHouseState
@@ -62,6 +64,7 @@ export const BTOTable = props => {
             }
           }
         })}
+        
       </div>
     </div>
   );
