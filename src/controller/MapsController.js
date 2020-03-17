@@ -24,7 +24,11 @@ router.route("/distance").post((req, res) => {
   const destinationLoc = req.body.destinationLoc;
   const googleDistanceApiPromise = maps.distance(originLoc, destinationLoc);
   googleDistanceApiPromise.then(result => {
-    res.send([result.data.routes[0].legs[0].distance.text, result.data.routes[0].legs[0].duration.text])
+    res.send([
+      result.data.routes[0].legs[0].end_address,
+      result.data.routes[0].legs[0].distance.text,
+      result.data.routes[0].legs[0].duration.text
+    ]);
   });
   // console.log(googleDistanceApi);
   // res.send(googleDistanceApi.data.routes[0].legs[0].distance.text);

@@ -1,131 +1,48 @@
-<TableContainer style={{ width: 800 }} component={Paper}>
-<Table style={{ width: 800 }}>
-  <TableHead>
-    <TableRow>
-      <TableCell align="center">Houses</TableCell>
-      <TableCell align="center">Distance</TableCell>
-      <TableCell align="center">Duration</TableCell>
-    </TableRow>
-  </TableHead>
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
 
-  <TableBody>
-    <TableCell align="center" component="th" scope="row">
-      {locationNames[0]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {distanceDetails.sort()[0]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {durationDetails.sort()[0]}
-    </TableCell>
-  </TableBody>
+const useStyles = makeStyles({
+  table: {
+    width: 10
+  }
+});
 
-  <TableBody>
-    <TableCell align="center" component="th" scope="row">
-      {locationNames[1]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {distanceDetails.sort()[1]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {durationDetails.sort()[1]}
-    </TableCell>
-  </TableBody>
+export const MapsTable = props => {
+  const classes = useStyles();
 
-  <TableBody>
-    <TableCell align="center" component="th" scope="row">
-      {locationNames[2]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {distanceDetails.sort()[2]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {durationDetails.sort()[2]}
-    </TableCell>
-  </TableBody>
-
-  <TableBody>
-    <TableCell align="center" component="th" scope="row">
-      {locationNames[3]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {distanceDetails.sort()[3]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {durationDetails.sort()[3]}
-    </TableCell>
-  </TableBody>
-
-  <TableBody>
-    <TableCell align="center" component="th" scope="row">
-      {locationNames[4]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {distanceDetails.sort()[4]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {durationDetails.sort()[4]}
-    </TableCell>
-  </TableBody>
-
-  <TableBody>
-    <TableCell align="center" component="th" scope="row">
-      {locationNames[5]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {distanceDetails.sort()[5]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {durationDetails.sort()[5]}
-    </TableCell>
-  </TableBody>
-
-  <TableBody>
-    <TableCell align="center" component="th" scope="row">
-      {locationNames[6]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {distanceDetails.sort()[6]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {durationDetails.sort()[6]}
-    </TableCell>
-  </TableBody>
-
-  <TableBody>
-    <TableCell align="center" component="th" scope="row">
-      {locationNames[7]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {distanceDetails.sort()[7]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {durationDetails.sort()[7]}
-    </TableCell>
-  </TableBody>
-
-  <TableBody>
-    <TableCell align="center" component="th" scope="row">
-      {locationNames[8]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {distanceDetails.sort()[8]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {durationDetails.sort()[8]}
-    </TableCell>
-  </TableBody>
-
-  <TableBody>
-    <TableCell align="center" component="th" scope="row">
-      {locationNames[9]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {distanceDetails.sort()[9]}
-    </TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {durationDetails.sort()[9]}
-    </TableCell>
-  </TableBody>
-</Table>
-</TableContainer>
+  return (
+    <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>BTO Location</TableCell>
+            <TableCell>Travel Distance</TableCell>
+            <TableCell>Travel Duration</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {props.rows.map(row => (
+            <TableRow key={row.destinationName}>
+              <TableCell component="th" scope="row">
+                {row.destinationName}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                {row.distance}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                {row.duration}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+};
