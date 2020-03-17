@@ -30,32 +30,17 @@ export const BTOTableColumn = props => {
             {props.location}
           </TableCell>
         </TableBody>
-        {props.flatTypeAndCost.map(eachFlatTypeAndCost => {
-          for (const [key, value] of Object.entries(eachFlatTypeAndCost)) {
-            return (
-              <TableBody>
-                <TableCell align="center" component="th" scope="row">
-                  {value}
-                </TableCell>
-              </TableBody>
-            );
-          }
-        })}
+        <TableBody>
+          <TableCell align="center" component="th" scope="row">
+            {props.type}
+          </TableCell>
+        </TableBody>
+        <TableBody>
+          <TableCell align="center" component="th" scope="row">
+            {props.shortestDesc}
+          </TableCell>
+        </TableBody>
       </Table>
     </TableContainer>
   );
 };
-
-// <TableBody>
-//           {rows.map(row => (
-//             <TableRow key={row.name}>
-//               <TableCell component="th" scope="row">
-//                 {row.name}
-//               </TableCell>
-//               <TableCell align="right">{row.calories}</TableCell>
-//               <TableCell align="right">{row.fat}</TableCell>
-//               <TableCell align="right">{row.carbs}</TableCell>
-//               <TableCell align="right">{row.protein}</TableCell>
-//             </TableRow>
-//           ))}
-//         </TableBody>

@@ -7,9 +7,11 @@ import "./components.css";
 
 export const BTOTable = props => {
   const [house, setHouse] = useState([]);
-  const [name, setName] = useState([]);
-  const [location, setLocation] = useState([]);
-  const [flatTypeAndCost, setFlatTypeAndCost] = useState([]);
+
+  const [name, setName] = useState("");
+  const [location, setLocation] = useState("");
+  const [type, setType] = useState("");
+
   const [loading, setLoading] = useState(true);
 
   // component did mount
@@ -19,15 +21,16 @@ export const BTOTable = props => {
 
   const getLink = async () => {
     try {
-      const response1 = await axios("http://localhost:5000/api/housing");
-      for (const eachHouse of response1.data) {
+      const response1 = await axios("http://localhost:5000/api/bto");
+      for (const eachBTO of response1.data) {
         setHouse(curRows => [
           ...curRows,
           {
-            key: eachHouse.key,
-            name: eachHouse.name,
-            location: eachHouse.location,
-            flatTypeAndCost: eachHouse.flatTypeAndCost
+            key: eachBTO.Name,
+            name: eachBTO.Name,
+            location: eachBTO.Address,
+            type: eachBTO.Type,
+            shortestDesc: eachBTO.ShortestDesc
           }
         ]);
       }
@@ -41,19 +44,19 @@ export const BTOTable = props => {
   }
   return (
     <div className="flexRowDiv">
-      <BTOTableFixed />
-      {house.map(eachHouse => {
-        if (props.displayHouseState[eachHouse.key]) {
+      <div className="flexRowBTO">
+        {house.map(eachBTO => {
           return (
             <BTOTableColumn
-              key={eachHouse.key}
-              name={eachHouse.name}
-              location={eachHouse.location}
-              flatTypeAndCost={eachHouse.flatTypeAndCost}
+              key={eachBTO.name}
+              name={eachBTO.name}
+              location={eachBTO.location}
+              type={eachBTO.type}
+              shortestDesc={eachBTO.shortestDesc}
             />
           );
-        }
-      })}
+        })}
+      </div>
     </div>
   );
 };

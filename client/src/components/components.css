@@ -6,3 +6,11 @@
   align-content: center;
   align-items: center;
 }
+
+.flexRowBTO {
+  height: 800px;
+  width: 2000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

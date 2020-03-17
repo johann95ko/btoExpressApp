@@ -9,7 +9,7 @@ var cors = require("cors");
 
 var btoDescRouter = require("./controller/btoDescription");
 var grantRouter = require("./controller/GrantsController");
-var housingRouter = require("./controller/BtoController");
+var btoRouter = require("./controller/BtoController");
 var loginRouter = require("./controller/LoginController");
 var mapRouter = require("./controller/MapsController");
 
@@ -31,7 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/btoDescription", btoDescRouter);
-app.use("/api/housing", housingRouter);
+app.use("/api/bto", btoRouter);
 app.use("/api/grants", grantRouter);
 app.use("/api/login", loginRouter);
 app.use("/api/map", mapRouter);
