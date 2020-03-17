@@ -1,4 +1,4 @@
-let housingData = require("../DB/BtoDb");
+let housingData = require("../database/BtoDb");
 
 class BtoDAO {
   constructor(modelData) {
