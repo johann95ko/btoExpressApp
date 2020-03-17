@@ -32,19 +32,14 @@ class AddressForm extends React.Component {
 
     render() {
         return (
-            <body>
-            <div style={{ height: `5px`}} >
-             {/* <StaticMap/> */}
+            <div id="searchBar" >
             <form onSubmit={this.handleSubmit}>
                 <label>Enter your desired location: <input type="text" value={this.state.value} onChange={this.handleChange}/></label>
                 <Button variant="secondary" type="submit" value="submit" >
                 Enter
                </Button>
-              
-        </form>
-       </div>
- <StaticMap/>
- </body>
+            </form>
+        </div>
         );
     }
 }

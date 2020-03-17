@@ -73,7 +73,7 @@ const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 export default function StaticMap() {
   return (
-    <div id='mapplace' style={{ width: "70vw", height: "50vh", margin:"15vw"}}>
+    <div id='mapplace'>
       <MapWrapped
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyA_WObUiYD7YpoYufR84re1LZHAJeAGXkY`}
         loadingElement={<div style={{ height: `100%` }} />}

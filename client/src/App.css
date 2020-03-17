@@ -60,17 +60,34 @@
   scroll-behavior: smooth; 
 }
 
-/* .carousel-caption #grantButton{
-  background-color: cornflowerblue;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
 .carousel-caption #grantCaption {
   color: black;
   background-color: rgba(236, 236, 236, 0.5)
 }
 
 #locationBody{
-  padding-top: 110px;
+  padding-top: 70px;
+}
+
+#searchBar{
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+#mapplace{
+  width: 70vw;
+  height: 50vh;
+  margin: auto;
+  
+}
+
+#locationInstructions{
+  text-align: center;
+  background-color: coral;
+  padding: 30px;
+}
+
+#map {
+  padding: 30px;
 }
