@@ -17,15 +17,17 @@ export const ComparePage = () => {
   const { sengkang, woodlands, jurong } = state;
 
   return (
-    <div className="flexRow">
-      <ChooseHouseForm
-        handleChange={handleChange}
-        sengkang={sengkang}
-        woodlands={woodlands}
-        jurong={jurong}
-      />
-      <div>
-        <BTOTable displayHouseState={state}/>
+    <div>
+      <div className="flexRow" style={{ height: "400px" }}>
+        <ChooseHouseForm
+          handleChange={handleChange}
+          sengkang={sengkang}
+          woodlands={woodlands}
+          jurong={jurong}
+        />
+      </div>
+      <div className="flexRow" style={{ height: "100px", marginTop: "300px" }}>
+        <BTOTable displayHouseState={state} />
       </div>
     </div>
   );
