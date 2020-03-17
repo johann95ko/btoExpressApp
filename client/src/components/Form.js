@@ -35,19 +35,22 @@ class AddressForm extends React.Component {
     return (
       <div id="searchBar">
         
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Enter your desired location:{" "}
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <Button variant="secondary" type="submit" value="submit">
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Label>
+            Enter your Desired Destination:
+            </Form.Label>
+            <Form.Control
+                type="text"
+                placeholder="Toa Payoh"
+                value={this.state.value}
+                onChange={this.handleChange}
+              />
+          
+          <Button id="searchButton" variant="danger" type="submit" value="submit">
             Enter
           </Button>
-        </form>
+        </Form>
+        
         
       </div>
     );

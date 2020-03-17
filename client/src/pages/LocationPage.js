@@ -9,8 +9,8 @@ export const LocationPage = () => {
   return (
     <body id="locationBody">
     <div className="main" id="locationInstructions">
-      <h2>Location Calculator</h2>
-      <p>Find out the distance from all available BTOs to your destination</p>
+      <h1>Location Calculator</h1>
+      <h5>Find out the distance from all available BTOs to your destination</h5>
     <Form/>
     </div>
     <div className="main" id="map">

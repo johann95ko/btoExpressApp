@@ -73,6 +73,11 @@
   margin: auto;
   width: 50%;
   text-align: center;
+  padding-top: 35px;
+}
+
+#searchButton{
+  margin-top: 15px;
 }
 
 #mapplace{
@@ -85,9 +90,13 @@
 #locationInstructions{
   text-align: center;
   background-color: rgba(162, 162, 190, 0.356);
-  padding: 30px;
+  padding: 40px;
 }
 
 #map {
   padding: 30px;
+}
+
+#locationTable{
+  
 }

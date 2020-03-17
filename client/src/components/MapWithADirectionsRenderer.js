@@ -383,8 +383,8 @@ const MapWithADirectionsRenderer = compose(
     <p> BTO 6: {locationNames[5]} : {distanceDetails[5]} : {durationDetails[5]}</p> */}
     </GoogleMap>
 
-    <TableContainer style={{ width: 800 }} component={Paper}>
-      <Table style={{ width: 800 }}>
+    <TableContainer style={{ width: "70vw" }} component={Paper}>
+      <Table id="locationTable" style={{ width: "70vw" }}>
         <TableHead>
           <TableRow>
             <TableCell align="center">Houses</TableCell>
