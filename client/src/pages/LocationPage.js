@@ -5,15 +5,12 @@ import { MapsForm } from "../components/MapsForm";
 
 export const LocationPage = () => {
   return (
+    <body id="locationBody">
     <div>
-      <h1>Spacer</h1>
-      <h1>Spacer</h1>
-
-      <h1>Spacer</h1>
-
       <MapsForm />
       <StaticMap />
     </div>
+    </body>
   );
 };
 
