@@ -5,25 +5,27 @@ import { ChooseHouseForm } from "../components/ChooseHouseForm";
 
 export const ComparePage = () => {
   const [state, setState] = React.useState({
-    sengkang: true,
-    woodlands: true,
-    jurong: true
+    cck: true,
+    Tengah: true,
+    Pasir: true,
+    Tampines: true
   });
 
   const handleChange = name => event => {
     setState({ ...state, [name]: event.target.checked });
   };
 
-  const { sengkang, woodlands, jurong } = state;
+  const { cck, Tengah, Pasir, Tampines } = state;
 
   return (
     <div>
       <div className="flexRow" style={{ height: "400px" }}>
         <ChooseHouseForm
           handleChange={handleChange}
-          sengkang={sengkang}
-          woodlands={woodlands}
-          jurong={jurong}
+          cck={cck}
+          Tengah={Tengah}
+          Pasir={Pasir}
+          Tampines={Tampines}
         />
       </div>
       <div className="flexRow" style={{ height: "100px", marginTop: "300px" }}>

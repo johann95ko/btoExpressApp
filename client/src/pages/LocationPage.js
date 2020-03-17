@@ -14,32 +14,19 @@ export const LocationPage = () => {
       <MapWithADirectionsRenderer origin={formValue} />,
       document.getElementById("mapplace")
     );
-    axios
-      .post("http://localhost:5000/api//bto", {
-        incomeLevel: this.state.incomeLevel,
-        FTA: this.state.FTA,
-        spouseFTA: this.state.spouseFTA,
-        employmentStatus: this.state.employmentStatus
-      })
-      .then(response => {
-        // console.log(response);
-        this.setState({ grant: response.data });
-      })
-      .catch(error => {
-        console.log(error);
-      });
+
     event.preventDefault();
   };
   return (
     <body id="locationBody">
-    <div>
-      <MapsForm
-        handleSubmit={handleSubmit}
-        handleChange={handleChange}
-        formValue={formValue}
-      />
-      <StaticMap />
-    </div>
+      <div>
+        <MapsForm
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          formValue={formValue}
+        />
+        <StaticMap />
+      </div>
     </body>
   );
 };

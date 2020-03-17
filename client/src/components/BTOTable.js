@@ -26,7 +26,7 @@ export const BTOTable = props => {
         setHouse(curRows => [
           ...curRows,
           {
-            key: eachBTO.Name,
+            key: eachBTO.KeyName,
             name: eachBTO.Name,
             location: eachBTO.Address,
             type: eachBTO.Type,
@@ -46,30 +46,23 @@ export const BTOTable = props => {
     <div className="flexRowDiv">
       <div className="flexRowBTO">
         {house.map(eachBTO => {
-          return (
-            <BTOTableColumn
-              key={eachBTO.name}
-              name={eachBTO.name}
-              location={eachBTO.location}
-              type={eachBTO.type}
-              shortestDesc={eachBTO.shortestDesc}
-            />
-          );
+          for (const [eachHouseKey, eachHouseVal] of Object.entries(
+            props.displayHouseState
+          )) {
+            if (eachBTO.key == eachHouseKey && eachHouseVal) {
+              return (
+                <BTOTableColumn
+                  key={eachBTO.key}
+                  name={eachBTO.name}
+                  location={eachBTO.location}
+                  type={eachBTO.type}
+                  shortestDesc={eachBTO.shortestDesc}
+                />
+              );
+            }
+          }
         })}
       </div>
     </div>
   );
 };
-
-// <div className="tableBackground">
-// {users.map(eachUser => (
-//   <ErrorLog
-//     key={eachUser.name}
-//     name={eachUser.name}
-//     errorLogs={eachUser.errorLogs}
-//     position={eachUser.position}
-//     department={eachUser.department}
-//     errorCount={eachUser.errorCount}
-//   />
-// ))}
-// </div>
