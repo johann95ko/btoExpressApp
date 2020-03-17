@@ -1,7 +1,7 @@
+import React, { Component } from "react";
 
-import React, { Component } from 'react';
-import Map from "../components/Map";
-import Form from "../components/Form"
+import StaticMap from "../components/StaticMap";
+import { MapsForm } from "../components/MapsForm";
 
 export const LocationPage = () => {
   return (
@@ -11,12 +11,10 @@ export const LocationPage = () => {
 
       <h1>Spacer</h1>
 
-
-    <Form/>
-  </div>
-
+      <MapsForm />
+      <StaticMap />
+    </div>
   );
 };
 
 export default LocationPage;
-
