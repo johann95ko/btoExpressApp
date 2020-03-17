@@ -31,12 +31,8 @@ export const LocationPage = () => {
     event.preventDefault();
   };
   return (
+    <body id="locationBody">
     <div>
-      <h1>Spacer</h1>
-      <h1>Spacer</h1>
-
-      <h1>Spacer</h1>
-
       <MapsForm
         handleSubmit={handleSubmit}
         handleChange={handleChange}
@@ -44,6 +40,7 @@ export const LocationPage = () => {
       />
       <StaticMap />
     </div>
+    </body>
   );
 };
 
