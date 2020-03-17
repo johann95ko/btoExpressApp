@@ -6,6 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form, Button} from 'react-bootstrap'
 import  StaticMap  from './StaticMap'
+import { blue } from '@material-ui/core/colors';
 
 class AddressForm extends React.Component {
     constructor(props) {
@@ -31,7 +32,8 @@ class AddressForm extends React.Component {
 
     render() {
         return (
-            <div style={{ height: `100px`,width:`1300px` }} >
+            <body>
+            <div style={{ height: `5px`}} >
              {/* <StaticMap/> */}
             <form onSubmit={this.handleSubmit}>
                 <label>Enter your desired location: <input type="text" value={this.state.value} onChange={this.handleChange}/></label>
@@ -40,10 +42,9 @@ class AddressForm extends React.Component {
                </Button>
               
         </form>
-        <StaticMap/>
-
-</div>
-
+       </div>
+ <StaticMap/>
+ </body>
         );
     }
 }
