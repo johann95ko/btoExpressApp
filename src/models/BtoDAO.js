@@ -1,6 +1,6 @@
-let housingData = require("../DB/BtoDb");
+let housingData = require("../database/BtoDb");
 
-class BtoController {
+class BtoDAO {
   constructor(modelData) {
     this.modelData = modelData;
   }
@@ -32,4 +32,4 @@ class BtoController {
   }
 }
 
-module.exports = BtoController;
+module.exports = BtoDAO;

@@ -1,4 +1,4 @@
-let userData = require("../DB/UserDb");
+let userData = require("../database/UserDb");
 
 class UserDao {
   constructor(modelData) {

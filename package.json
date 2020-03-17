@@ -7,7 +7,8 @@
     "start": "node src/app.js",
     "server": "nodemon src/app.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "jest"
   },
   "dependencies": {
     "@google/maps": "^1.1.0",
@@ -26,7 +27,7 @@
     "google-maps-react": "^2.0.2",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "mongoose": "^5.8.11",
+    "mongoose": "^5.9.4",
     "morgan": "~1.9.1",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-geocode": "^0.2.1",
@@ -40,6 +41,7 @@
     "use-supercluster": "^0.2.5"
   },
   "devDependencies": {
+    "jest": "24.9.0",
     "nodemon": "^2.0.2"
   }
 }
