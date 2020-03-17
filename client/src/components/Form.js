@@ -10,7 +10,7 @@ import  StaticMap  from './StaticMap'
 class AddressForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: 'Singapore' };
+        this.state = { value: 'Toa Payoh' };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -49,4 +49,3 @@ class AddressForm extends React.Component {
 }
 
 export default AddressForm;
-

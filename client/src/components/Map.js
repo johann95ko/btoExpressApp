@@ -86,7 +86,7 @@ class Map extends Component{
 	 */
 	getCity = ( addressArray ) => {
 		let city = '';
-		for( let i = 0; i < addressArray.length; i++ ) {
+		for (let i = 0; i < addressArray.length; i++ ) {
 			if ( addressArray[ i ].types[0] && 'administrative_area_level_2' === addressArray[ i ].types[0] ) {
 				city = addressArray[ i ].long_name;
 				return city;
@@ -213,8 +213,6 @@ class Map extends Component{
 			},
 		})
 	};
-
-
 	render(){
 		const AsyncMap = withScriptjs(
 			withGoogleMap(
@@ -250,11 +248,11 @@ class Map extends Component{
 								marginTop: '2px',
 								marginBottom: '500px'
                             }}
-                            origin={{ lat:1.352083, lng:103.819839 }}
+                            origin={{ lat:1.301674, lng:103.819839 }}
 							onPlaceSelected={ this.onPlaceSelected }
 							types={['(regions)']}
                         />
-                        
+                        1.301674, lng: 103.838076
                         
 					</GoogleMap>
 				)

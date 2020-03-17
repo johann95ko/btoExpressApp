@@ -31,6 +31,7 @@ var locationNames=[]
 var durationDetails=[]
 var distanceDetails=[]
 var mainlist=[]
+var inlocation=[]
 
 
 const MapWithADirectionsRenderer = compose(
@@ -38,7 +39,7 @@ const MapWithADirectionsRenderer = compose(
     withProps({
         googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyA_WObUiYD7YpoYufR84re1LZHAJeAGXkY",
         loadingElement: <div style={{ height: `100%` }} />,
-        containerElement: <div style={{ height: `517px` }} />,
+        containerElement: <div style={{ height: `50vh` }} />,
         mapElement: <div style={{ height: `100%` }} />,
     }),
     withScriptjs,
@@ -83,12 +84,21 @@ const MapWithADirectionsRenderer = compose(
             DirectionsService.route({
                 origin: this.props.origin,
                 destination: destinations[0],
-                travelMode: google.maps.TravelMode.DRIVING,
+                travelMode: google.maps.TravelMode.TRANSIT,
             }, (result, status) => {
                 if (status === google.maps.DirectionsStatus.OK) {
                   locationNames.push(result.request.destination.query)
                   distanceDetails.push(result.routes[0].legs[0].distance.text)
                   durationDetails.push(result.routes[0].legs[0].duration.text)
+
+                  console.log(result.routes[0].bounds.Za.i)
+                  console.log(result.routes[0].bounds.Ua.j)
+                  inlocation.push(result.routes[0].bounds.Za.i);
+                  inlocation.push(result.routes[0].bounds.Ua.j)
+
+                  console.log("Check this out")
+                  console.log(result)
+
                     this.setState({
                         directions: result,
                         newDirections: this.state.newDirections.concat([result])
@@ -101,12 +111,16 @@ const MapWithADirectionsRenderer = compose(
             DirectionsService.route({
                 origin: this.props.origin,
                 destination: destinations[1],
-                travelMode: google.maps.TravelMode.DRIVING,
+                travelMode: google.maps.TravelMode.TRANSIT,
             }, (result, status) => {
                 if (status === google.maps.DirectionsStatus.OK) {
                   locationNames.push(result.request.destination.query)
                   distanceDetails.push(result.routes[0].legs[0].distance.text)
                   durationDetails.push(result.routes[0].legs[0].duration.text)
+
+                  console.log(result.routes[0].bounds.Za.i)
+                  console.log(result.routes[0].bounds.Ua.j)
+
                     this.setState({
                         directions1: result,
                         newDirections: this.state.newDirections.concat([result])
@@ -125,6 +139,13 @@ const MapWithADirectionsRenderer = compose(
                   locationNames.push(result.request.destination.query)
                   distanceDetails.push(result.routes[0].legs[0].distance.text)
                   durationDetails.push(result.routes[0].legs[0].duration.text)
+
+                  console.log(result.routes[0].bounds.Za.i)
+                  console.log(result.routes[0].bounds.Ua.j)
+
+                  console.log("Here")
+                //   console.log(inlocation)
+
                     this.setState({
                         directions2: result,
                         newDirections: this.state.newDirections.concat([result])
@@ -144,6 +165,10 @@ const MapWithADirectionsRenderer = compose(
                   locationNames.push(result.request.destination.query)
                   distanceDetails.push(result.routes[0].legs[0].distance.text)
                   durationDetails.push(result.routes[0].legs[0].duration.text)
+
+                  console.log(result.routes[0].bounds.Za.i)
+                  console.log(result.routes[0].bounds.Ua.j)
+
                     this.setState({
                         directions3: result,
                         newDirections: this.state.newDirections.concat([result])
@@ -162,6 +187,7 @@ const MapWithADirectionsRenderer = compose(
                 locationNames.push(result.request.destination.query)
                 distanceDetails.push(result.routes[0].legs[0].distance.text)
                 durationDetails.push(result.routes[0].legs[0].duration.text)
+
                   this.setState({
                       directions3: result,
                       newDirections: this.state.newDirections.concat([result])
@@ -266,21 +292,27 @@ const MapWithADirectionsRenderer = compose(
         }
     })
 )(props =>
-    <div style={{ width: "500px", height: "100px" }}>
-
-    
+    <div style={{ width: "400vw", height: "10000vh" }}>
     <GoogleMap
-        defaultZoom={7}
-        defaultCenter={new google.maps.LatLng(1.32083,102.819839)}>
-       <DirectionsRenderer directions={props.newDirections[0]} />
-       <DirectionsRenderer directions={props.newDirections[1]} />
-       <DirectionsRenderer directions={props.newDirections[2]} />
+        defaultZoom={11.5}
+        defaultCenter={new google.maps.LatLng(1.3521,103.8198)}>
+        {/* <DirectionsRenderer directions={props.newDirections[0]} />
+        <DirectionsRenderer directions={props.newDirections[1]} />
+        <DirectionsRenderer directions={props.newDirections[2]} />
        <DirectionsRenderer directions={props.newDirections[3]} />
-       <DirectionsRenderer directions={props.newDirections[4]} />
-       <DirectionsRenderer directions={props.newDirections[5]} />
+       <DirectionsRenderer directions={props.newDirections[4]} /> 
+        <DirectionsRenderer directions={props.newDirections[5]} />
        <DirectionsRenderer directions={props.newDirections[6]} />
        <DirectionsRenderer directions={props.newDirections[7]} />
-       <DirectionsRenderer directions={props.newDirections[8]} />
+       <DirectionsRenderer directions={props.newDirections[8]} />  */}
+
+       <Marker 
+        position={{ 
+            lat: inlocation[0],
+            lng: inlocation[1]
+        }}
+
+        />
 
            {btoData.features.map(bto=>( 
           <Marker 
@@ -295,7 +327,7 @@ const MapWithADirectionsRenderer = compose(
             scaledSize: new window.google.maps.Size(30,30)
           }}
           />  
-        ))}
+        ))} 
   
   
         {/* {MarkerOn && (
@@ -321,9 +353,9 @@ const MapWithADirectionsRenderer = compose(
     <p> BTO 4: {locationNames[3]} : {distanceDetails[3]} : {durationDetails[3]}</p>
     <p> BTO 5: {locationNames[4]} : {distanceDetails[4]} : {durationDetails[4]}</p>
     <p> BTO 6: {locationNames[5]} : {distanceDetails[5]} : {durationDetails[5]}</p> */}
-    </GoogleMap>
+     </GoogleMap> 
 
-        <TableContainer style={{ width: 800 }} component={Paper}>
+      <TableContainer style={{ width: 800 }} component={Paper}>
       <Table style={{ width: 800 }}>
         <TableHead>
           <TableRow>
@@ -397,12 +429,8 @@ const MapWithADirectionsRenderer = compose(
         </Table>
       
    </TableContainer>
-
     </div>
-
-    
 );
-
 export default MapWithADirectionsRenderer;
 
 
