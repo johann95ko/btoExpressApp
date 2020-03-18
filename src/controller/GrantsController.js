@@ -10,12 +10,11 @@ router.route("/bto").post((req, res) => {
   const spouseFTA = req.body.spouseFTA;
   const employmentStatus = req.body.employmentStatus;
 
-
    const schema = Joi.object().keys({
-    incomeLevel: Joi.required(),
-    FTA:Joi.required(),
-    spouseFTA:joi.required(),
-    employmentStatus:Joi.required()
+    incomeLevel: Joi.number().required(),
+    FTA:Joi.boolean().required(),
+    spouseFTA:Joi.boolean().required(),
+    employmentStatus:Joi.boolean().required()
   });
 
   Joi.validate(req.body,schema,(err,result)=>{
