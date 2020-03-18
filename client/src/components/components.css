@@ -15,3 +15,38 @@
   justify-content: space-evenly;
 }
 
+
+:root {
+  --mainDark: #343a40;
+  --mainGrey: rgba(109,109,109);
+  --mainLightGrey:rgba(172,172,172);
+  --mainWhite:#fff;
+  --mainBlue:#007bff;
+  --mainRed:firebrick;
+}
+
+.main-footer{
+  color:white;
+  position:relative;
+  padding-top:3em;
+  bottom:0;
+  width:100%;
+}
+
+.container{
+  padding-bottom:60px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.page-container{
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+.content-wrap{
+  flex:1;
+}
+

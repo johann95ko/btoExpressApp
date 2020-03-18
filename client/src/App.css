@@ -102,3 +102,22 @@
     float: left;
     transform: translateX(-29%);
 }
+
+
+:root {
+  --mainDark: #343a40;
+  --mainGrey: rgba(109,109,109);
+  --mainLightGrey:rgba(172,172,172);
+  --mainWhite:#fff;
+  --mainBlue:#007bff;
+}
+
+#page-container{
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+#content-wrap{
+  flex:1;
+}

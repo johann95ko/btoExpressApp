@@ -2,6 +2,8 @@ import React from "react";
 import "./pages.css";
 import { BTOTable } from "../components/BTOTable";
 import { ChooseHouseForm } from "../components/ChooseHouseForm";
+import {Footer} from '../components/Footer'
+import "../components/components.css";
 
 export const ComparePage = () => {
   const [state, setState] = React.useState({
@@ -18,6 +20,8 @@ export const ComparePage = () => {
   const { cck, Tengah, Pasir, Tampines } = state;
 
   return (
+    <div className="page-container">
+    <div className="content-wrap">
     <body>
     <div className="main" style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#DEE4EC", textAlign:"center"}}>
       <h1>Compare BTOs</h1>
@@ -34,7 +38,14 @@ export const ComparePage = () => {
       
         <BTOTable displayHouseState={state} />
       </div>
-    
+  
+  
     </body>
+    </div>   
+
+    <Footer/> 
+    </div>
+
+
   );
 };

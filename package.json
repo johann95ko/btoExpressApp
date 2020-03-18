@@ -38,6 +38,7 @@
     "react-native-paper": "^3.6.0",
     "react-places-autocomplete": "^7.2.1",
     "react-router-dom": "^5.1.2",
+    "styled-components": "^5.0.1",
     "swr": "^0.1.17",
     "use-supercluster": "^0.2.5"
   },

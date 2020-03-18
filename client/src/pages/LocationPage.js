@@ -3,7 +3,8 @@ import StaticMap from "../components/StaticMap";
 import { MapsForm } from "../components/MapsForm";
 import ReactDOM from "react-dom";
 import MapWithADirectionsRenderer from "../components/MapWithADirectionsRenderer";
-
+import {Footer} from "../components/Footer";
+import "../components/components.css";
 export const LocationPage = () => {
   const [formValue, setFormValue] = useState("");
   const handleChange = event => {
@@ -18,6 +19,8 @@ export const LocationPage = () => {
     event.preventDefault();
   };
   return (
+    <div className="page-container">
+    <div className="content-wrap">
     <body id="locationBody">
     <div className="main" id="locationInstructions">
       <h1>Location Calculator</h1>
@@ -32,7 +35,19 @@ export const LocationPage = () => {
     <div className="main" id="map">
     <StaticMap />
     </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+   
   </body>
+  </div>
+  <Footer/>
+
+  </div>
+
   
   );
 };
