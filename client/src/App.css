@@ -105,3 +105,18 @@
     float: left;
     transform: translateX(-29%);
 }
+
+
+#formGroup{
+  justify-content: center;
+}
+
+#BTOButton{
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#addButton{
+  text-align: center;
+
+}

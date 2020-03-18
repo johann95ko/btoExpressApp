@@ -18,25 +18,25 @@ export const BTOTableColumn = props => {
   const classes = useStyles();
 
   return (
-    <TableContainer style={{ width: "18.75vw" }} component={Paper}>
-      <Table style={{ width: "18.75vw" }}>
+    <TableContainer style={{ width: "25vw"}} component={Paper}>
+      <Table style={{ width: "25vw" }}>
         <TableBody>
-          <TableCell style={{backgroundColor:"#D9E3F0"}} align="center" component="th" scope="row">
+          <TableCell style={{backgroundColor:"#C5CAE9", height:"5.5em"}} align="center" component="th" scope="row" >
             {props.name}
           </TableCell>
         </TableBody>
         <TableBody>
-          <TableCell align="center" component="th" scope="row">
+          <TableCell align="center" component="th" scope="row" style={{ height:"8.5em"}}>
             {props.location}
           </TableCell>
         </TableBody>
         <TableBody>
-          <TableCell align="center" component="th" scope="row">
+          <TableCell align="center" component="th" scope="row" style={{ height:"5.5em"}}>
             {props.type}
           </TableCell>
         </TableBody>
         <TableBody>
-          <TableCell align="center" component="th" scope="row">
+          <TableCell align="center" component="th" scope="row" style={{ height:"25em"}}>
             {props.shortestDesc}
           </TableCell>
         </TableBody>
