@@ -26,7 +26,7 @@ export const ChooseHouseForm = props => {
   return (
     <div className={classes.root} >
       <FormControl component="fieldset" className={classes.formControl} fullWidth="true">
-        <FormLabel component="legend" style={{textAlign:"center"}}>Compare the BTOs</FormLabel>
+        <FormLabel component="legend" style={{textAlign:"center"}}>Choose your Picks</FormLabel>
         <FormGroup id="formGroup" className={classes.row}>
           <FormControlLabel
             control={
