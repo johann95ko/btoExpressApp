@@ -18,8 +18,8 @@ export const MapsTable = props => {
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
+    <TableContainer style={{ width:"70vw"}} component={Paper}>
+      <Table className={classes.table} style={{ width:"70vw"}} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>BTO Location</TableCell>
