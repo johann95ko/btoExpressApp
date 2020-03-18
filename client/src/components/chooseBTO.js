@@ -22,10 +22,11 @@ const useStyles = makeStyles({
       bottom: false,  
     });
     const [BTOstate, BTOsetState] = React.useState({
-        cck: false,
-        Tengah: false,
+        cck: true,
+        Tengah: true,
         Pasir: false,
-        Tampines: false
+        Tampines: false,
+        
       });
 
     const toggleDrawer = (anchor, open) => event => {
@@ -51,7 +52,7 @@ const useStyles = makeStyles({
             [classes.fullList]: anchor === 'bottom',
           })}
           role="presentation"
-        //   onClick={toggleDrawer(anchor, false)}
+        
           onKeyDown={toggleDrawer(anchor, false)}
         >
             
@@ -61,6 +62,7 @@ const useStyles = makeStyles({
           Tengah={Tengah}
           Pasir={Pasir}
           Tampines={Tampines}
+          
         /> 
         </div>
         <div id="BTOButton">
@@ -78,7 +80,7 @@ const useStyles = makeStyles({
         <div id="addButton">
           
             <React.Fragment key='bottom'>
-              <Button  variant="contained" color="primary" onClick={toggleDrawer('bottom', true)}>Add BTO to Compare</Button>
+              <Button  variant="contained" color="primary" onClick={toggleDrawer('bottom', true)}>Add BTOs to Compare</Button>
               <Drawer anchor='bottom' open={state['bottom']} onClose={toggleDrawer('bottom', false)}>
               {list('bottom')}
               </Drawer>
