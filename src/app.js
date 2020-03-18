@@ -7,7 +7,6 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 
-var btoDescRouter = require("./controller/btoDescription");
 var grantRouter = require("./controller/GrantsController");
 var btoRouter = require("./controller/BtoController");
 var loginRouter = require("./controller/LoginController");
@@ -30,7 +29,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/api/btoDescription", btoDescRouter);
 app.use("/api/bto", btoRouter);
 app.use("/api/grants", grantRouter);
 app.use("/api/login", loginRouter);
