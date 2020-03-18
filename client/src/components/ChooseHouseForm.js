@@ -7,28 +7,34 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import Checkbox from "@material-ui/core/Checkbox";
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex"
   },
   formControl: {
     margin: theme.spacing(3)
+    
+  },
+  row: {
+    flexDirection: 'row',
   }
 }));
 
 export const ChooseHouseForm = props => {
   const classes = useStyles();
   return (
-    <div className={classes.root} style={{width:"23vw"}}>
-      <FormControl component="fieldset" className={classes.formControl}>
-        <FormLabel component="legend">Select BTO For Comparison</FormLabel>
-        <FormGroup>
+    <div className={classes.root} >
+      <FormControl component="fieldset" className={classes.formControl} fullWidth="true">
+        <FormLabel component="legend" style={{textAlign:"center"}}>Compare the BTOs</FormLabel>
+        <FormGroup id="formGroup" className={classes.row}>
           <FormControlLabel
             control={
               <Checkbox
                 checked={props.cck}
                 onChange={props.handleChange("cck")}
                 value="cck"
+                indeterminate
               />
             }
             label="cck"
@@ -40,6 +46,7 @@ export const ChooseHouseForm = props => {
                 checked={props.Tengah}
                 onChange={props.handleChange("Tengah")}
                 value="Tengah"
+                indeterminate
               />
             }
             label="Tengah"
@@ -51,6 +58,7 @@ export const ChooseHouseForm = props => {
                 checked={props.Pasir}
                 onChange={props.handleChange("Pasir")}
                 value="Pasir"
+                indeterminate
               />
             }
             label="Pasir"
@@ -62,6 +70,7 @@ export const ChooseHouseForm = props => {
                 checked={props.Tampines}
                 onChange={props.handleChange("Tampines")}
                 value="Tampines"
+                indeterminate
               />
             }
             label="Tampines"
