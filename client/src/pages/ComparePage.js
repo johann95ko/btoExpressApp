@@ -18,19 +18,23 @@ export const ComparePage = () => {
   const { cck, Tengah, Pasir, Tampines } = state;
 
   return (
-    <div>
-      <div className="flexRow" style={{ height: "400px" }}>
-        <ChooseHouseForm
+    <body>
+    <div className="main" style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#DEE4EC", textAlign:"center"}}>
+      <h1>Compare BTOs</h1>
+      <h6>Compare the different features of various BTOs</h6>
+    </div>
+      <div className="flexRow" style={{ height: "100vh"}}>
+        <ChooseHouseForm 
           handleChange={handleChange}
           cck={cck}
           Tengah={Tengah}
           Pasir={Pasir}
           Tampines={Tampines}
         />
-      </div>
-      <div className="flexRow" style={{ height: "100px", marginTop: "300px" }}>
+      
         <BTOTable displayHouseState={state} />
       </div>
-    </div>
+    
+    </body>
   );
 };

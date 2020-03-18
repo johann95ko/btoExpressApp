@@ -43,8 +43,8 @@ function Map() {
             setSelectedPark(park);
           }}
           icon={{
-            url: `/home.svg`,
-            scaledSize: new window.google.maps.Size(30, 30)
+            url: `/Building.svg`,
+            scaledSize: new window.google.maps.Size(40, 40)
           }}
         />
       ))}
@@ -73,7 +73,7 @@ const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 export default function StaticMap() {
   return (
-    <div id='mapplace' style={{ width: "50vw", height: "50vh", align:"right" }}>
+    <div id='mapplace'>
       <MapWrapped
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyA_WObUiYD7YpoYufR84re1LZHAJeAGXkY`}
         loadingElement={<div style={{ height: `100%` }} />}

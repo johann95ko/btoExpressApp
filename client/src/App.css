@@ -50,6 +50,7 @@
   background-color: firebrick;
 }
 
+
 .carousel-caption p {
   font-family:    'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size:      1em;
@@ -60,23 +61,47 @@
   scroll-behavior: smooth; 
 }
 
-/* .carousel-caption #grantButton{
-  background-color: cornflowerblue;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
 .carousel-caption #grantCaption {
   color: black;
   background-color: rgba(236, 236, 236, 0.5)
 }
 
-.mapplace {
-  text-align: center;
-  left: 50%;
-
+#locationBody{
+  padding-top: 70px;
 }
 
-#locationBody{
-  padding-top: 100px;
+#searchBar{
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding-top: 35px;
+}
+
+#mapplace{
+  width: 70vw;
+  height: 50vh;
+  margin: auto;
+  
+}
+
+#locationInstructions{
+  text-align: center;
+  background-color: rgba(162, 162, 190, 0.356);
+  padding: 40px;
+}
+
+#mapTable {
+  /* padding: 30px; */
+  margin: auto;
+  width: 70vw;
+  
+}
+
+#map{
+  padding-top: 30px;
+}
+
+#BTOCaption{
+    float: left;
+    transform: translateX(-29%);
 }
