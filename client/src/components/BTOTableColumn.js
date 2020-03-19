@@ -126,6 +126,19 @@ export const BTOTableColumn = props => {
             </div>
           </TableCell>
         </TableBody>
+
+        <TableBody>
+          <TableCell
+            align="center"
+            component="th"
+            scope="row"
+            style={{ height: "25em" }}
+          >
+            <div className="flexRowCompareDiv">
+              <p>Region PSI readings</p> {props.psiIndex}
+            </div>
+          </TableCell>
+        </TableBody>
       </Table>
     </TableContainer>
   );

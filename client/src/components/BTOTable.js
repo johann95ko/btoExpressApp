@@ -36,11 +36,12 @@ export const BTOTable = props => {
             rooms: eachBTO.TypeOfFlats,
             nearestMrt: eachBTO.NearestMrt,
             nearestMall: eachBTO.NearestMall,
-            nearestMarket: eachBTO.NearestMarket
+            nearestMarket: eachBTO.NearestMarket,
+            region: eachBTO.Region
           }
         ]);
       }
-      console.log(response2.data.items[0].readings.psi_twenty_four_hourly);
+      // console.log(house);
 
       setPsi({
         west: response2.data.items[0].readings.psi_twenty_four_hourly.west,
@@ -63,13 +64,17 @@ export const BTOTable = props => {
   }
   return (
     <div className="flexRowDiv" style={{ marginTop: "180px" }}>
-      {JSON.stringify(psi)}
       <div className="flexRowBTO">
         {house.map(eachBTO => {
           for (const [eachHouseKey, eachHouseVal] of Object.entries(
             props.displayHouseState
           )) {
             if (eachBTO.key == eachHouseKey && eachHouseVal) {
+              for (const [eachPsiKey, eachPsiVal] of Object.entries(psi)) {
+                if (eachBTO.region == eachPsiKey) {
+                  var btoPsi = eachPsiVal;
+                }
+              }
               return (
                 <BTOTableColumn
                   key={eachBTO.key}
@@ -82,6 +87,7 @@ export const BTOTable = props => {
                   nearestMall={eachBTO.nearestMall}
                   nearestMarket={eachBTO.nearestMarket}
                   launchDate={eachBTO.launchDate}
+                  psiIndex={btoPsi}
                 />
               );
             }

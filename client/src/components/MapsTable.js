@@ -32,7 +32,6 @@ export const MapsTable = props => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {JSON.stringify(props)}
           {props.rows.map(row => (
             <TableRow key={row.destinationName}>
               <TableCell component="th" scope="row">
