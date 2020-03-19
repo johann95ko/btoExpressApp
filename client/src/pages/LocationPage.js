@@ -5,6 +5,7 @@ import { MapsTable } from "../components/MapsTable";
 import ReactDOM from "react-dom";
 import MapWithADirectionsRenderer from "../components/MapWithADirectionsRenderer";
 import axios from "axios";
+import {Footer} from "../components/Footer"
 
 let btoLocations = [
   "Choa Chu Kang Grove, Keat Hong Link",
@@ -54,6 +55,7 @@ export const LocationPage = () => {
   };
 
   return (
+
     <body id="locationBody">
     <div className="main" id="locationInstructions">
       <h2 className="page-title">Location Calculator</h2>
@@ -80,8 +82,9 @@ export const LocationPage = () => {
             }
           })}
         />
-        
+
       </div>
+      <Footer/>
     </body>
   );
 };
