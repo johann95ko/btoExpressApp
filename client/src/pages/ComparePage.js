@@ -8,9 +8,9 @@ export const ComparePage = () => {
 
   return (
     <body>
-    <div className="main" style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#DEE4EC", textAlign:"center"}}>
-      <h1>Compare BTOs</h1>
-      <h6>Find Out Which BTO Suits You Best</h6>
+    <div className="main" style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#DDDDDD", textAlign:"center"}}>
+      <h2 className="page-title">Compare BTOs</h2>
+      <p className="sub-title">Find Out Which BTO Suits You Best</p>
     </div>
       <div className="flexRow" style={{ height: "100vh"}}>
         < TemporaryDrawer/>

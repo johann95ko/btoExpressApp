@@ -23,7 +23,9 @@ const LandingButton = () => {
     return (
         <div>
             <div class='header'>All your BTO needs, in one palce</div>
-            <button onClick={event => window.location.href='/home'}>VIEW ALL BTO</button>
+            <div className="view-bto-button">
+                <button onClick={event => window.location.href='/home'}>VIEW ALL BTO</button>
+            </div>
         </div>
 
         

@@ -56,8 +56,8 @@ export const LocationPage = () => {
   return (
     <body id="locationBody">
     <div className="main" id="locationInstructions">
-      <h1>Location Calculator</h1>
-      <h5>Find out the distances from all available BTOs to your destination</h5>
+      <h2 className="page-title">Location Calculator</h2>
+      <p className="sub-title">Find out the distances from all available BTOs to your destination</p>
   
         <MapsForm
           handleSubmit={handleSubmit}
