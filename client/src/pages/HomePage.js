@@ -2,7 +2,6 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import "./pages.css";
 import { useFetch } from "../customHooks/useFetch";
-import Landing from "../components/Landing";
 import Carousel from "../components/frontCarousel";
 import Card from "../components/bCard";
 import { CardDeck } from "react-bootstrap";
@@ -18,7 +17,7 @@ export const HomePage = () => {
         <Carousel />
       </div>
       <div class="main" id="section2">
-        <h2>Available BTOs</h2>
+        <h2 className="page-title">Available BTOs</h2>
         <CardDeck>
           {data.map(eachHousing => (
             <Card

@@ -9,8 +9,8 @@ return(
   <Card>
     <Card.Img variant="top" src="holder.js/100px160" />
     <Card.Body>
-      <Card.Title>{props.btoName}</Card.Title>
-      <Card.Text>
+      <Card.Title className="bto-name">{props.btoName}</Card.Title>
+      <Card.Text className="bto-text">
         {props.shortDesc}
       </Card.Text>
     </Card.Body>

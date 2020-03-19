@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -42,16 +43,66 @@
   margin:30;
   height: 10000;
   width:30;
-
 }
 
+.mr-auto{
+  position: relative;
+  left: 40px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.mr-auto .tab {
+  margin-right: 20px;
+}
 
 .navColour{
   background-color: firebrick;
 }
 
+.navColour .logo-title{
+  font-size: x-large;
+}
+
+.Navbar{
+  font-family: Georgia;
+  font-size: 40px;
+}
+
+.view-bto-button{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+}
+
+.page-title{
+  font-family: "HelveticaNeue", "Helvetica Neue Light", Helvetica, sans-serif;
+  text-align: center;
+  font-size: 45px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+.sub-title{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+  margin-top: -20px;
+}
+
+.bto-name{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+  font-size: 30px !important;
+}
+
+.bto-text{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+  text-align: left;
+}
+
+.bto-card{
+  border: none;
+}
+
+
 .carousel-caption p {
-  font-family:    'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /*font-family:    'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+  font-family: "Helvetica Neue Light", Helvetica, sans-serif;
   font-size:      1em;
   color:          black;
   }
@@ -60,23 +111,62 @@
   scroll-behavior: smooth; 
 }
 
-/* .carousel-caption #grantButton{
-  background-color: cornflowerblue;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
 .carousel-caption #grantCaption {
   color: black;
   background-color: rgba(236, 236, 236, 0.5)
 }
 
-.mapplace {
-  text-align: center;
-  left: 50%;
-
+#locationBody{
+  padding-top: 70px;
 }
 
-#locationBody{
-  padding-top: 100px;
+#searchBar{
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding-top: 35px;
+}
+
+#mapplace{
+  width: 70vw;
+  height: 50vh;
+  margin: auto;
+  
+}
+
+#locationInstructions{
+  text-align: center;
+  background-color: rgba(162, 162, 190, 0.356);
+  padding: 40px;
+}
+
+#mapTable {
+  /* padding: 30px; */
+  margin: auto;
+  width: 70vw;
+  
+}
+
+#map{
+  padding-top: 30px;
+}
+
+#BTOCaption{
+    float: left;
+    transform: translateX(-29%);
+}
+
+
+#formGroup{
+  justify-content: center;
+}
+
+#BTOButton{
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#addButton{
+  text-align: center;
+
 }

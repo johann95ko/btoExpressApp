@@ -1,22 +1,22 @@
 var express = require("express");
 var router = express.Router();
-const BtoGrantCalculator = require("../models/BtoGrantCalculator");
+const BtoGrantsCalculator = require("../models/BtoGrantsCalculator");
 
 /* GET grants. */
 router.route("/bto").post((req, res) => {
   const incomeLevel = req.body.incomeLevel;
-  const FTA = req.body.FTA;
-  const spouseFTA = req.body.spouseFTA;
+  const firstTimeApplicant = req.body.firstTimeApplicant;
+  const spouseFirstTimeApplicant = req.body.spouseFirstTimeApplicant;
   const employmentStatus = req.body.employmentStatus;
 
-  const btoGrantCalculator = new BtoGrantCalculator(
+  const btoGrantsCalculator = new BtoGrantsCalculator(
     incomeLevel,
-    FTA,
-    spouseFTA,
+    firstTimeApplicant,
+    spouseFirstTimeApplicant,
     employmentStatus
   );
 
-  res.send(btoGrantCalculator.calulateGrant().toString());
+  res.send(btoGrantsCalculator.calculateGrants().toString());
 });
 
 module.exports = router;
