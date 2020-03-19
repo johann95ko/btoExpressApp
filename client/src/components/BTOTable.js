@@ -7,6 +7,7 @@ import "./components.css";
 
 export const BTOTable = props => {
   const [house, setHouse] = useState([]);
+  const [psi, setPsi] = useState(0);
 
   const [loading, setLoading] = useState(true);
 
@@ -18,6 +19,10 @@ export const BTOTable = props => {
   const getLink = async () => {
     try {
       const response1 = await axios("http://localhost:5000/api/bto");
+      const response2 = await axios(
+        "https://api.data.gov.sg/v1/environment/psi"
+      );
+
       for (const eachBTO of response1.data) {
         setHouse(curRows => [
           ...curRows,
@@ -31,10 +36,24 @@ export const BTOTable = props => {
             rooms: eachBTO.TypeOfFlats,
             nearestMrt: eachBTO.NearestMrt,
             nearestMall: eachBTO.NearestMall,
-            nearestMarket: eachBTO.NearestMarket
+            nearestMarket: eachBTO.NearestMarket,
+            region: eachBTO.Region
           }
         ]);
       }
+      // console.log(house);
+
+      setPsi({
+        west: response2.data.items[0].readings.psi_twenty_four_hourly.west,
+        east: response2.data.items[0].readings.psi_twenty_four_hourly.east,
+        south: response2.data.items[0].readings.psi_twenty_four_hourly.south,
+        north: response2.data.items[0].readings.psi_twenty_four_hourly.north,
+        central:
+          response2.data.items[0].readings.psi_twenty_four_hourly.central,
+        national:
+          response2.data.items[0].readings.psi_twenty_four_hourly.national
+      });
+
       setLoading(false);
     } catch (e) {
       console.log(e);
@@ -51,6 +70,11 @@ export const BTOTable = props => {
             props.displayHouseState
           )) {
             if (eachBTO.key == eachHouseKey && eachHouseVal) {
+              for (const [eachPsiKey, eachPsiVal] of Object.entries(psi)) {
+                if (eachBTO.region == eachPsiKey) {
+                  var btoPsi = eachPsiVal;
+                }
+              }
               return (
                 <BTOTableColumn
                   key={eachBTO.key}
@@ -63,6 +87,7 @@ export const BTOTable = props => {
                   nearestMall={eachBTO.nearestMall}
                   nearestMarket={eachBTO.nearestMarket}
                   launchDate={eachBTO.launchDate}
+                  psiIndex={btoPsi}
                 />
               );
             }

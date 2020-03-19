@@ -5,7 +5,7 @@ import { MapsTable } from "../components/MapsTable";
 import ReactDOM from "react-dom";
 import MapWithADirectionsRenderer from "../components/MapWithADirectionsRenderer";
 import axios from "axios";
-import {Footer} from "../components/Footer"
+import { Footer } from "../components/Footer";
 
 let btoLocations = [
   "Choa Chu Kang Grove, Keat Hong Link",
@@ -55,22 +55,23 @@ export const LocationPage = () => {
   };
 
   return (
-
     <body id="locationBody">
-    <div className="main" id="locationInstructions">
-      <h2 className="page-title">Location Calculator</h2>
-      <p className="sub-title">Find out the distances from all available BTOs to your destination</p>
-  
+      <div className="main" id="locationInstructions">
+        <h2 className="page-title">Location Calculator</h2>
+        <p className="sub-title">
+          Find out the distances from all available BTOs to your destination
+        </p>
+
         <MapsForm
           handleSubmit={handleSubmit}
           handleChange={handleChange}
           formValue={formValue}
         />
-        </div>
-        <div className="main" id="map">
+      </div>
+      <div className="main" id="map">
         <StaticMap />
-        </div>
-        <div className="main" id="mapTable">
+      </div>
+      <div className="main" id="mapTable">
         <MapsTable
           rows={distances.sort(function(a, b) {
             if (a.duration > b.duration) {
@@ -82,9 +83,8 @@ export const LocationPage = () => {
             }
           })}
         />
-
       </div>
-      <Footer/>
+      <Footer />
     </body>
   );
 };

@@ -6,6 +6,7 @@ import Logo from "../Images/BTOLogo.png"
 import { LoginDrawer } from "../components/loginSlide";
 
 
+
 export const NavBar = () => {
   return (
     <div className="Navbar">

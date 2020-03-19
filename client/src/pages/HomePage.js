@@ -5,12 +5,15 @@ import { useFetch } from "../customHooks/useFetch";
 import Carousel from "../components/frontCarousel";
 import Card from "../components/bCard";
 import { CardDeck } from "react-bootstrap";
+import { LoadSpinners } from "../components/LoadSpinners";
 
 export const HomePage = () => {
   const { data, loading } = useFetch("/api/bto");
-  // console.log(data);
 
-  if (loading) return null;
+  if (loading) {
+    console.log("loading");
+    return <LoadSpinners />;
+  }
   return (
     <body>
       <div className="main" id="section1">

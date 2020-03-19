@@ -5,13 +5,20 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var bodyParser = require("body-parser");
 var cors = require("cors");
+var expressLayouts = require("express-ejs-layouts")
+var app = express();
+
+// // EJS
+// app.use(expressLayouts)
+// app.set('view engine', 'ejs')
+app.use(express.urlencoded({extended: false}))
 
 var grantRouter = require("./controller/GrantsController");
 var btoRouter = require("./controller/BtoController");
 var loginRouter = require("./controller/LoginController");
 var mapRouter = require("./controller/MapsController");
 
-var app = express();
+
 app.use(cors());
 
 // view engine setup

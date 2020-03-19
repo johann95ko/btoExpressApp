@@ -18,6 +18,8 @@ class User {
     this.password = newPassword;
     // set database password
   }
+
+  //testing
   getVerified(){
     // check if password is in database
     return true

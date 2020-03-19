@@ -146,7 +146,7 @@
   /* padding: 30px; */
   margin: auto;
   width: 70vw;
-  min-height: 50vh;
+  min-height: 80vh;
 }
 
 #map{
@@ -182,12 +182,17 @@
   --mainRed:firebrick;
 }
 
+
 #login{
   background-color: white;
-  width: 320px;
-  margin:auto;
+  text-align: center;
+  padding-top: 50px;
 }
 
-#forgot{
-  background-color: white;
+#loginButton{
+  margin:30px;
+}
+
+#logButton{
+  color: azure;
 }

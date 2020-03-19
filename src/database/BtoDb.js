@@ -54,6 +54,10 @@ const BTOSchema = new Schema(
     LongestDesc: {
       type: String,
       required: true
+    },
+    region: {
+      type: String,
+      required: true
     }
   },
   {

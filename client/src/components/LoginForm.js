@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     const classes = useStyles();
 
     return(
-        <form className={classes.root} noValidate autoComplete="on">
+        <form id="loginForm" className={classes.root} noValidate autoComplete="on">
         <div>
 
             <TextField required id="username-input" label="Username" defaultValue="lariliiiii"/>
