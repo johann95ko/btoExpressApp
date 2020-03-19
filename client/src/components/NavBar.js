@@ -9,7 +9,7 @@ export const NavBar = () => {
   return (
     <div className="Navbar">
       <Navbar className="navColour" variant="dark" fixed="top">
-        <Navbar.Brand href="/">
+        <Navbar.Brand className="logo-title" href="/">
           <img 
           src= {Logo}
           alt="BTO Logo"
@@ -19,9 +19,10 @@ export const NavBar = () => {
           BTOAnywhere
           </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link id="linkColor" href="/compare">Compare</Nav.Link>
+          <Nav.Link href="/compare">Compare</Nav.Link>
           <Nav.Link href="/grant">Grant Calculator</Nav.Link>
           <Nav.Link href="/location">Location Calculator</Nav.Link>
+          <Nav.Link href="/FAQ">FAQ</Nav.Link>
         </Nav>
       </Navbar>
     </div>

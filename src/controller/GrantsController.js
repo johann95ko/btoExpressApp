@@ -16,7 +16,7 @@ router.route("/bto").post((req, res) => {
     employmentStatus
   );
 
-  res.send(btoGrantsCalculator.calulateGrants().toString());
+  res.send(btoGrantsCalculator.calculateGrants().toString());
 });
 
 module.exports = router;

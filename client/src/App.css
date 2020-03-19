@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -42,17 +43,66 @@
   margin:30;
   height: 10000;
   width:30;
-
 }
 
+.mr-auto{
+  position: relative;
+  left: 40px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.mr-auto .tab {
+  margin-right: 20px;
+}
 
 .navColour{
   background-color: firebrick;
 }
 
+.navColour .logo-title{
+  font-size: x-large;
+}
+
+.Navbar{
+  font-family: Georgia;
+  font-size: 40px;
+}
+
+.view-bto-button{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+}
+
+.page-title{
+  font-family: "HelveticaNeue", "Helvetica Neue Light", Helvetica, sans-serif;
+  text-align: center;
+  font-size: 45px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+.sub-title{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+  margin-top: -20px;
+}
+
+.bto-name{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+  font-size: 30px !important;
+}
+
+.bto-text{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+  text-align: left;
+}
+
+.bto-card{
+  border: none;
+}
+
 
 .carousel-caption p {
-  font-family:    'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /*font-family:    'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+  font-family: "Helvetica Neue Light", Helvetica, sans-serif;
   font-size:      1em;
   color:          black;
   }
@@ -82,19 +132,21 @@
   height: 50vh;
   margin: auto;
   
+  
 }
 
 #locationInstructions{
   text-align: center;
   background-color: rgba(162, 162, 190, 0.356);
   padding: 40px;
+  
 }
 
 #mapTable {
   /* padding: 30px; */
   margin: auto;
   width: 70vw;
-  
+  min-height: 50vh;
 }
 
 #map{
@@ -119,4 +171,13 @@
 #addButton{
   text-align: center;
 
+}
+
+:root {
+  --mainDark: #343a40;
+  --mainGrey: rgba(109,109,109);
+  --mainLightGrey:rgba(172,172,172);
+  --mainWhite:#fff;
+  --mainBlue:#007bff;
+  --mainRed:firebrick;
 }
