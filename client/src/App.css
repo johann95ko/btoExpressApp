@@ -181,3 +181,13 @@
   --mainBlue:#007bff;
   --mainRed:firebrick;
 }
+
+#login{
+  background-color: white;
+  width: 320px;
+  margin:auto;
+}
+
+#forgot{
+  background-color: white;
+}
