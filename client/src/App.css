@@ -146,7 +146,7 @@
   /* padding: 30px; */
   margin: auto;
   width: 70vw;
-  min-height: 50vh;
+  min-height: 80vh;
 }
 
 #map{
@@ -171,13 +171,4 @@
 #addButton{
   text-align: center;
 
-}
-
-:root {
-  --mainDark: #343a40;
-  --mainGrey: rgba(109,109,109);
-  --mainLightGrey:rgba(172,172,172);
-  --mainWhite:#fff;
-  --mainBlue:#007bff;
-  --mainRed:firebrick;
 }

@@ -1,11 +1,10 @@
 import React from "react";
 import "./pages.css";
 import FAQbutton from '../components/FAQbutton';
-import {Footer} from "../components/Footer"
+
 export const FAQpage = () => {
   
   return ( // printed on screen
-    <body>
     <div className="flexBoxDiv">
         <div class="FAQbox">
         <h1>FAQs</h1>
@@ -45,12 +44,7 @@ export const FAQpage = () => {
 
 
           </div>
-          
         </div>
-
     </div>
-    <Footer/>
-    </body>
-    
   );
 };

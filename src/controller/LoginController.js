@@ -9,6 +9,19 @@ router.route("/").get((req, res) => {
   userDao.readUser(req, res);
 });
 
+/* Login Page */
+router.route("/login").get((req, res) => {});
+
+/* Register Page */
+router.route("/register").get((req, res) => {});
+
+/* Register Handle. */
+router.route("/register").post((req, res) => {
+  const { name, email, password, password2 } = req.body;
+  let errors = []
+  // 
+});
+
 /* sign up. */
 router.route("/signup").post((req, res) => {
   userDao.createUser(req, res);
