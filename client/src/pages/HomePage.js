@@ -17,7 +17,7 @@ export const HomePage = () => {
         <Carousel />
       </div>
       <div class="main" id="section2">
-        <h2>Available BTOs</h2>
+        <h2 className="page-title">Available BTOs</h2>
         <CardDeck>
           {data.map(eachHousing => (
             <Card

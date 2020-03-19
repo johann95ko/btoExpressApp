@@ -5,18 +5,18 @@ const BtoGrantsCalculator = require("../models/BtoGrantsCalculator");
 /* GET grants. */
 router.route("/bto").post((req, res) => {
   const incomeLevel = req.body.incomeLevel;
-  const FTA = req.body.FTA;
-  const spouseFTA = req.body.spouseFTA;
+  const firstTimeApplicant = req.body.firstTimeApplicant;
+  const spouseFirstTimeApplicant = req.body.spouseFirstTimeApplicant;
   const employmentStatus = req.body.employmentStatus;
 
   const btoGrantsCalculator = new BtoGrantsCalculator(
     incomeLevel,
-    FTA,
-    spouseFTA,
+    firstTimeApplicant,
+    spouseFirstTimeApplicant,
     employmentStatus
   );
 
-  res.send(btoGrantsCalculator.calulateGrants().toString());
+  res.send(btoGrantsCalculator.calculateGrants().toString());
 });
 
 module.exports = router;
