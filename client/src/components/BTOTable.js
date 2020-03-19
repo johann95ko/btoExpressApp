@@ -7,6 +7,7 @@ import "./components.css";
 
 export const BTOTable = props => {
   const [house, setHouse] = useState([]);
+  const [psi, setPsi] = useState(0);
 
   const [loading, setLoading] = useState(true);
 
@@ -18,6 +19,10 @@ export const BTOTable = props => {
   const getLink = async () => {
     try {
       const response1 = await axios("http://localhost:5000/api/bto");
+      const response2 = await axios(
+        "https://api.data.gov.sg/v1/environment/psi"
+      );
+
       for (const eachBTO of response1.data) {
         setHouse(curRows => [
           ...curRows,
@@ -35,6 +40,19 @@ export const BTOTable = props => {
           }
         ]);
       }
+      console.log(response2.data.items[0].readings.psi_twenty_four_hourly);
+
+      setPsi({
+        west: response2.data.items[0].readings.psi_twenty_four_hourly.west,
+        east: response2.data.items[0].readings.psi_twenty_four_hourly.east,
+        south: response2.data.items[0].readings.psi_twenty_four_hourly.south,
+        north: response2.data.items[0].readings.psi_twenty_four_hourly.north,
+        central:
+          response2.data.items[0].readings.psi_twenty_four_hourly.central,
+        national:
+          response2.data.items[0].readings.psi_twenty_four_hourly.national
+      });
+
       setLoading(false);
     } catch (e) {
       console.log(e);
@@ -45,6 +63,7 @@ export const BTOTable = props => {
   }
   return (
     <div className="flexRowDiv" style={{ marginTop: "180px" }}>
+      {JSON.stringify(psi)}
       <div className="flexRowBTO">
         {house.map(eachBTO => {
           for (const [eachHouseKey, eachHouseVal] of Object.entries(

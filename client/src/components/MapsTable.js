@@ -18,8 +18,12 @@ export const MapsTable = props => {
   const classes = useStyles();
 
   return (
-    <TableContainer style={{ width:"70vw"}} component={Paper}>
-      <Table className={classes.table} style={{ width:"70vw"}} aria-label="simple table">
+    <TableContainer style={{ width: "70vw" }} component={Paper}>
+      <Table
+        className={classes.table}
+        style={{ width: "70vw" }}
+        aria-label="simple table"
+      >
         <TableHead>
           <TableRow>
             <TableCell>BTO Location</TableCell>
@@ -28,6 +32,7 @@ export const MapsTable = props => {
           </TableRow>
         </TableHead>
         <TableBody>
+          {JSON.stringify(props)}
           {props.rows.map(row => (
             <TableRow key={row.destinationName}>
               <TableCell component="th" scope="row">
