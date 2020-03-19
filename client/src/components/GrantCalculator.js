@@ -6,8 +6,8 @@ class GrantCalculator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      FTA: true,
-      spouseFTA: true,
+      firstTimeApplicant: true,
+      spouseFirstTimeApplicant: true,
       incomeLevel: 1500,
       employmentStatus: true,
       grant: 0
@@ -22,17 +22,17 @@ class GrantCalculator extends React.Component {
 
   handleFTA(event) {
     if (event.target.value === "true") {
-      this.setState({ FTA: true });
+      this.setState({ firstTimeApplicant: true });
     } else {
-      this.setState({ FTA: false });
+      this.setState({ firstTimeApplicant: false });
     }
   }
 
   handleSpouseFTA(event) {
     if (event.target.value === "true") {
-      this.setState({ spouseFTA: true });
+      this.setState({ spouseFirstTimeApplicant: true });
     } else {
-      this.setState({ spouseFTA: false });
+      this.setState({ spouseFirstTimeApplicant: false });
     }
   }
 
@@ -55,8 +55,8 @@ class GrantCalculator extends React.Component {
     axios
       .post("http://localhost:5000/api/grants/bto", {
         incomeLevel: this.state.incomeLevel,
-        FTA: this.state.FTA,
-        spouseFTA: this.state.spouseFTA,
+        firstTimeApplicant: this.state.firstTimeApplicant,
+        spouseFirstTimeApplicant: this.state.spouseFirstTimeApplicant,
         employmentStatus: this.state.employmentStatus
       })
       .then(response => {
