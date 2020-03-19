@@ -18,26 +18,112 @@ export const BTOTableColumn = props => {
   const classes = useStyles();
 
   return (
-    <TableContainer style={{ width: "25vw"}} component={Paper}>
+    <TableContainer style={{ width: "25vw" }} component={Paper}>
       <Table style={{ width: "25vw" }}>
         <TableBody>
-          <TableCell style={{backgroundColor:"#C5CAE9", height:"5.5em"}} align="center" component="th" scope="row" >
+          <TableCell
+            style={{ backgroundColor: "#C5CAE9", height: "5.5em" }}
+            align="center"
+            component="th"
+            scope="row"
+          >
             {props.name}
           </TableCell>
         </TableBody>
         <TableBody>
-          <TableCell align="center" component="th" scope="row" style={{ height:"8.5em"}}>
-            {props.location}
+          <TableCell
+            align="center"
+            component="th"
+            scope="row"
+            style={{ height: "8.5em" }}
+          >
+            <div className="flexRowCompareDiv">
+              <p>Location</p> {props.location}
+            </div>
           </TableCell>
         </TableBody>
         <TableBody>
-          <TableCell align="center" component="th" scope="row" style={{ height:"5.5em"}}>
-            {props.type}
+          <TableCell
+            align="center"
+            component="th"
+            scope="row"
+            style={{ height: "5.5em" }}
+          >
+            <div className="flexRowCompareDiv">
+              <p>Type of Estate</p> {props.type}
+            </div>
           </TableCell>
         </TableBody>
         <TableBody>
-          <TableCell align="center" component="th" scope="row" style={{ height:"25em"}}>
-            {props.shortestDesc}
+          <TableCell
+            align="center"
+            component="th"
+            scope="row"
+            style={{ height: "25em" }}
+          >
+            <div className="flexRowCompareDiv">
+              <p>Launch Date</p> {props.launchDate}
+            </div>
+          </TableCell>
+        </TableBody>
+        <TableBody>
+          <TableCell
+            align="center"
+            component="th"
+            scope="row"
+            style={{ height: "25em" }}
+          >
+            <div className="flexRowCompareDiv">
+              <p>Description</p> {props.shortestDesc}
+            </div>
+          </TableCell>
+        </TableBody>
+        <TableBody>
+          <TableCell
+            align="center"
+            component="th"
+            scope="row"
+            style={{ height: "25em" }}
+          >
+            <div className="flexRowCompareDiv">
+              <p>Rooms Available</p> {props.rooms.join(", ")}
+            </div>
+          </TableCell>
+        </TableBody>
+        <TableBody>
+          <TableCell
+            align="center"
+            component="th"
+            scope="row"
+            style={{ height: "25em" }}
+          >
+            <div className="flexRowCompareDiv">
+              <p>Nearest MRT</p> {props.nearestMrt}
+            </div>
+          </TableCell>
+        </TableBody>
+        <TableBody>
+          <TableCell
+            align="center"
+            component="th"
+            scope="row"
+            style={{ height: "25em" }}
+          >
+            <div className="flexRowCompareDiv">
+              <p>Nearest Mall</p> {props.nearestMall}
+            </div>
+          </TableCell>
+        </TableBody>
+        <TableBody>
+          <TableCell
+            align="center"
+            component="th"
+            scope="row"
+            style={{ height: "25em" }}
+          >
+            <div className="flexRowCompareDiv">
+              <p>Nearest Market</p> {props.nearestMarket}
+            </div>
           </TableCell>
         </TableBody>
       </Table>

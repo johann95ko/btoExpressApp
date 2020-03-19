@@ -15,5 +15,11 @@
   justify-content: space-evenly;
 }
 
+.flexRowCompareDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 
 
