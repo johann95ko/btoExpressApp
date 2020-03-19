@@ -50,10 +50,6 @@ app.use(function(err, req, res, next) {
   res.render("error");
 });
 
-// app.listen(app.get('port'));
-
-app.listen(port, () => console.log(`Server started on port: ${port}`));
-
 // Connecting to MongoDB via Mongoose
 mongoose
   .connect(
