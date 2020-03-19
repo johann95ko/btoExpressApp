@@ -1,7 +1,7 @@
 import React from "react";
 import "./pages.css";
 import { TemporaryDrawer } from "../components/chooseBTO";
-
+import {Footer} from "../components/Footer"
 
 export const ComparePage = () => {
   
@@ -14,15 +14,14 @@ export const ComparePage = () => {
       <h2 className="page-title">Compare BTOs</h2>
       <p className="sub-title">Find Out Which BTO Suits You Best</p>
     </div>
-      <div className="flexRow" style={{ height: "100vh"}}>
+      <div className="flexRow" style={{ height: "150vh"}}>
         < TemporaryDrawer/>
-      
       </div>
   
   
     </body>
     </div>   
-
+<Footer/> 
     </div>
 
 
