@@ -146,7 +146,7 @@
   /* padding: 30px; */
   margin: auto;
   width: 70vw;
-  min-height: 80vh;
+  min-height: 50vh;
 }
 
 #map{
@@ -203,4 +203,8 @@
   color: lightcyan;
   transform: translateY(-83%);
   background-color: firebrick;
+}
+
+#section2{
+  min-height:60vh;
 }
