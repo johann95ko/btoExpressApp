@@ -182,6 +182,29 @@
   --mainRed:firebrick;
 }
 
+
+#login{
+  background-color: white;
+  text-align: center;
+  padding-top: 50px;
+}
+
+#loginButton{
+  margin:30px;
+}
+
+#logButton{
+  color: azure;
+}
+
+#lari{
+  
+  transform: translateX(500%);
+  color: lightcyan;
+  transform: translateY(-83%);
+  background-color: firebrick;
+}
+
 #section2{
   min-height:60vh;
 }

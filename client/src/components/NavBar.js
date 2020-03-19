@@ -3,6 +3,8 @@ import "./components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav } from "react-bootstrap";
 import Logo from "../Images/BTOLogo.png"
+import { LoginDrawer } from "../components/loginSlide";
+
 
 
 export const NavBar = () => {
@@ -23,6 +25,7 @@ export const NavBar = () => {
           <Nav.Link href="/grant">Grant Calculator</Nav.Link>
           <Nav.Link href="/location">Location Calculator</Nav.Link>
           <Nav.Link href="/FAQ">FAQ</Nav.Link>
+          <LoginDrawer/>
         </Nav>
       </Navbar>
     </div>
