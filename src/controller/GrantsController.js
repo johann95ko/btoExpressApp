@@ -1,7 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const BtoGrantCalculator = require("../models/BtoGrantCalculator");
-const Joi = require('joi');
+const BtoGrantsCalculator = require("../models/BtoGrantsCalculator");
 
 /* GET grants. */
 router.route("/bto").post((req, res) => {
@@ -10,33 +9,14 @@ router.route("/bto").post((req, res) => {
   const spouseFTA = req.body.spouseFTA;
   const employmentStatus = req.body.employmentStatus;
 
-   const schema = Joi.object().keys({
-    incomeLevel: Joi.number().required(),
-    FTA:Joi.boolean().required(),
-    spouseFTA:Joi.boolean().required(),
-    employmentStatus:Joi.boolean().required()
-  });
+  const btoGrantsCalculator = new BtoGrantsCalculator(
+    incomeLevel,
+    FTA,
+    spouseFTA,
+    employmentStatus
+  );
 
-  Joi.validate(req.body,schema,(err,result)=>{
-    if(err){
-      console.log(err)
-      res.send('Error Error!');
-    }
-    else{
-
-    const btoGrantCalculator = new BtoGrantCalculator(
-      incomeLevel,
-      FTA,
-      spouseFTA,
-      employmentStatus
-    );
-    res.send(btoGrantCalculator.calulateGrant().toString());
-    }
-  })
-
-
-
- 
+  res.send(btoGrantsCalculator.calulateGrants().toString());
 });
 
 module.exports = router;

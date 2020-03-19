@@ -82,20 +82,25 @@
   height: 50vh;
   margin: auto;
   
+  
 }
 
 #locationInstructions{
   text-align: center;
   background-color: rgba(162, 162, 190, 0.356);
   padding: 40px;
-}
-
-#map {
-  padding: 30px;
-}
-
-#locationTable{
   
+}
+
+#mapTable {
+  /* padding: 30px; */
+  margin: auto;
+  width: 70vw;
+  min-height: 80vh;
+}
+
+#map{
+  padding-top: 30px;
 }
 
 #BTOCaption{
@@ -104,20 +109,16 @@
 }
 
 
-:root {
-  --mainDark: #343a40;
-  --mainGrey: rgba(109,109,109);
-  --mainLightGrey:rgba(172,172,172);
-  --mainWhite:#fff;
-  --mainBlue:#007bff;
+#formGroup{
+  justify-content: center;
 }
 
-#page-container{
-  display:flex;
-  flex-direction:column;
-  min-height:100vh;
+#BTOButton{
+  text-align: center;
+  padding-bottom: 20px;
 }
 
-#content-wrap{
-  flex:1;
+#addButton{
+  text-align: center;
+
 }

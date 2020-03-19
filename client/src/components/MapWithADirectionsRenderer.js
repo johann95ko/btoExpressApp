@@ -322,7 +322,7 @@ const MapWithADirectionsRenderer = compose(
     }
   })
 )(props => (
-  <div style={{ width: "400vw", height: "10000vh" }}>
+  <div>
     <GoogleMap
       defaultZoom={11.5}
       defaultCenter={new google.maps.LatLng(1.3521, 103.8198)}
