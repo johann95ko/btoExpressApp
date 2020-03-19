@@ -5,13 +5,8 @@ import { LoadSpinners } from "./LoadSpinners";
 import axios from "axios";
 import "./components.css";
 
-
 export const BTOTable = props => {
   const [house, setHouse] = useState([]);
-
-  const [name, setName] = useState("");
-  const [location, setLocation] = useState("");
-  const [type, setType] = useState("");
 
   const [loading, setLoading] = useState(true);
 
@@ -29,9 +24,14 @@ export const BTOTable = props => {
           {
             key: eachBTO.KeyName,
             name: eachBTO.Name,
+            launchDate: eachBTO.MonthOfLaunch,
             location: eachBTO.Address,
             type: eachBTO.Type,
-            shortestDesc: eachBTO.ShortestDesc
+            shortestDesc: eachBTO.ShortestDesc,
+            rooms: eachBTO.TypeOfFlats,
+            nearestMrt: eachBTO.NearestMrt,
+            nearestMall: eachBTO.NearestMall,
+            nearestMarket: eachBTO.NearestMarket
           }
         ]);
       }
@@ -46,7 +46,6 @@ export const BTOTable = props => {
   return (
     <div className="flexRowDiv" style={{ marginTop: "180px" }}>
       <div className="flexRowBTO">
-        
         {house.map(eachBTO => {
           for (const [eachHouseKey, eachHouseVal] of Object.entries(
             props.displayHouseState
@@ -59,12 +58,16 @@ export const BTOTable = props => {
                   location={eachBTO.location}
                   type={eachBTO.type}
                   shortestDesc={eachBTO.shortestDesc}
+                  rooms={eachBTO.rooms}
+                  nearestMrt={eachBTO.nearestMrt}
+                  nearestMall={eachBTO.nearestMall}
+                  nearestMarket={eachBTO.nearestMarket}
+                  launchDate={eachBTO.launchDate}
                 />
               );
             }
           }
         })}
-        
       </div>
     </div>
   );
