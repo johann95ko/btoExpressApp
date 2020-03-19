@@ -196,3 +196,11 @@
 #logButton{
   color: azure;
 }
+
+#lari{
+  
+  transform: translateX(500%);
+  color: lightcyan;
+  transform: translateY(-83%);
+  background-color: firebrick;
+}

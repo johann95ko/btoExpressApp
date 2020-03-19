@@ -43,7 +43,7 @@ export const LoginDrawer = () => {
     console.log("hello this is here");
 
     return(
-    <div>
+    <div id="lari">
         <Image src={Lari} alt="lari" style={{height:"30px",width:"30px"}} roundedCircle/>
          Lari Li
     </div>
