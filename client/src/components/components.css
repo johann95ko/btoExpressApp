@@ -49,3 +49,6 @@
   flex:1;
 }
 
+#compareClass{
+  min-height: 100vh;
+}

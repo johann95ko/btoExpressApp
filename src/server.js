@@ -7,14 +7,10 @@ app.listen(port, () => {
 });
 
 // Connecting to MongoDB via Mongoose
+const db = require('./config/keys').mongoURI;
+
 mongoose
-  .connect(
-    "mongodb+srv://larrylee3107:90points!@cluster0-bpf6b.mongodb.net/test?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true
-    },
-    function(err, db) {}
-  )
-  .then(() => console.log("MongoDB Connected Successfully!")) //Display message when database is connected
-  .catch(err => console.log(err));
+.connect(db)
+.then(() => console.log('MongoDB Connected!'))
+.catch(err => console.log(err));
 

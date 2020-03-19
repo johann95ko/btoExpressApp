@@ -6,6 +6,7 @@ import Carousel from "../components/frontCarousel";
 import Card from "../components/bCard";
 import { CardDeck } from "react-bootstrap";
 import { LoadSpinners } from "../components/LoadSpinners";
+import { Footer } from "../components/Footer";
 
 export const HomePage = () => {
   const { data, loading } = useFetch("/api/bto");
@@ -31,6 +32,7 @@ export const HomePage = () => {
           ))}
         </CardDeck>
       </div>
+      <Footer/>
     </body>
   );
 };
