@@ -22,6 +22,7 @@ export const NavBar = () => {
           <Nav.Link href="/compare">Compare</Nav.Link>
           <Nav.Link href="/grant">Grant Calculator</Nav.Link>
           <Nav.Link href="/location">Location Calculator</Nav.Link>
+          <Nav.Link href="/FAQ">FAQ</Nav.Link>
         </Nav>
       </Navbar>
     </div>
