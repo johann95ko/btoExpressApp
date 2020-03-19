@@ -9,7 +9,7 @@ class BtoGrantsCalculator extends GrantsCalculatorInterface {
     this.employmentStatus = employmentStatus;
   }
 
-  calulateGrants() {
+  calculateGrants() {
     if (this.employmentStatus === true) {
       if (this.FTA === true && this.spouseFTA === true) {
         if (this.incomeLevel > 9000) {
