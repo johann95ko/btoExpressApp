@@ -36,6 +36,10 @@ export const LocationPage = () => {
         })
       );
     }
+    
+    if (distances.length != 0) {
+      setDistances([]);
+    }
 
     Promise.all(distancePromises).then(res => {
       for (const eachRes of res) {
