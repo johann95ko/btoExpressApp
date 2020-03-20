@@ -225,3 +225,12 @@
   font-size:16px;
 
 }
+
+#cardimage{
+  height:10em;
+}
+
+#cardtitle{
+  font-family: "weather";
+  font-style: bold;
+}
