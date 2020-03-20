@@ -4,23 +4,25 @@ import "./components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
 
-export const MapsForm = (props) => {
-  
+export const MapsForm = props => {
   return (
     <div id="searchBar">
       <form onSubmit={props.handleSubmit}>
         <label>
-          Enter Your Preferred Location:
-          <input type="text" value={props.formValue} onChange={props.handleChange} 
-          placeholder="Toa Payoh"
+          Enter a Location:
+          <input
+            type="text"
+            value={props.formValue}
+            onChange={props.handleChange}
+            placeholder="Orchard Road"
           />
         </label>
         <Button variant="danger" type="submit" value="submit">
-            Search
-          </Button>
+          Search
+        </Button>
       </form>
     </div>
   );
 };
 
-export default MapsForm
+export default MapsForm;
