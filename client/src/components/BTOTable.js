@@ -28,6 +28,7 @@ export const BTOTable = props => {
           ...curRows,
           {
             key: eachBTO.KeyName,
+            image: eachBTO.Image,
             name: eachBTO.Name,
             launchDate: eachBTO.MonthOfLaunch,
             location: eachBTO.Address,
@@ -37,7 +38,8 @@ export const BTOTable = props => {
             nearestMrt: eachBTO.NearestMrt,
             nearestMall: eachBTO.NearestMall,
             nearestMarket: eachBTO.NearestMarket,
-            region: eachBTO.Region
+            region: eachBTO.Region,
+            
           }
         ]);
       }
@@ -78,6 +80,7 @@ export const BTOTable = props => {
               return (
                 <BTOTableColumn
                   key={eachBTO.key}
+                  image={eachBTO.Image}
                   name={eachBTO.name}
                   location={eachBTO.location}
                   type={eachBTO.type}
@@ -88,6 +91,7 @@ export const BTOTable = props => {
                   nearestMarket={eachBTO.nearestMarket}
                   launchDate={eachBTO.launchDate}
                   psiIndex={btoPsi}
+                 
                 />
               );
             }

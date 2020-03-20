@@ -7,9 +7,9 @@ const btoCard = props =>{
 return(
 
   <Card>
-    <Card.Img variant="top" src="holder.js/100px160" />
+    <Card.Img variant="top" src={props.Image} id="cardimage"/>
     <Card.Body>
-      <Card.Title className="bto-name">{props.btoName}</Card.Title>
+      <Card.Title className="bto-name" id="cardtitle">{props.btoName}</Card.Title>
       <Card.Text className="bto-text">
         {props.shortDesc}
       </Card.Text>
@@ -23,3 +23,5 @@ return(
 }
 
 export default btoCard;
+
+
