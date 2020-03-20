@@ -35,6 +35,7 @@ export const HomePage = () => {
               key={eachHousing.id}
               btoName={eachHousing.Name}
               shortDesc={eachHousing.ShortestDesc}
+              Image={eachHousing.Image}
             />
           ))}
         </CardDeck>
@@ -51,7 +52,3 @@ export const HomePage = () => {
   );
 };
 
-
-// <div class="col-12 col-md-9">&copy; { new Date().getFullYear()} BTOAnywhere App - All rights reserved
-// </div>
-//   <div class="col-6 col-md-3">Subscribe to BTOAnywhere Service</div>

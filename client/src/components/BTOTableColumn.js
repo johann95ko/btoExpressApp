@@ -30,6 +30,7 @@ export const BTOTableColumn = props => {
             {props.name}
           </TableCell>
         </TableBody>
+
         <TableBody>
           <TableCell
             align="center"
