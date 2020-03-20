@@ -21,8 +21,15 @@ export const HomePage = () => {
         <Carousel />
       </div>
       <div class="main" id="section2">
-        <h2 className="page-title">Available BTOs</h2>
-        <CardDeck>
+        <h1 className="page-title">Available BTOs</h1>
+        <h3 className="page-title-2"><center>We help you choose the right home with ease.</center></h3>
+        
+    <div class="row">
+    <div class="col-md-2">
+    </div>
+
+    <div class="col-md-8">
+    <CardDeck>
           {data.map(eachHousing => (
             <Card
               key={eachHousing.id}
@@ -31,8 +38,20 @@ export const HomePage = () => {
             />
           ))}
         </CardDeck>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+
+
+
       </div>
       <Footer/>
     </body>
   );
 };
+
+
+// <div class="col-12 col-md-9">&copy; { new Date().getFullYear()} BTOAnywhere App - All rights reserved
+// </div>
+//   <div class="col-6 col-md-3">Subscribe to BTOAnywhere Service</div>

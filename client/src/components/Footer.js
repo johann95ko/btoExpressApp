@@ -10,6 +10,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import EmailIcon from '@material-ui/icons/Email';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import TelegramIcon from '@material-ui/icons/Telegram';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 
 
 export const Footer = () => {
@@ -68,22 +69,16 @@ export const Footer = () => {
     </div>
 
 
-    <div class="row">
+<div class="row">
   <div class="col-12 col-md-10"></div>
   <div class="col-6 col-md-2">
   <a href="https://www.linkedin.com/company/singaporehdb/"> <LinkedInIcon a href="/"/></a>
   <a href="https://www.facebook.com/SingaporeHDB"> <FacebookIcon a href="/"/></a>
   <a href="https://twitter.com/singapore_hdb"> <TwitterIcon a href="/"/></a>
   <a href="https://www.hdb.gov.sg/cs/infoweb/contact-us"> <EmailIcon a href="/"/></a>
-  <a href="https://t.me/SingaporeHDB"> <TelegramIcon a href="/"/></a>
-
-     
-    
+  <a href="https://t.me/SingaporeHDB"> <TelegramIcon a href="/"/></a>    
   </div>
 </div>
-
-    
-    
 
     {/* Footer Bottom  */}
     <div className="footer-bottom">
@@ -94,7 +89,6 @@ export const Footer = () => {
   <div class="col-6 col-md-3">Subscribe to BTOAnywhere Service</div>
 </div>
 </div>
-
     </div>
     </div>
     </FooterContainer>
