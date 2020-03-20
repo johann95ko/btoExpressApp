@@ -10,6 +10,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import EmailIcon from '@material-ui/icons/Email';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import TelegramIcon from '@material-ui/icons/Telegram';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 
 
 export const Footer = () => {
@@ -19,6 +20,7 @@ export const Footer = () => {
     <div className="container">
     <div className='row2'>
       <h4>BTOAnywhere</h4>
+      <hr/>
     </div>
     <div className="row">
         {/* Column 1 */}
@@ -37,22 +39,22 @@ export const Footer = () => {
             <div className="col-md-3 col-sm-6">
         <h4>HDB Information</h4>
          <ul className="list-unstyled">
-            <li><a href="/">BTO/SBF/Opening</a></li>
-                <li>    <a href="/">HDB BTO Official Website</a></li>
-                <li>   <a href="/">BTO Sales Launch</a></li>
-                <li>  <a href="/">HDB Press Releases</a></li>
-                <li>   <a href="/">Open Booking of Flats</a></li>
+         <li>    <a href="https://www.hdb.gov.sg/cs/infoweb/residential/buying-a-flat/new/bto-sbf">HDB BTO Official Website</a></li>
+            <li><a href="https://www.hdb.gov.sg/cs/infoweb/residential/buying-a-flat/new/bto-sbf">BTO/SBF/Opening</a></li>
+                <li>   <a href="https://www.google.com/search?q=bto+sales+launch&rlz=1C5CHFA_enSG888SG888&oq=bto+sales+launch&aqs=chrome..69i57j0l7.4459j0j4&sourceid=chrome&ie=UTF-8">BTO Sales Launch</a></li>
+                <li>  <a href="https://www.hdb.gov.sg/cs/infoweb/about-us/news-and-publications/press-releases">HDB Press Releases</a></li>
+                <li>   <a href="https://esales.hdb.gov.sg/bp25/launch/open/OPEN_page_7142/home.html">Open Booking of Flats</a></li>
         </ul>
     </div>
             {/* Column 3 */}
             <div className="col-md-3 col-sm-6">
         <h4>Residental</h4>
         <ul className="list-unstyled">
-        <li><a href="/">Buying a Flat</a></li>
-                <li>    <a href="/">Financing a Flat Purchase</a></li>
-                <li>   <a href="/">Servicing your HDB Housing Loan</a></li>
-                <li>  <a href="/">Selling a Flat</a></li>
-                <li>   <a href="/">Renting a Flat</a></li>
+        <li>    <a href="https://www.hdb.gov.sg/cs/infoweb/residential/buying-a-flat">Buying a Flat</a></li>
+                <li>    <a href="https://www.hdb.gov.sg/cs/infoweb/residential/financing-a-flat-purchase">Financing a Flat Purchase</a></li>
+                <li>   <a href="https://www.hdb.gov.sg/cs/infoweb/residential/servicing-your-hdb-loan">Servicing your HDB Housing Loan</a></li>
+                <li>  <a href="https://www.hdb.gov.sg/cs/infoweb/residential/selling-a-flat">Selling a Flat</a></li>
+                <li>   <a href="https://www.hdb.gov.sg/cs/infoweb/residential/renting-a-flat">Renting a Flat</a></li>
         </ul>
     </div>
             {/* Column 4 */}
@@ -67,25 +69,16 @@ export const Footer = () => {
     </div>
 
 
-    <div class="row">
+<div class="row">
   <div class="col-12 col-md-10"></div>
   <div class="col-6 col-md-2">
-  <a href="/"> <LinkedInIcon a href="/"/></a>
-
-  <a href="/"> <FacebookIcon a href="/"/></a>
-  <a href="/"> <TwitterIcon a href="/"/></a>
-
-  <a href="/"> <EmailIcon a href="/"/></a>
-
-  <a href="/"> <TelegramIcon a href="/"/></a>
-
-     
-    
+  <a href="https://www.linkedin.com/company/singaporehdb/"> <LinkedInIcon a href="/"/></a>
+  <a href="https://www.facebook.com/SingaporeHDB"> <FacebookIcon a href="/"/></a>
+  <a href="https://twitter.com/singapore_hdb"> <TwitterIcon a href="/"/></a>
+  <a href="https://www.hdb.gov.sg/cs/infoweb/contact-us"> <EmailIcon a href="/"/></a>
+  <a href="https://t.me/SingaporeHDB"> <TelegramIcon a href="/"/></a>    
   </div>
 </div>
-
-    
-    
 
     {/* Footer Bottom  */}
     <div className="footer-bottom">
@@ -96,7 +89,6 @@ export const Footer = () => {
   <div class="col-6 col-md-3">Subscribe to BTOAnywhere Service</div>
 </div>
 </div>
-
     </div>
     </div>
     </FooterContainer>
