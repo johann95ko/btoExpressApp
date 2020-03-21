@@ -1,16 +1,14 @@
-import { createContext, useReducer, useContext } from "react";
+import React, { useReducer, useContext } from "react";
+
 
 /* Action Types */
 const SET_LOG = "SET_LOG";
 
 /* Define a context and a reducer for updating the context */
-const GlobalStateContext = createContext();
+const GlobalStateContext = React.createContext();
 
 const initialState = {
   log: {
-    name: null,
-    breed: null,
-    isGoodBoy: true,
     loggedIn: false
   }
 };
@@ -48,13 +46,10 @@ This also allows us to keep all of this state logic in this one file
 const useGlobalState = () => {
   const [state, dispatch] = useContext(GlobalStateContext);
 
-  const setLog = ({ name, breed, isGoodBoy, loggedIn }) => {
+  const setLog = ({ loggedIn }) => {
     dispatch({
       type: SET_LOG,
       payload: {
-        name,
-        breed,
-        isGoodBoy,
         loggedIn
       }
     });

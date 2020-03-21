@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./pages.css";
 import { useFetch } from "../customHooks/useFetch";
 import Carousel from "../components/frontCarousel";
@@ -7,12 +7,14 @@ import { CardDeck } from "react-bootstrap";
 import { LoadSpinners } from "../components/LoadSpinners";
 import { Footer } from "../components/Footer";
 import { lazy, Suspense } from "react";
+import useGlobalState from "../customHooks/useGlobalState";
 
 export const HomePage = () => {
   const { data, loading } = useFetch("/api/bto");
+  const globalState = useGlobalState();
 
   if (loading) {
-    console.log("loading");
+    // console.log("loading");
     return <LoadSpinners />;
   }
 
