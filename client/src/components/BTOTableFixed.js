@@ -16,7 +16,7 @@ export const BTOTableFixed = props => {
   // const classes = useStyles();
 
   return (
-    <TableContainer style={{ width: 100 }} component={Paper}>
+    <TableContainer style={{ width: 100}} component={Paper}>
       <Table style={{ width: 100 }}>
         <TableBody>
           <TableCell align="center" component="th" scope="row">
@@ -58,16 +58,3 @@ export const BTOTableFixed = props => {
   );
 };
 
-// <TableBody>
-//           {rows.map(row => (
-//             <TableRow key={row.name}>
-//               <TableCell component="th" scope="row">
-//                 {row.name}
-//               </TableCell>
-//               <TableCell align="right">{row.calories}</TableCell>
-//               <TableCell align="right">{row.fat}</TableCell>
-//               <TableCell align="right">{row.carbs}</TableCell>
-//               <TableCell align="right">{row.protein}</TableCell>
-//             </TableRow>
-//           ))}
-//         </TableBody>

@@ -76,7 +76,7 @@ export const BTOTable = props => {
           return (
             <BTOTableColumn
               key={eachBTO.key}
-              image={eachBTO.Image}
+              image={eachBTO.image}
               name={eachBTO.name}
               location={eachBTO.location}
               type={eachBTO.type}
