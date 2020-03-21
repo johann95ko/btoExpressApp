@@ -15,6 +15,10 @@ const BTOSchema = new Schema(
       type: String,
       required: true
     },
+    Image: {
+      type:String,
+      required : true
+    },
     MonthOfLaunch: {
       type: String,
       required: true
