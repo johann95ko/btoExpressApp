@@ -7,7 +7,7 @@ export const FAQpage = () => {
   
   return ( // printed on screen
     <body>
-    <div className="flexBoxDiv">
+
         <div class="FAQbox">
         <h1>FAQs</h1>
           <div id="FAQaccordion">
@@ -48,7 +48,7 @@ export const FAQpage = () => {
           </div>
         </div>
 
-    </div>
+    
             <Footer/>
     </body>
   );
