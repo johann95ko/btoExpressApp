@@ -197,6 +197,17 @@
   color: azure;
 }
 
+#register{
+  background-color: white;
+  text-align: center;
+  padding-top: 50px;
+}
+
+#registerButton{
+  margin:30px;
+}
+
+
 #lari{
   
   transform: translateX(500%);
@@ -233,6 +244,26 @@
 #cardtitle{
   font-family: "weather";
   font-style: bold;
+}
+
+#grantForm{
+  padding-top: 150px;
+  margin: auto;
+  width: 80vw;
+}
+
+#formContent{
+  padding: 50px;
+}
+
+#formButton{
+  text-align: center;
+  margin: 30px;
+}
+
+#grantTitle{
+  text-align: center;
+  margin: 20px;
 }
 
 #grantButton{

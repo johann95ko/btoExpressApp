@@ -1,6 +1,6 @@
 import React from "react";
 import "./pages.css";
-import { ChooseBto } from "../components/ChooseBTO";
+import { ChooseBto } from "../components/chooseBTO";
 import {Footer} from "../components/Footer"
 import { useFetch } from "../customHooks/useFetch";
 import { LoadSpinners } from "../components/LoadSpinners";
