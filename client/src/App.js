@@ -3,11 +3,11 @@ import "./App.css";
 import { HomePage } from "./pages/HomePage";
 import { NavBar } from "./components/NavBar";
 import { ComparePage } from "./pages/ComparePage";
-import  GrantPage  from "./pages/GrantPage";
+import GrantPage from "./pages/GrantPage";
 import { NoPageFound } from "./pages/NoPageFound";
 import { LocationPage } from "./pages/LocationPage";
 import { FAQpage } from "./pages/FAQpage";
-
+import { Footer } from "./components/Footer";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -18,11 +18,12 @@ function App() {
       <Switch>
         <Route path="/" exact component={HomePage} />
         <Route path="/compare" component={ComparePage} />
-        <Route path="/grant" component={ GrantPage } />
+        <Route path="/grant" component={GrantPage} />
         <Route path="/location" component={LocationPage} />
         <Route path="/FAQ" component={FAQpage} />
         <Route component={NoPageFound} />
       </Switch>
+      <Footer />
     </Router>
   );
 }

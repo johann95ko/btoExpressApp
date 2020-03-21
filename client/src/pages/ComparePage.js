@@ -25,7 +25,7 @@ export const ComparePage = () => {
       <div className="flexRow">
         < ChooseBto/>
       </div>
-      <Footer/> 
+
   </body>
   
 
