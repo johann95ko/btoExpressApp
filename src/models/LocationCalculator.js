@@ -3,3 +3,5 @@ class LocationCalculator{
     
   }
 }
+
+module.exports = LocationCalculator

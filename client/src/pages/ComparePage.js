@@ -2,17 +2,13 @@ import React from "react";
 import "./pages.css";
 import { ChooseBto } from "../components/ChooseBTO";
 import {Footer} from "../components/Footer"
-
 import { useFetch } from "../customHooks/useFetch";
-import Carousel from "../components/frontCarousel";
-import Card from "../components/bCard";
-import { CardDeck } from "react-bootstrap";
 import { LoadSpinners } from "../components/LoadSpinners";
 
 
 
 export const ComparePage = () => {
-  const { data, loading } = useFetch("/api/bto");
+  const { loading } = useFetch("/api/bto");
   
   if (loading) {
     console.log("loading");
