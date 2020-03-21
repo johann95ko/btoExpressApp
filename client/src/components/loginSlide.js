@@ -15,6 +15,7 @@ import TextField from "@material-ui/core/TextField";
 import axios from "axios";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
+import useGlobalState from "../customHooks/useGlobalState";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -62,6 +63,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export const LoginDrawer = () => {
+  const globalState = useGlobalState();
   const classes = useStyles();
   const [snackSuccess, setSnackSuccess] = React.useState("error");
   const [openSnack, setOpenSnack] = React.useState(false);
@@ -72,6 +74,7 @@ export const LoginDrawer = () => {
   const [loginState, loginsetState] = React.useState({
     loggedIn: false
   });
+
   const [userValue, setUserValue] = useState("");
   const [passValue, setPassValue] = useState("");
   const [userValueReg, setUserValueReg] = useState("");
@@ -143,6 +146,9 @@ export const LoginDrawer = () => {
         } else if (res == "login success") {
           loginsetState({ ...loginState, [props]: logged });
           setState({ ...state, right: false });
+          globalState.setLog({ loggedIn: true });
+          localStorage.setItem("loggedIn", true);
+          localStorage.setItem("username", userValue);
         }
       })
       .catch(error => {
@@ -175,18 +181,8 @@ export const LoginDrawer = () => {
   };
 
   const loggedInFunction = () => {
-    if (loginState.loggedIn === true) {
-      return (
-        <div id="lari">
-          <Image
-            src={Lari}
-            alt="lari"
-            style={{ height: "30px", width: "30px" }}
-            roundedCircle
-          />
-          Lari Li
-        </div>
-      );
+    if (localStorage.getItem("loggedIn")) {
+      return <div id="user-name">{localStorage.getItem("username")}</div>;
     }
   };
 
