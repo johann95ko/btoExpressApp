@@ -1,16 +1,16 @@
 import React from "react";
 import "./components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Card, CardDeck } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 
 const btoCard = props =>{
 return(
 
   <Card>
-    <Card.Img variant="top" src="holder.js/100px160" />
+    <Card.Img variant="top" src={props.Image} id="cardimage"/>
     <Card.Body>
-      <Card.Title>{props.btoName}</Card.Title>
-      <Card.Text>
+      <Card.Title className="bto-name" id="cardtitle">{props.btoName}</Card.Title>
+      <Card.Text className="bto-text">
         {props.shortDesc}
       </Card.Text>
     </Card.Body>

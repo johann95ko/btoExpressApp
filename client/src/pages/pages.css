@@ -34,8 +34,32 @@
   margin-right: auto;
 }
 
-.header {
-  position: absolute;;
-  bottom: 100;
+.FAQbox {
+  height: 60%;
+  width: 100%;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 700px;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 1px 0 rgba(10, 16, 34, .2);
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  flex: 1;
+  border-radius: 7px;
+  font-size: 14px;
 }
 
+.FAQbox.active,
+.FAQbox:hover {
+ background-color: #ddd;
+}
+
+#FAQ h1 {
+  color:red;
+}

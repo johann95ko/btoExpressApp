@@ -1,8 +1,8 @@
 var express = require("express");
-let housingData = require("../database/BtoDb");
+let BTOData = require("../database/BtoDb");
 var router = express.Router();
-const BtoDao = require("../models/BtoDao");
-const btoDao = new BtoDao(housingData);
+const BtoDao = require("../models/BtoDAO");
+const btoDao = new BtoDao(BTOData);
 
 /* GET users listing. */
 router.route("/").get((req, res) => {

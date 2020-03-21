@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #eeeeee !important;
 }
 
 code {
@@ -12,7 +13,3 @@ code {
     monospace;
 }
 
-.mapplace {
-  text-align: center;
-  left: 50%;
-}

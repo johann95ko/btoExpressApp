@@ -1,6 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
 import "./pages.css";
-import { useFetch } from "../customHooks/useFetch";
 import GrantCalculator from '../components/GrantCalculator'
 import GrantInfo from "../components/GrantInfo";
 

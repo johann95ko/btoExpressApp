@@ -3,25 +3,29 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var cors = require("cors");
+var session = require("express-session");
+var app = express();
+const passport = require("passport")
 
-var btoDescRouter = require("./controller/btoDescription");
+// Passport config
+require('./config/passport')(passport)
+
+// // EJS
+app.use(express.urlencoded({ extended: false }));
+
 var grantRouter = require("./controller/GrantsController");
-var housingRouter = require("./controller/BtoController");
+var btoRouter = require("./controller/BtoController");
 var loginRouter = require("./controller/LoginController");
 var mapRouter = require("./controller/MapsController");
 
-var app = express();
 app.use(cors());
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
-// app.set("port", process.env.PORT || 5000);
-const port = process.env.port || 5000;
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -30,8 +34,19 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/api/btoDescription", btoDescRouter);
-app.use("/api/housing", housingRouter);
+// Express session
+app.use(session({
+  secret: 'secret',
+  resave: true,
+  saveUninitialized: true
+}))
+
+// Passport middleware
+app.use(passport.initialize())
+app.use(passport.session())
+
+
+app.use("/api/bto", btoRouter);
 app.use("/api/grants", grantRouter);
 app.use("/api/login", loginRouter);
 app.use("/api/map", mapRouter);
@@ -51,21 +66,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
-// app.listen(app.get('port'));
-
-app.listen(port, () => console.log(`Server started on port: ${port}`));
-
-// Connecting to MongoDB via Mongoose
-mongoose
-  .connect(
-    "mongodb+srv://larrylee3107:90points!@cluster0-bpf6b.mongodb.net/test?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true
-    },
-    function(err, db) {}
-  )
-  .then(() => console.log("MongoDB Connected Successfully!")) //Display message when database is connected
-  .catch(err => console.log(err));
 
 module.exports = app;

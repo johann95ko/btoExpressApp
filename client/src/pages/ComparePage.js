@@ -1,32 +1,29 @@
 import React from "react";
 import "./pages.css";
-import { BTOTable } from "../components/BTOTable";
-import { ChooseHouseForm } from "../components/ChooseHouseForm";
+import { TemporaryDrawer } from "../components/chooseBTO";
+import {Footer} from "../components/Footer"
 
 export const ComparePage = () => {
-  const [state, setState] = React.useState({
-    sengkang: true,
-    woodlands: true,
-    jurong: true
-  });
-
-  const handleChange = name => event => {
-    setState({ ...state, [name]: event.target.checked });
-  };
-
-  const { sengkang, woodlands, jurong } = state;
+  
 
   return (
-    <div className="flexRow">
-      <ChooseHouseForm
-        handleChange={handleChange}
-        sengkang={sengkang}
-        woodlands={woodlands}
-        jurong={jurong}
-      />
-      <div>
-        <BTOTable displayHouseState={state}/>
-      </div>
+    <div className="page-container">
+    <div className="content-wrap">
+    <body>
+    <div className="main" style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#DDDDDD", textAlign:"center"}}>
+      <h2 className="page-title">Compare BTOs</h2>
+      <p className="sub-title">Find Out Which BTO Suits You Best</p>
     </div>
+      <div className="flexRow" style={{ height: "150vh"}}>
+        < TemporaryDrawer/>
+      </div>
+  
+  
+    </body>
+    </div>   
+<Footer/> 
+    </div>
+
+
   );
 };

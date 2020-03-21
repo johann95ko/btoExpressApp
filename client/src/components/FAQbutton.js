@@ -11,7 +11,7 @@ const FAQbutton= () => {
     // }
     return (
         <div>
-            <button onClick={event => window.location.href='/home'}>FAQs</button>
+            <button onClick={event => window.location.href='#'}>Ask us!</button>
         </div>
 
         

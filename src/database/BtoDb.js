@@ -3,7 +3,11 @@ const Schema = mongoose.Schema;
 
 const BTOSchema = new Schema(
   {
-    name: {
+    KeyName: {
+      type: String,
+      required: true
+    },
+    Name: {
       type: String,
       required: true
     },
@@ -12,6 +16,14 @@ const BTOSchema = new Schema(
       required: true
     },
     MonthOfLaunch: {
+      type: String,
+      required: true
+    },
+    NumOfFlats: {
+      type: Number,
+      required: true
+    },
+    Type: {
       type: String,
       required: true
     },
@@ -24,9 +36,29 @@ const BTOSchema = new Schema(
       required: true
     },
     NearestMrt: {
-      
+      type: String,
+      required: true
+    },
+    NearestMall: {
+      type: String,
+      required: true
+    },
+    NearestMarket: {
+      type: String,
+      required: true
+    },
+    ShortestDesc: {
+      type: String,
+      required: true
+    },
+    LongestDesc: {
+      type: String,
+      required: true
+    },
+    region: {
+      type: String,
+      required: true
     }
-
   },
   {
     timestamps: true

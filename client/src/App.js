@@ -6,8 +6,10 @@ import { ComparePage } from "./pages/ComparePage";
 import  GrantPage  from "./pages/GrantPage";
 import { NoPageFound } from "./pages/NoPageFound";
 import { LocationPage } from "./pages/LocationPage";
+import { FAQpage } from "./pages/FAQpage";
 
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path="/compare" component={ComparePage} />
         <Route path="/grant" component={ GrantPage } />
         <Route path="/location" component={LocationPage} />
+        <Route path="/FAQ" component={FAQpage} />
         <Route component={NoPageFound} />
       </Switch>
     </Router>

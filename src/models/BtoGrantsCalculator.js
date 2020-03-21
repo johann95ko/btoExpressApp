@@ -1,6 +1,6 @@
-const GrantCalculatorInterface = require("./GrantCalculatorInterface");
+const GrantsCalculatorInterface = require("./GrantsCalculatorInterface");
 
-class BtoGrantCalculator extends GrantCalculatorInterface {
+class BtoGrantsCalculator extends GrantsCalculatorInterface {
   constructor(incomeLevel, FTA, spouseFTA, employmentStatus) {
     super();
     this.incomeLevel = parseInt(incomeLevel);
@@ -9,7 +9,8 @@ class BtoGrantCalculator extends GrantCalculatorInterface {
     this.employmentStatus = employmentStatus;
   }
 
-  calulateGrant() {
+  calculateGrants() {
+    
     if (this.employmentStatus === true) {
       if (this.FTA === true && this.spouseFTA === true) {
         if (this.incomeLevel > 9000) {
@@ -36,4 +37,4 @@ class BtoGrantCalculator extends GrantCalculatorInterface {
   }
 }
 
-module.exports = BtoGrantCalculator;
+module.exports = BtoGrantsCalculator;
