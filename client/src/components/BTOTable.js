@@ -11,7 +11,6 @@ export const BTOTable = props => {
 
   const [loading, setLoading] = useState(true);
 
-  // component did mount
   useEffect(() => {
     getLink();
   }, []);
@@ -43,7 +42,6 @@ export const BTOTable = props => {
           }
         ]);
       }
-      // console.log(house);
 
       setPsi({
         west: response2.data.items[0].readings.psi_twenty_four_hourly.west,
@@ -67,7 +65,6 @@ export const BTOTable = props => {
   return (
     <div className="flexRowDiv" style={{ marginTop: "180px" }}>
       <div className="flexRowBTO">
-      // eslint-disable-next-line
         {house.map(eachBTO => {
           for (const [eachHouseKey, eachHouseVal] of Object.entries(props.displayHouseState)) {
             if (eachBTO.key === eachHouseKey && eachHouseVal) {
