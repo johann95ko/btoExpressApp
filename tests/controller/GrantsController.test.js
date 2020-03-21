@@ -6,8 +6,8 @@ test('GrantsController should route properly', async () => {
     .post('/api/grants/bto')
     .send({
         incomeLevel: 1500,
-        FTA: true,
-        spouseFTA: true,
+        firstTimeApplicant: true,
+        spouseFirstTimeApplicant: true,
         employmentStatus: true
     })
     

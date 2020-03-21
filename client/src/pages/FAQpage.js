@@ -1,11 +1,13 @@
 import React from "react";
 import "./pages.css";
-import FAQbutton from '../components/FAQbutton';
+// import FAQbutton from '../components/FAQbutton';
+import { Footer } from "../components/Footer";
 
 export const FAQpage = () => {
   
   return ( // printed on screen
-    <div className="flexBoxDiv">
+    <body>
+
         <div class="FAQbox">
         <h1>FAQs</h1>
           <div id="FAQaccordion">
@@ -45,6 +47,9 @@ export const FAQpage = () => {
 
           </div>
         </div>
-    </div>
+
+    
+            <Footer/>
+    </body>
   );
 };

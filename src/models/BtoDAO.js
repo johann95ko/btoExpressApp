@@ -26,6 +26,7 @@ class BtoDAO {
     const NearestMarket = req.body.NearestMarket;
     const ShortestDesc = req.body.ShortestDesc;
     const LongestDesc = req.body.LongestDesc;
+    const region = req.body.region;
 
     const newBTO = new this.modelData({
       KeyName,
@@ -40,7 +41,8 @@ class BtoDAO {
       NearestMall,
       NearestMarket,
       ShortestDesc,
-      LongestDesc
+      LongestDesc,
+      region
     });
 
     newBTO

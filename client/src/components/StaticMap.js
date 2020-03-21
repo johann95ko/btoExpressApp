@@ -4,11 +4,9 @@ import {
   withScriptjs,
   GoogleMap,
   Marker,
-  InfoWindow,
-  DirectionsRenderer
+  InfoWindow
 } from "react-google-maps";
 import * as parkData from "../data/btoData.json";
-import mapStyles from "./mapStyles";
 
 function Map() {
   const [selectedPark, setSelectedPark] = useState(null);

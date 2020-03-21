@@ -1,6 +1,5 @@
 /*global google*/
-import React, { Component } from "react";
-
+import React from "react";
 import { compose, withProps, lifecycle } from "recompose";
 // Only can incorporate local states in class based components
 // Recompose allows the incorporation of local states in functional components
@@ -9,29 +8,14 @@ import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker,
-  InfoWindow,
-  DirectionsRenderer
+  Marker
 } from "react-google-maps";
 
 import * as btoData from "../data/btoData.json";
-import { useFetch } from "../customHooks/useFetch";
-
-import { NavBar } from "./NavBar";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-
-import { BTOTableColumn } from "../components/BTOTableColumn";
 
 var locationNames = [];
 var durationDetails = [];
 var distanceDetails = [];
-var mainlist = [];
 var inlocation = [];
 
 const MapWithADirectionsRenderer = compose(
@@ -71,15 +55,10 @@ const MapWithADirectionsRenderer = compose(
     drawRoutes() {
       // let destinations = ['Dover,Singapore', 'Jalan Membina, Singapore', 'Tampines,Singapore', 'Pasir Ris, Singapore']
       let destinations = [
-        "Bukit Batok, Singapore",
         "Choa Chu Kang, Singapore",
         "Tengah, Singapore",
         "Pasir Ris, Singapore",
-        "Tampines, Singapore",
-        "Woodlands, Singapore",
-        "Ang Mo Kio, Singapore",
-        "Bishan, Singapore",
-        "Geylang, Singapore"
+        "Tampines, Singapore"
       ];
 
       const DirectionsService = new google.maps.DirectionsService();
@@ -192,137 +171,10 @@ const MapWithADirectionsRenderer = compose(
           }
         }
       );
-
-      DirectionsService.route(
-        {
-          origin: this.props.origin,
-          destination: destinations[4],
-          travelMode: google.maps.TravelMode.DRIVING
-        },
-        (result, status) => {
-          if (status === google.maps.DirectionsStatus.OK) {
-            locationNames.push(result.request.destination.query);
-            distanceDetails.push(result.routes[0].legs[0].distance.text);
-            durationDetails.push(result.routes[0].legs[0].duration.text);
-
-            this.setState({
-              directions3: result,
-              newDirections: this.state.newDirections.concat([result])
-            });
-          } else {
-            console.error(`error fetching directions ${result}`);
-          }
-        }
-      );
-
-      DirectionsService.route(
-        {
-          origin: this.props.origin,
-          destination: destinations[5],
-          travelMode: google.maps.TravelMode.DRIVING
-        },
-        (result, status) => {
-          if (status === google.maps.DirectionsStatus.OK) {
-            locationNames.push(result.request.destination.query);
-            distanceDetails.push(result.routes[0].legs[0].distance.text);
-            durationDetails.push(result.routes[0].legs[0].duration.text);
-            this.setState({
-              directions3: result,
-              newDirections: this.state.newDirections.concat([result])
-            });
-          } else {
-            console.error(`error fetching directions ${result}`);
-          }
-        }
-      );
-
-      DirectionsService.route(
-        {
-          origin: this.props.origin,
-          destination: destinations[6],
-          travelMode: google.maps.TravelMode.DRIVING
-        },
-        (result, status) => {
-          if (status === google.maps.DirectionsStatus.OK) {
-            locationNames.push(result.request.destination.query);
-            distanceDetails.push(result.routes[0].legs[0].distance.text);
-            durationDetails.push(result.routes[0].legs[0].duration.text);
-            this.setState({
-              directions3: result,
-              newDirections: this.state.newDirections.concat([result])
-            });
-          } else {
-            console.error(`error fetching directions ${result}`);
-          }
-        }
-      );
-
-      DirectionsService.route(
-        {
-          origin: this.props.origin,
-          destination: destinations[7],
-          travelMode: google.maps.TravelMode.DRIVING
-        },
-        (result, status) => {
-          if (status === google.maps.DirectionsStatus.OK) {
-            locationNames.push(result.request.destination.query);
-            distanceDetails.push(result.routes[0].legs[0].distance.text);
-            durationDetails.push(result.routes[0].legs[0].duration.text);
-            this.setState({
-              directions3: result,
-              newDirections: this.state.newDirections.concat([result])
-            });
-          } else {
-            console.error(`error fetching directions ${result}`);
-          }
-        }
-      );
-
-      DirectionsService.route(
-        {
-          origin: this.props.origin,
-          destination: destinations[8],
-          travelMode: google.maps.TravelMode.DRIVING
-        },
-        (result, status) => {
-          if (status === google.maps.DirectionsStatus.OK) {
-            locationNames.push(result.request.destination.query);
-            distanceDetails.push(result.routes[0].legs[0].distance.text);
-            durationDetails.push(result.routes[0].legs[0].duration.text);
-            this.setState({
-              directions3: result,
-              newDirections: this.state.newDirections.concat([result])
-            });
-          } else {
-            console.error(`error fetching directions ${result}`);
-          }
-        }
-      );
-
-      DirectionsService.route(
-        {
-          origin: this.props.origin,
-          destination: destinations[9],
-          travelMode: google.maps.TravelMode.DRIVING
-        },
-        (result, status) => {
-          if (status === google.maps.DirectionsStatus.OK) {
-            locationNames.push(result.request.destination.query);
-            distanceDetails.push(result.routes[0].legs[0].distance.text);
-            durationDetails.push(result.routes[0].legs[0].duration.text);
-            this.setState({
-              directions3: result,
-              newDirections: this.state.newDirections.concat([result])
-            });
-          } else {
-            console.error(`error fetching directions ${result}`);
-          }
-        }
-      );
     }
   })
 )(props => (
-  <div style={{ width: "400vw", height: "10000vh" }}>
+  <div>
     <GoogleMap
       defaultZoom={11.5}
       defaultCenter={new google.maps.LatLng(1.3521, 103.8198)}

@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import StaticMap from "../components/StaticMap";
 import { MapsForm } from "../components/MapsForm";
 import { MapsTable } from "../components/MapsTable";
 import ReactDOM from "react-dom";
 import MapWithADirectionsRenderer from "../components/MapWithADirectionsRenderer";
 import axios from "axios";
+import { Footer } from "../components/Footer";
 
 let btoLocations = [
   "Choa Chu Kang Grove, Keat Hong Link",
@@ -36,6 +37,10 @@ export const LocationPage = () => {
       );
     }
 
+    if (distances.length !== 0) {
+      setDistances([]);
+    }
+
     Promise.all(distancePromises).then(res => {
       for (const eachRes of res) {
         setDistances(curRow => [
@@ -55,20 +60,22 @@ export const LocationPage = () => {
 
   return (
     <body id="locationBody">
-    <div className="main" id="locationInstructions">
-      <h2 className="page-title">Location Calculator</h2>
-      <p className="sub-title">Find out the distances from all available BTOs to your destination</p>
-  
+      <div className="main" id="locationInstructions">
+        <h2 className="page-title">Location Calculator</h2>
+        <p className="sub-title">
+          Let us show you the BTOs that are nearest to your preferred location!
+        </p>
+
         <MapsForm
           handleSubmit={handleSubmit}
           handleChange={handleChange}
           formValue={formValue}
         />
-        </div>
-        <div className="main" id="map">
+      </div>
+      <div className="main" id="map">
         <StaticMap />
-        </div>
-        <div className="main" id="mapTable">
+      </div>
+      <div className="main" id="mapTable">
         <MapsTable
           rows={distances.sort(function(a, b) {
             if (a.duration > b.duration) {
@@ -80,7 +87,6 @@ export const LocationPage = () => {
             }
           })}
         />
-        
       </div>
     </body>
   );
