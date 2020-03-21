@@ -35,7 +35,7 @@ export const FAQpage = () => {
                 </h5>
               </div>
 
-              <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#FAQaccordion">
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#FAQaccordion">
                 <div class="card-body">
                   Hello hello 2
                 </div>
