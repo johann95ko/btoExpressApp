@@ -63,7 +63,7 @@ export const LocationPage = () => {
       <div className="main" id="locationInstructions">
         <h2 className="page-title">Location Calculator</h2>
         <p className="sub-title">
-          Find out the distances from all available BTOs to your destination
+          Let us show you the BTOs that are nearest to your preferred location!
         </p>
 
         <MapsForm
