@@ -51,7 +51,7 @@ class GrantCalculator extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.state);
-
+    
     axios
       .post("http://localhost:5000/api/grants/bto", {
         incomeLevel: this.state.incomeLevel,
@@ -120,12 +120,12 @@ class GrantCalculator extends React.Component {
             </Form.Control>
           </Form.Group>
 
-          <Button variant="primary" type="submit">
-            Submit
+          <Button variant="danger" type="submit">
+            Check my grant
           </Button>
         </Form>
 
-        <div>Grant: {this.state.grant}</div>
+        <h6 className="flexDiv">Grant: ${this.state.grant}</h6>
       </div>
     );
   }
