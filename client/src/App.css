@@ -197,6 +197,17 @@
   color: azure;
 }
 
+#register{
+  background-color: white;
+  text-align: center;
+  padding-top: 50px;
+}
+
+#registerButton{
+  margin:30px;
+}
+
+
 #lari{
   
   transform: translateX(500%);
