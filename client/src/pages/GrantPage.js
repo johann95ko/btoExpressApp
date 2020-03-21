@@ -1,22 +1,36 @@
 import React from "react";
 import "./pages.css";
-import GrantCalculator from '../components/GrantCalculator'
-import GrantInfo from "../components/GrantInfo";
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import FormG from "../components/GrantCalc";
 
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(1),
+      width: theme.spacing(16),
+      height: theme.spacing(16),
+    },
+  },
+}));
 
 const GrantPage = () => {
-  // const [grant, setGrant] = useState(0);
+  const classes = useStyles();
   return (
-    <div className="pageContainer">
-      <div className="flexBoxDiv">
-        <h1>How much grant can I get?</h1>
-        <GrantInfo />
-        <GrantCalculator />
-      </div>
+    <div id="grantForm">
+      
+        <Paper elevation= {24} id="formContent">
+          
+        <h2 id="grantTitle">How much grant can I get?</h2>
+       <FormG/>
+        
+      </Paper>
+      
     </div>
   );
 };
-// As a couple comprising a first-timer and second-timer (FT/ ST couple), 
-// you may be eligible for the Enhanced CPF Housing Grant (EHG) (Singles).
+
 
 export default GrantPage;
