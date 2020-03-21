@@ -5,7 +5,7 @@ import GrantInfo from "../components/GrantInfo";
 
 
 const GrantPage = () => {
-  const [grant, setGrant] = useState(0);
+  // const [grant, setGrant] = useState(0);
   return (
     <div className="pageContainer">
       <div className="flexBoxDiv">
