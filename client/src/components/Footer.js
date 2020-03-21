@@ -94,8 +94,10 @@ export const Footer = () => {
 const FooterContainer=styled.footer`
 .row2{
   padding-bottom:2rem;
+  font-family: "Times New Roman", Times, serif;
 }
 .container{
+    font-family: "Helvetica Neue Light", Helvetica, sans-serif;
     display: flex;
     flex-direction:column;
     position: relative;

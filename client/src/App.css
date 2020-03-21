@@ -101,7 +101,6 @@
 
 
 .carousel-caption p {
-  /*font-family:    'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
   font-family: "Helvetica Neue Light", Helvetica, sans-serif;
   font-size:      1em;
   color:          black;
@@ -247,7 +246,7 @@
 }
 
 #grantForm{
-  padding-top: 150px;
+  padding-top: 50px;
   margin: auto;
   width: 80vw;
 }
@@ -302,4 +301,9 @@
 
 #flexRow{
   background-color:red;
+
+}
+
+.landscape{
+  margin-top: -50px;
 }

@@ -60,12 +60,11 @@ export const LocationPage = () => {
 
   return (
     <body id="locationBody">
-      <div className="main" id="locationInstructions">
-        <h2 className="page-title">Location Calculator</h2>
-        <p className="sub-title">
-          Let us show you the BTOs that are nearest to your preferred location!
-        </p>
-
+      <div className="main" id="locationInstructions" style={{padding:"30px", paddingBottom:"30px", backgroundColor:"#DDDDDD", textAlign:"center"}}>
+          <h2 className="page-title">Location Calculator</h2>
+          <p className="sub-title">
+            Let us show you the BTOs that are nearest to your preferred location!
+          </p>
         <MapsForm
           handleSubmit={handleSubmit}
           handleChange={handleChange}
@@ -87,6 +86,10 @@ export const LocationPage = () => {
             }
           })}
         />
+      </div>
+      <div style={{marginTop:"-20%"}}>
+        <img className="landscape" src="https://cdn.clipart.email/3644262fb7ec3f9b40361e0329af3faa_houston-vector-skyline-singapore-picture-1104648-houston-vector-_2496-752.png" 
+        style={{opacity:0.4, maxWidth:"100%", marginBottom:"-3%"}}></img>
       </div>
       <Footer />
     </body>

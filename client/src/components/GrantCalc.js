@@ -127,7 +127,7 @@ const FormG = () => {
             </Form.Control>
           </Form.Group>
           <div id="formButton">
-          <Button  variant="danger" type="submit" onClick={handleClickOpen}>
+          <Button style={{backgroundColor:"firebrick", border:"none"}} variant="danger" type="submit" onClick={handleClickOpen}>
             Check my grant
           </Button></div>
           <Dialog

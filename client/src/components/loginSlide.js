@@ -108,7 +108,7 @@ export const LoginDrawer = () => {
         <h5>Log In to BTOAnywhere</h5>
     
       <LoginForm/>
-      <Button id="loginButton" variant="contained" color="primary" onClick={loginToggle('loggedIn', true)}>
+      <Button style={{backgroundColor:"firebrick", border:"none"}} id="loginButton" variant="contained" color="primary" onClick={loginToggle('loggedIn', true)}>
              Log In
       </Button>
          
@@ -132,7 +132,7 @@ export const LoginDrawer = () => {
       <h5>Create an Account</h5>
   
     <RegisterForm/>
-    <Button id="registerButton" variant="contained" color="primary" >
+    <Button style={{backgroundColor:"firebrick", border:"none"}} id="registerButton" variant="contained" color="primary" >
            Register
        </Button>
   
@@ -146,10 +146,12 @@ export const LoginDrawer = () => {
   return (
     <div>
         <React.Fragment key='right'>
-          <Button id="logButton" onClick={toggleDrawer('right', true)}>Login</Button>
+          <Button id="logButton" onClick={toggleDrawer('right', true)}>
+            Login
+          </Button>
           <Drawer anchor='right' open={state['right']} onClose={toggleDrawer('right', false)}>
           <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+        <Tabs style={{backgroundColor:"firebrick"}} value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Log In" {...a11yProps(0)} />
           <Tab label="Register" {...a11yProps(1)} />
         </Tabs>
