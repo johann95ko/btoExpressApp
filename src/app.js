@@ -6,7 +6,6 @@ var logger = require("morgan");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 var session = require("express-session");
-var expressLayouts = require("express-ejs-layouts");
 var app = express();
 const passport = require("passport")
 
@@ -14,8 +13,6 @@ const passport = require("passport")
 require('./config/passport')(passport)
 
 // // EJS
-// app.use(expressLayouts)
-// app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }));
 
 var grantRouter = require("./controller/GrantsController");
@@ -29,7 +26,6 @@ app.use(cors());
 app.set("views", path.join(__dirname, "views"));
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
-// app.set("port", process.env.PORT || 5000);
 
 app.use(logger("dev"));
 app.use(express.json());

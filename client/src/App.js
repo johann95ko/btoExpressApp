@@ -9,7 +9,7 @@ import { LocationPage } from "./pages/LocationPage";
 import { FAQpage } from "./pages/FAQpage";
 
 
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (

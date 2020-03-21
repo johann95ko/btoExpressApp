@@ -1,6 +1,5 @@
 /*global google*/
-import React, { Component } from "react";
-
+import React from "react";
 import { compose, withProps, lifecycle } from "recompose";
 // Only can incorporate local states in class based components
 // Recompose allows the incorporation of local states in functional components
@@ -9,29 +8,14 @@ import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker,
-  InfoWindow,
-  DirectionsRenderer
+  Marker
 } from "react-google-maps";
 
 import * as btoData from "../data/btoData.json";
-import { useFetch } from "../customHooks/useFetch";
-
-import { NavBar } from "./NavBar";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-
-import { BTOTableColumn } from "../components/BTOTableColumn";
 
 var locationNames = [];
 var durationDetails = [];
 var distanceDetails = [];
-var mainlist = [];
 var inlocation = [];
 
 const MapWithADirectionsRenderer = compose(

@@ -1,6 +1,6 @@
 import React from "react";
 import "./pages.css";
-import FAQbutton from '../components/FAQbutton';
+// import FAQbutton from '../components/FAQbutton';
 import { Footer } from "../components/Footer";
 
 export const FAQpage = () => {

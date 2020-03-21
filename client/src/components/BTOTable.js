@@ -1,6 +1,6 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useState, useEffect } from "react";
 import { BTOTableColumn } from "./BTOTableColumn";
-import { BTOTableFixed } from "./BTOTableFixed";
 import { LoadSpinners } from "./LoadSpinners";
 import axios from "axios";
 import "./components.css";
@@ -67,33 +67,31 @@ export const BTOTable = props => {
   return (
     <div className="flexRowDiv" style={{ marginTop: "180px" }}>
       <div className="flexRowBTO">
+      // eslint-disable-next-line
         {house.map(eachBTO => {
-          for (const [eachHouseKey, eachHouseVal] of Object.entries(
-            props.displayHouseState
-          )) {
-            if (eachBTO.key == eachHouseKey && eachHouseVal) {
+          for (const [eachHouseKey, eachHouseVal] of Object.entries(props.displayHouseState)) {
+            if (eachBTO.key === eachHouseKey && eachHouseVal) {
               for (const [eachPsiKey, eachPsiVal] of Object.entries(psi)) {
-                if (eachBTO.region == eachPsiKey) {
+                if (eachBTO.region === eachPsiKey) {
                   var btoPsi = eachPsiVal;
                 }
               }
-              return (
-                <BTOTableColumn
-                  key={eachBTO.key}
-                  image={eachBTO.Image}
-                  name={eachBTO.name}
-                  location={eachBTO.location}
-                  type={eachBTO.type}
-                  shortestDesc={eachBTO.shortestDesc}
-                  rooms={eachBTO.rooms}
-                  nearestMrt={eachBTO.nearestMrt}
-                  nearestMall={eachBTO.nearestMall}
-                  nearestMarket={eachBTO.nearestMarket}
-                  launchDate={eachBTO.launchDate}
-                  psiIndex={btoPsi}
-                 
-                />
-              );
+          return (
+            <BTOTableColumn
+              key={eachBTO.key}
+              image={eachBTO.Image}
+              name={eachBTO.name}
+              location={eachBTO.location}
+              type={eachBTO.type}
+              shortestDesc={eachBTO.shortestDesc}
+              rooms={eachBTO.rooms}
+              nearestMrt={eachBTO.nearestMrt}
+              nearestMall={eachBTO.nearestMall}
+              nearestMarket={eachBTO.nearestMarket}
+              launchDate={eachBTO.launchDate}
+              psiIndex={btoPsi}
+            />
+          )
             }
           }
         })}

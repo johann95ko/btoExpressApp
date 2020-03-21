@@ -2,16 +2,12 @@ import React from "react";
 import "./components.css";
 import styled from 'styled-components';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Nav } from "react-bootstrap";
-import Logo from "../Images/BTOLogo.png"
 import './components.css'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import EmailIcon from '@material-ui/icons/Email';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import TelegramIcon from '@material-ui/icons/Telegram';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-
 
 export const Footer = () => {
   return (
@@ -28,7 +24,7 @@ export const Footer = () => {
     <div className="col-md-3 col-sm-6">
         <h4>About Us</h4>
          <ul className="list-unstyled">
-            <li><a href="/"></a></li>
+            {/* <li><a href="/"></a></li> */}
                 <li>    <a href="/">Vision, Mission, and Values</a></li>
                 <li>   <a href="/">Our Role</a></li>
                 <li>  <a href="/">Our Logo</a></li>

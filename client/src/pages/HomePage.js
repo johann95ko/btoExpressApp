@@ -1,5 +1,4 @@
 import React from "react";
-import Container from "@material-ui/core/Container";
 import "./pages.css";
 import { useFetch } from "../customHooks/useFetch";
 import Carousel from "../components/frontCarousel";

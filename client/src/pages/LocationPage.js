@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import StaticMap from "../components/StaticMap";
 import { MapsForm } from "../components/MapsForm";
 import { MapsTable } from "../components/MapsTable";
@@ -37,7 +37,7 @@ export const LocationPage = () => {
       );
     }
     
-    if (distances.length != 0) {
+    if (distances.length !== 0) {
       setDistances([]);
     }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import "./components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Card, CardDeck } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 
 const btoCard = props =>{
 return(
@@ -23,5 +23,3 @@ return(
 }
 
 export default btoCard;
-
-
