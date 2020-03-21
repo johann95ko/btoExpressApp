@@ -83,7 +83,7 @@ export const BTOTableColumn = props => {
             align="center"
             component="th"
             scope="row"
-            style={{ height: "15em" }}
+            style={{ height: "16em" }}
           >
             <div className="flexRowCompareDiv">
               <p><b>Description</b></p> {props.shortestDesc}
