@@ -18,5 +18,4 @@ const GrantPage = () => {
 };
 // As a couple comprising a first-timer and second-timer (FT/ ST couple), 
 // you may be eligible for the Enhanced CPF Housing Grant (EHG) (Singles).
-
 export default GrantPage;
