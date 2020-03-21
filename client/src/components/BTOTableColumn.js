@@ -5,7 +5,7 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import Paper from "@material-ui/core/Paper";
-
+import "../components/components.css"
 // const useStyles = makeStyles({
 //   table: {
 //     width: 10
@@ -16,16 +16,29 @@ export const BTOTableColumn = props => {
   // const classes = useStyles();
 
   return (
-    <TableContainer style={{ width: "25vw" }} component={Paper}>
-      <Table style={{ width: "25vw" }}>
+    <TableContainer style={{ height:"1590px" , width: "20vw" }} component={Paper}>
+        <TableBody>
+          <TableCell 
+            class="MuiTableCell-paddingNone"
+            align="center"
+            component="th"
+            scope="row"
+            style={{height:"150",width:"20vw"}}>
+            <div className="flexRowPicture" >
+              <img src={props.image} id="comparepicture"></img>
+            </div>
+          </TableCell>
+        </TableBody>
+
+      <Table style={{ width: "20vw" }}>
         <TableBody>
           <TableCell
-            style={{ backgroundColor: "#C5CAE9", height: "5.5em" }}
+            style={{ backgroundColor: "lightgrey", height: "5.5em" }}
             align="center"
             component="th"
             scope="row"
           >
-            {props.name}
+            <h3 className="bto-name" id="cardtitle">{props.name}</h3>
           </TableCell>
         </TableBody>
 
@@ -37,7 +50,7 @@ export const BTOTableColumn = props => {
             style={{ height: "8.5em" }}
           >
             <div className="flexRowCompareDiv">
-              <p>Location</p> {props.location}
+              <p><b>Location</b></p> {props.location}
             </div>
           </TableCell>
         </TableBody>
@@ -46,10 +59,10 @@ export const BTOTableColumn = props => {
             align="center"
             component="th"
             scope="row"
-            style={{ height: "5.5em" }}
+            style={{ height: "8.5em" }}
           >
             <div className="flexRowCompareDiv">
-              <p>Type of Estate</p> {props.type}
+              <p><b>Type of Estate</b></p> {props.type}
             </div>
           </TableCell>
         </TableBody>
@@ -58,10 +71,10 @@ export const BTOTableColumn = props => {
             align="center"
             component="th"
             scope="row"
-            style={{ height: "25em" }}
+            style={{ height: "8.5em" }}
           >
             <div className="flexRowCompareDiv">
-              <p>Launch Date</p> {props.launchDate}
+              <p><b>Launch Date</b></p> {props.launchDate}
             </div>
           </TableCell>
         </TableBody>
@@ -70,10 +83,10 @@ export const BTOTableColumn = props => {
             align="center"
             component="th"
             scope="row"
-            style={{ height: "25em" }}
+            style={{ height: "16em" }}
           >
             <div className="flexRowCompareDiv">
-              <p>Description</p> {props.shortestDesc}
+              <p><b>Description</b></p> {props.shortestDesc}
             </div>
           </TableCell>
         </TableBody>
@@ -82,10 +95,10 @@ export const BTOTableColumn = props => {
             align="center"
             component="th"
             scope="row"
-            style={{ height: "25em" }}
+            style={{ height: "12em" }}
           >
             <div className="flexRowCompareDiv">
-              <p>Rooms Available</p> {props.rooms.join(", ")}
+              <p><b>Rooms Available</b></p> {props.rooms.join(", ")}
             </div>
           </TableCell>
         </TableBody>
@@ -94,10 +107,10 @@ export const BTOTableColumn = props => {
             align="center"
             component="th"
             scope="row"
-            style={{ height: "25em" }}
+            style={{ height: "8.5em" }}
           >
             <div className="flexRowCompareDiv">
-              <p>Nearest MRT</p> {props.nearestMrt}
+              <p><b>Nearest MRT</b></p> {props.nearestMrt}
             </div>
           </TableCell>
         </TableBody>
@@ -106,10 +119,10 @@ export const BTOTableColumn = props => {
             align="center"
             component="th"
             scope="row"
-            style={{ height: "25em" }}
+            style={{ height: "8.5em" }}
           >
             <div className="flexRowCompareDiv">
-              <p>Nearest Mall</p> {props.nearestMall}
+              <p><b>Nearest Mall</b></p> {props.nearestMall}
             </div>
           </TableCell>
         </TableBody>
@@ -118,10 +131,10 @@ export const BTOTableColumn = props => {
             align="center"
             component="th"
             scope="row"
-            style={{ height: "25em" }}
+            style={{ height: "8.5em" }}
           >
             <div className="flexRowCompareDiv">
-              <p>Nearest Market</p> {props.nearestMarket}
+              <p><b>Nearest Market</b></p> {props.nearestMarket}
             </div>
           </TableCell>
         </TableBody>
@@ -131,10 +144,10 @@ export const BTOTableColumn = props => {
             align="center"
             component="th"
             scope="row"
-            style={{ height: "25em" }}
+            style={{ height: "8.5em" }}
           >
             <div className="flexRowCompareDiv">
-              <p>Region PSI readings</p> {props.psiIndex}
+              <p><b>Region PSI readings</b></p> {props.psiIndex}
             </div>
           </TableCell>
         </TableBody>

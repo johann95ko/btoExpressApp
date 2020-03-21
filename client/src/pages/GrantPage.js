@@ -1,23 +1,36 @@
 import React from "react";
 import "./pages.css";
-import GrantCalculator from '../components/GrantCalculator'
-import {Footer} from '../components/Footer'
-import "../components/components.css";
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import FormG from "../components/GrantCalc";
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(1),
+      width: theme.spacing(16),
+      height: theme.spacing(16),
+    },
+  },
+}));
 
 const GrantPage = () => {
-  // const calculateGrant;
+  const classes = useStyles();
   return (
-    <div className="page-container">
-    <div className="content-wrap">
-    <div className="flexBoxDiv">
-      Grant Calculator
-      <GrantCalculator />
+    <div id="grantForm">
       
-    </div>
-    </div>
-    <Footer/>
+        <Paper elevation= {24} id="formContent">
+          
+        <h2 id="grantTitle">How much grant can I get?</h2>
+       <FormG/>
+        
+      </Paper>
+      
     </div>
   );
 };
+
 
 export default GrantPage;
