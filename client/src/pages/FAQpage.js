@@ -5,6 +5,7 @@ import "./pages.css";
 // import FAQbutton from '../components/FAQbutton';
 import { Footer } from "../components/Footer";
 import faqlogo from "../Images/undraw_searching_p5ux.svg";
+import FAQbutton from "../components/FAQbutton";
 
 export const FAQpage = () => {
   
@@ -64,10 +65,9 @@ The buyers can check the status of the Request for Value via HDB Resale Portal.<
       <Card.Body>Typically, an estate that has been around for more than 20 years would be considered as a matured one and those that have been built in recent years would be considered as a non-mature estate. Generally, most people would prefer mature estates over non-mature ones due to the amenities available in an estate.</Card.Body>
     </Accordion.Collapse>
   </Card>
-
-
-
 </Accordion>
+
+<img src={faqlogo}></img>
         </div>
 
       
