@@ -251,7 +251,7 @@ export const LoginDrawer = () => {
           <Button
             id="loginButton"
             variant="contained"
-            color="primary"
+            color="secondary"
             onClick={loginToggle("loggedIn", true)}
           >
             Log In
@@ -323,7 +323,7 @@ export const LoginDrawer = () => {
           <Button
             id="registerButton"
             variant="contained"
-            color="primary"
+            color="secondary"
             onClick={() => {
               registerToggle();
             }}
@@ -353,9 +353,10 @@ export const LoginDrawer = () => {
               <Tabs
                 value={value}
                 onChange={handleChange}
+                color="primary"
                 aria-label="simple tabs example"
               >
-                <Tab label="Log In" {...a11yProps(0)} />
+                <Tab textcolor="secondary" label="Log In" {...a11yProps(0)} />
                 <Tab label="Register" {...a11yProps(1)} />
               </Tabs>
             </AppBar>

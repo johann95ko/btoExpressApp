@@ -14,7 +14,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const FormG = () => {
   const [FTAstate, FTAsetState] = React.useState({
-    firstTimeApplicant: false
+    firstTimeApplicant: true
   });
   const [SFTAstate, SFTAsetState] = React.useState({
     spouseFirstTimeApplicant: true
