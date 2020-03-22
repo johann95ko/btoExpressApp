@@ -85,7 +85,7 @@
 }
 
 .page-title{
-  font-family: "HelveticaNeue", "Helvetica Neue Light", Helvetica, sans-serif;
+  font-family: montserrat;
   text-align: center;
   font-size: 45px;
   padding-top: 30px;
@@ -181,6 +181,8 @@
 
 #addButton{
   text-align: center;
+  border:none;
+  color: firebrick;
 
 }
 

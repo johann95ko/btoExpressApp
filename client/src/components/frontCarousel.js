@@ -6,13 +6,14 @@ import BTOfront from "../Images/BTOfront.png";
 import Grants from "../Images/Grants.jpg";
 import LocationCalc from "../Images/Location.jpg";
 import Button from "react-bootstrap/Button";
+import {Image} from "react-bootstrap";
 
 const frontCarousel = props => {
   return (
     <Carousel>
       <Carousel.Item>
         <img className="d-block w-100" src={BTOfront} alt="First slide" />
-
+        
         <Carousel.Caption>
           <div>
             <Button id="BTOCaption" variant="outline-danger" href="#section2">
