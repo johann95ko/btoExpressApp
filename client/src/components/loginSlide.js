@@ -3,8 +3,6 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
-import Image from "react-bootstrap/Image";
-import Lari from "../Images/lariLiiiii.jpg";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
@@ -16,6 +14,7 @@ import axios from "axios";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import useGlobalState from "../customHooks/useGlobalState";
+import Dropdown from 'react-bootstrap/Dropdown'
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -84,6 +83,7 @@ export const LoginDrawer = () => {
   const [registerError, setRegisterError] = useState("");
   const [value, setValue] = React.useState(0);
 
+
   const handleUserChange = event => {
     setUserValue(event.target.value);
   };
@@ -141,13 +141,13 @@ export const LoginDrawer = () => {
       })
       .then(response => {
         let res = response.data;
-        if (res == "username or password does not exist") {
+        if (res === "username or password does not exist") {
           setOpenSnack(true);
-        } else if (res == "login success") {
+        } else if (res === "login success") {
           loginsetState({ ...loginState, [props]: logged });
           setState({ ...state, right: false });
-          globalState.setLog({ loggedIn: true });
-          localStorage.setItem("loggedIn", true);
+          globalState.setLog({ loggedIn: logged });
+          localStorage.setItem("loggedIn", logged);
           localStorage.setItem("username", userValue);
         }
       })
@@ -155,6 +155,8 @@ export const LoginDrawer = () => {
         console.log(error);
       });
   };
+
+  
 
   const registerToggle = () => {
     axios
@@ -166,7 +168,7 @@ export const LoginDrawer = () => {
       })
       .then(response => {
         let res = response.data;
-        if (res == "user registration successful") {
+        if (res === "user registration successful") {
           setOpenSnackReg(true);
           setRegisterError(res);
           setSnackSuccess("success");
@@ -181,10 +183,24 @@ export const LoginDrawer = () => {
   };
 
   const loggedInFunction = () => {
-    if (localStorage.getItem("loggedIn")) {
-      return <div id="user-name">{localStorage.getItem("username")}</div>;
-    }
+    
+      while (localStorage.getItem("loggedIn")) {
+      // return <div id="user-name">{localStorage.getItem("username")}</div>;
+      return(
+      <Dropdown>
+        <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
+        {localStorage.getItem("username")}
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item><Button onClick={loginToggle("loggedIn",false)}>Log Out</Button></Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+
+      )
+    } 
   };
+  
 
   const list = anchor => {
     return (
@@ -312,10 +328,12 @@ export const LoginDrawer = () => {
     );
   };
 
+  
+
   return (
     <div>
       <React.Fragment key="right">
-        <Button id="logButton" onClick={toggleDrawer("right", true)}>
+      <Button id="logButton" onClick={toggleDrawer("right", true)}>
           Login
         </Button>
         <Drawer
@@ -342,6 +360,7 @@ export const LoginDrawer = () => {
         </Drawer>
       </React.Fragment>
       {loggedInFunction()}
+    
     </div>
   );
 };
