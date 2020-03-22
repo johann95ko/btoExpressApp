@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
 export const ChooseHouseForm = props => {
   const classes = useStyles();
   return (
-    <div className={classes.root} >
+    <div id="compareBto" className={classes.root} >
       <FormControl component="fieldset" className={classes.formControl} fullWidth="true">
         <FormLabel component="legend" style={{textAlign:"center"}}>Choose your Picks</FormLabel>
         <FormGroup id="formGroup" className={classes.row}>

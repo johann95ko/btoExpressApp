@@ -161,10 +161,15 @@
 #formGroup{
   justify-content: center;
 }
+#compareBto{
+  background-color: #eeeeee !important;
+}
 
 #BTOButton{
   text-align: center;
   padding-bottom: 20px;
+  background-color: #eeeeee !important;
+
 }
 
 #addButton{
@@ -217,6 +222,7 @@
 
 #section2{
   min-height:60vh;
+  /* padding-bottom: 20%; */
 }
 
 
@@ -301,7 +307,6 @@
 
 #flexRow{
   background-color:red;
-
 }
 
 .landscape{

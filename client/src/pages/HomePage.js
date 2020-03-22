@@ -30,7 +30,7 @@ export const HomePage = () => {
         </div>
       </div>
 
-      {/*       
+            
       <div class="main" id="section2">
         <h1 className="page-title">Available BTOs</h1>
         <h3 className="page-title-2"><center>We help you choose the right home with ease.</center></h3>
@@ -39,8 +39,8 @@ export const HomePage = () => {
     <div class="col-md-2">
     </div>
  
-    <div class="col-md-8"> */}
-      {/* 
+    <div class="col-md-8">
+      
     <CardDeck>
           {data.map(eachHousing => (
             <Card
@@ -50,14 +50,14 @@ export const HomePage = () => {
               Image={eachHousing.Image}
             />
           ))}
-        </CardDeck> */}
-      {/* </div> */}
+        </CardDeck>
+      </div>
 
-      {/* <div class="col-md-2">
-    </div> */}
-      {/* </div> */}
+      <div class="col-md-2">
+    </div>
+      </div>
 
-      {/* </div> */}
+      </div>
     </body>
   );
 };
