@@ -83,6 +83,7 @@ export const LoginDrawer = () => {
   const [registerError, setRegisterError] = useState("");
   const [value, setValue] = React.useState(0);
 
+
   const handleUserChange = event => {
     setUserValue(event.target.value);
   };
@@ -140,9 +141,9 @@ export const LoginDrawer = () => {
       })
       .then(response => {
         let res = response.data;
-        if (res == "username or password does not exist") {
+        if (res === "username or password does not exist") {
           setOpenSnack(true);
-        } else if (res == "login success") {
+        } else if (res === "login success") {
           loginsetState({ ...loginState, [props]: logged });
           setState({ ...state, right: false });
           globalState.setLog({ loggedIn: logged });
@@ -167,7 +168,7 @@ export const LoginDrawer = () => {
       })
       .then(response => {
         let res = response.data;
-        if (res == "user registration successful") {
+        if (res === "user registration successful") {
           setOpenSnackReg(true);
           setRegisterError(res);
           setSnackSuccess("success");
@@ -327,10 +328,12 @@ export const LoginDrawer = () => {
     );
   };
 
+  
+
   return (
     <div>
       <React.Fragment key="right">
-        <Button id="logButton" onClick={toggleDrawer("right", true)}>
+      <Button id="logButton" onClick={toggleDrawer("right", true)}>
           Login
         </Button>
         <Drawer
