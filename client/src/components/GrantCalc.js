@@ -32,14 +32,19 @@ const FormG = () => {
   const [open, setOpen] = React.useState(false);
 
   const handleFTA = () => event => {
-    FTAsetState({ ...FTAstate, firstTimeApplicant: event.target.value });
+    if(event.target.value === "true"){
+      FTAsetState({ ...FTAstate, firstTimeApplicant: true });
+    } else {
+      FTAsetState({ ...FTAstate, firstTimeApplicant: false });
+    }
   };
 
   const handleSFTA = () => event => {
-    SFTAsetState({
-      ...SFTAstate,
-      spouseFirstTimeApplicant: event.target.value
-    });
+    if(event.target.value === "true"){
+      SFTAsetState({ ...SFTAstate, spouseFirstTimeApplicant: true });
+    } else {
+      SFTAsetState({ ...SFTAstate, spouseFirstTimeApplicant: false });
+    }
   };
 
   const handleIncome = () => event => {
@@ -50,10 +55,11 @@ const FormG = () => {
   };
 
   const handleEmployed = () => event => {
-    employmentsetState({
-      ...employmentstate,
-      employmentStatus: event.target.value
-    });
+    if(event.target.value === "employed"){
+      employmentsetState({ ...employmentstate, employmentStatus: true });
+    } else {
+      employmentsetState({ ...employmentstate, employmentStatus: false });
+    }
   };
 
   const handleClickOpen = () => {
@@ -80,6 +86,8 @@ const FormG = () => {
       .catch(error => {
         console.log(error);
       });
+    
+    console.log([FTAstate, SFTAstate, incomestate, employmentstate, grantstate]);
   };
 
   return (
