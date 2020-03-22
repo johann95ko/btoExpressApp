@@ -3,8 +3,8 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
-import { ChooseHouseForm } from "../components/ChooseHouseForm";
-import { BTOTable } from "../components/BTOTable";
+import { ChooseHouseForm } from "./ChooseHouseForm";
+import { BTOTable } from "./BTOTable";
 
 
 const useStyles = makeStyles({
@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     },
   });
 
-  export const TemporaryDrawer = () => {
+  export const ChooseBto = () => {
     const classes = useStyles();
     const [state, setState] = React.useState({
       bottom: false,  
@@ -25,7 +25,7 @@ const useStyles = makeStyles({
         cck: true,
         Tengah: true,
         Pasir: false,
-        Tampines: false,
+        Tampines: true,
         
       });
 

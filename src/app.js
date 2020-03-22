@@ -7,8 +7,8 @@ var bodyParser = require("body-parser");
 var cors = require("cors");
 var session = require("express-session");
 var app = express();
-const passport = require("passport")
-
+const passport = require("passport");
+var mongoose = require("mongoose");
 // Passport config
 require('./config/passport')(passport)
 
@@ -66,5 +66,12 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+// Connecting to MongoDB via Mongoose
+const db = require('./config/keys').mongoURI;
+
+mongoose
+.connect(db)
+.catch(err => console.log(err));
 
 module.exports = app;

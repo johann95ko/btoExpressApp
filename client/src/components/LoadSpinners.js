@@ -3,7 +3,7 @@ import React from "react";
 
 export const LoadSpinners = () => {
   return (
-    <div>
+    <div style={{ marginTop: "400px", marginLeft: "46%" }}>
       <Spinner animation="grow" variant="primary" />
       <Spinner animation="grow" variant="secondary" />
       <Spinner animation="grow" variant="success" />

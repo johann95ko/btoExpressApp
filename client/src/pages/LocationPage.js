@@ -36,7 +36,7 @@ export const LocationPage = () => {
         })
       );
     }
-    
+
     if (distances.length !== 0) {
       setDistances([]);
     }
@@ -88,7 +88,6 @@ export const LocationPage = () => {
           })}
         />
       </div>
-      <Footer />
     </body>
   );
 };

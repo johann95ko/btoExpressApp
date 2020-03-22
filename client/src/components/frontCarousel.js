@@ -15,7 +15,7 @@ const frontCarousel = props => {
 
         <Carousel.Caption>
           <div>
-            <Button id="BTOCaption" variant="outline-danger" href="#section2">
+            <Button id="BTOCaption" variant="outline-danger" href="/compare">
               {" "}
               View All BTOs
             </Button>
@@ -23,21 +23,21 @@ const frontCarousel = props => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block w-100" src={Grants} alt="Third slide" />
+        <img className="d-block w-100" id="carousel-picture" src={Grants} alt="Third slide" />
 
         <Carousel.Caption>
           <h3 id="grantCaption">Find Out your Eligible Grant Amount</h3>
-          <Button id="grantButton" variant="dark" href="/grant">
+          <Button id="grantButton" variant="danger" href="/grant">
             View Grant Calculator
           </Button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block w-100" src={LocationCalc} alt="Third slide" />
+        <img className="d-block w-100" id="carousel-picture" src={LocationCalc} alt="Third slide" />
 
         <Carousel.Caption>
           <h3>Check Distance to Desired Locations</h3>
-          <Button id="locationButton" variant="dark" href="/location">
+          <Button id="locationButton" variant="danger" href="/location">
             View Location Calculator
           </Button>
         </Carousel.Caption>
