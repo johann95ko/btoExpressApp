@@ -12,7 +12,8 @@
   width: 90vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-evenly; 
+  padding-bottom: 50%;
 }
 
 .flexRowPicture {
@@ -34,7 +35,7 @@
 .main-footer {
   color: white;
   position: relative;
-  padding-top: 3em;
+  padding-top: 0;
   bottom: 0;
   width: 100%;
 }
@@ -73,4 +74,8 @@
 .formsDiv {
   display: flex;
   flex-direction: column;
+}
+
+.mapFormButton{
+  margin-left:5px; 
 }

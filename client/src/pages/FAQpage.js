@@ -7,6 +7,11 @@ export const FAQpage = () => {
   return (
     // printed on screen
     <body>
+      <div className="main" style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#DDDDDD", textAlign:"center"}}>
+        <h2 className="page-title">Frequently Asked Questions</h2>
+        <p className="sub-title">We will answer all your burning questions.</p>
+      </div>
+      <div style={{backgroundImage:"https://cdn.clipart.email/3644262fb7ec3f9b40361e0329af3faa_houston-vector-skyline-singapore-picture-1104648-houston-vector-_2496-752.png"}}>
       <div class="FAQbox">
         <h1>FAQs</h1>
         <div id="FAQaccordion">
@@ -61,7 +66,8 @@ export const FAQpage = () => {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+        </div>
     </body>
   );
 };

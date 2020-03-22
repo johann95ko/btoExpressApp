@@ -60,18 +60,17 @@ export const LocationPage = () => {
 
   return (
     <body id="locationBody">
-      <div className="main" id="locationInstructions">
-        <h2 className="page-title">Location Calculator</h2>
-        <p className="sub-title">
-          Let us show you the BTOs that are nearest to your preferred location!
-        </p>
-
-        <MapsForm
+      <div className="main" id="locationInstructions" style={{padding:"30px", paddingBottom:"30px", backgroundColor:"#DDDDDD", textAlign:"center"}}>
+          <h2 className="page-title">Location Calculator</h2>
+          <p className="sub-title">
+            Let us show you the BTOs that are nearest to your preferred location!
+          </p>
+      </div>        
+      <MapsForm
           handleSubmit={handleSubmit}
           handleChange={handleChange}
           formValue={formValue}
-        />
-      </div>
+      />
       <div className="main" id="map">
         <StaticMap />
       </div>

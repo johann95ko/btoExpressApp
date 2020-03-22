@@ -1,7 +1,7 @@
 import React from "react";
 import "./pages.css";
 import { ChooseBto } from "../components/chooseBTO";
-
+import { Footer } from "../components/Footer";
 import { useFetch } from "../customHooks/useFetch";
 import { LoadSpinners } from "../components/LoadSpinners";
 import useGlobalState from "../customHooks/useGlobalState";
@@ -38,6 +38,10 @@ export const ComparePage = () => {
           <ChooseBto />
         </div>
       </div>
+      {/* <div>
+        <img className="landscape" src="https://cdn.clipart.email/3644262fb7ec3f9b40361e0329af3faa_houston-vector-skyline-singapore-picture-1104648-houston-vector-_2496-752.png" 
+        style={{opacity:0.4, maxWidth:"100%", marginBottom:"-4%"}}></img>
+      </div> */}
     </body>
   );
 };

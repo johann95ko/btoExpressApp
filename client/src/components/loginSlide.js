@@ -253,6 +253,7 @@ export const LoginDrawer = () => {
             variant="contained"
             color="secondary"
             onClick={loginToggle("loggedIn", true)}
+            style={{backgroundColor:"firebrick", border:"none"}}
           >
             Log In
           </Button>
@@ -327,6 +328,7 @@ export const LoginDrawer = () => {
             onClick={() => {
               registerToggle();
             }}
+            style={{backgroundColor:"firebrick", border:"none"}}
           >
             Register
           </Button>
@@ -356,8 +358,8 @@ export const LoginDrawer = () => {
                 color="primary"
                 aria-label="simple tabs example"
               >
-                <Tab textcolor="secondary" label="Log In" {...a11yProps(0)} />
-                <Tab label="Register" {...a11yProps(1)} />
+                <Tab style={{backgroundColor:"firebrick", border:"none"}} label="Log In" {...a11yProps(0)} />
+                <Tab style={{backgroundColor:"firebrick", border:"none"}} label="Register" {...a11yProps(1)} />
               </Tabs>
             </AppBar>
             <TabPanel value={value} index={0}>
