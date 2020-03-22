@@ -36,7 +36,7 @@ export const LocationPage = () => {
         })
       );
     }
-    
+
     if (distances.length !== 0) {
       setDistances([]);
     }

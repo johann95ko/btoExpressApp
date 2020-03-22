@@ -125,6 +125,7 @@ const FormG = () => {
           </Form.Control>
         </Form.Group>
 
+<<<<<<< HEAD
           <Form.Group controlId="formEmployment">
             <Form.Label>Employment status</Form.Label>
             <Form.Control as="select" onChange={handleEmployed()}>
@@ -134,6 +135,17 @@ const FormG = () => {
           </Form.Group>
           <div id="formButton">
           <Button style={{backgroundColor:"firebrick", border:"none"}} variant="danger" type="submit" onClick={handleClickOpen}>
+=======
+        <Form.Group controlId="formEmployment">
+          <Form.Label>Employment status</Form.Label>
+          <Form.Control as="select" onChange={handleEmployed()}>
+            <option value="employed">Employed</option>
+            <option value="unemployed">Unemployed</option>
+          </Form.Control>
+        </Form.Group>
+        <div id="formButton">
+          <Button variant="danger" type="submit" onClick={handleClickOpen}>
+>>>>>>> origin/master
             Check my grant
           </Button>
         </div>

@@ -15,7 +15,7 @@ const frontCarousel = props => {
 
         <Carousel.Caption>
           <div>
-            <Button id="BTOCaption" variant="outline-danger" href="#section2">
+            <Button id="BTOCaption" variant="outline-danger" href="/compare">
               {" "}
               View All BTOs
             </Button>
