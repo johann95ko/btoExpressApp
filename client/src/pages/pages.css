@@ -23,8 +23,8 @@
 }
 
 .pageContainer {
-  height: 800px;
-  width: 90%;
+  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -37,28 +37,22 @@
 }
 
 .FAQbox {
-  height: 60%;
+  height: 100vh;
   width: 100%;
   background-color: #eee;
   color: #444;
   cursor: pointer;
-  padding: 18px;
-  width: 700px;
+  padding: 60px;
   text-align: left;
   border: none;
   outline: none;
   transition: 0.4s;
-  margin-bottom: 10px;
+
+  margin-top: 95px;
   box-shadow: 0 1px 1px 0 rgba(10, 16, 34, 0.2);
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
   flex: 1;
   border-radius: 7px;
-  font-size: 14px;
+  font-size: 16px;
 }
-
-.FAQbox.active,
-.FAQbox:hover {
-  background-color: #ddd;
-}
-

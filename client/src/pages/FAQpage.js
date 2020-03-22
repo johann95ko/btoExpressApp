@@ -1,55 +1,76 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Accordion, Card, Button, Row, Col, Image, Container} from "react-bootstrap";
 import "./pages.css";
 // import FAQbutton from '../components/FAQbutton';
 import { Footer } from "../components/Footer";
+import faqlogo from "../Images/undraw_searching_p5ux.svg";
 
 export const FAQpage = () => {
   
   return ( // printed on screen
     <body>
-
         <div class="FAQbox">
-        <h1>FAQs</h1>
-          <div id="FAQaccordion">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <button type ="button" class="btn btn-link" data-toggle="collapse " data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Question 1
-                  </button>
-                  
-                </h5>
-              </div>
+          <h1>Ask us!</h1>
+        <Accordion defaultActiveKey="0">
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="0">
+        Why does staying with my parents affect how much Grant I receive?
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="0">
+      <Card.Body>Hello! I'm the body</Card.Body>
+    </Accordion.Collapse>
+  </Card>
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="1">
+        Click me!
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="1">
+      <Card.Body>Hello! I'm another body</Card.Body>
+    </Accordion.Collapse>
+  </Card>
 
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#FAQaccordion">
-                <div class="card-body">
-                  Hello!
-                </div>
-              </div> 
-            </div>
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="2">
+        Where can I check my HDB resale price?
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="2">
+      <Card.Body>Hello! I'm the body</Card.Body>
+    </Accordion.Collapse>
+  </Card>
 
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
-                    Question 2
-                  </button>
-                </h5>
-              </div>
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="3">
+       What is the difference betweem matured and non-matured estates?
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="3">
+      <Card.Body>Hello! I'm the body</Card.Body>
+    </Accordion.Collapse>
+  </Card>
 
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#FAQaccordion">
-                <div class="card-body">
-                  Hello hello 2
-                </div>
-              </div>
-            </div>
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="4">
+        What documents do I need for the application process?
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="4">
+      <Card.Body>Hello! I'm the body</Card.Body>
+    </Accordion.Collapse>
+  </Card>
 
-
-          </div>
+</Accordion>
         </div>
 
-    
-            <Footer/>
+      
     </body>
   );
 };

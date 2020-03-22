@@ -48,8 +48,10 @@
 .mr-auto{
   position: relative;
   left: 40px;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: montserrat;
   font-size: 18px;
+  font-weight: bold;
+  color: white;
 }
 
 .mr-auto .tab {
@@ -61,16 +63,25 @@
 }
 
 .navColour .logo-title{
-  font-size: x-large;
+  /* font-size: x-large; */
+  font-family: montserrat;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.Navbar img{
+  margin-right: 10px;
+  margin-bottom: 5px;
 }
 
 .Navbar{
-  font-family: Georgia;
+  font-family: monospace;
   font-size: 40px;
+  
 }
 
 .view-bto-button{
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+  font-family: montserrat;
 }
 
 .page-title{
@@ -81,17 +92,17 @@
   margin-bottom: 30px;
 }
 .sub-title{
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+  font-family: montserrat;
   margin-top: -20px;
 }
 
 .bto-name{
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+  font-family: montserrat;
   font-size: 30px !important;
 }
 
 .bto-text{
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+  font-family: montserrat;
   text-align: left;
 }
 
@@ -184,27 +195,44 @@
 
 
 #login{
-  background-color: white;
+  background-color:white;
   text-align: center;
   padding-top: 50px;
+  font-family: montserrat;
+
 }
+
+#simple-tab-1{
+  background-color:firebrick;
+}
+#simple-tab-0{
+  background-color: firebrick;
+}
+
+
 
 #loginButton{
   margin:30px;
+  font-family: montserrat;
+  background-color: firebrick;
 }
 
 #logButton{
   color: azure;
+  font-family: montserrat;
 }
 
 #register{
   background-color: white;
   text-align: center;
   padding-top: 50px;
+  font-family: montserrat;
 }
 
 #registerButton{
   margin:30px;
+  background-color: firebrick;
+  font-family: montserrat;
 }
 
 
