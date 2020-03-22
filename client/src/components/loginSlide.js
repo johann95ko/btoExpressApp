@@ -184,7 +184,7 @@ export const LoginDrawer = () => {
     loginsetState({ ...loginState, loggedIn: false });
     globalState.setLog({ loggedIn: false });
     localStorage.setItem("loggedIn", false);
-    console.log(localStorage.getItem("loggedIn"));
+  
   };
 
   const loggedInFunction = () => {
