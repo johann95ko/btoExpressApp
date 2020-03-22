@@ -6,7 +6,7 @@ import Card from "../components/bCard";
 import { CardDeck } from "react-bootstrap";
 import { LoadSpinners } from "../components/LoadSpinners";
 import { Footer } from "../components/Footer";
-import { lazy, Suspense } from "react";
+
 import useGlobalState from "../customHooks/useGlobalState";
 
 export const HomePage = () => {
@@ -15,16 +15,21 @@ export const HomePage = () => {
 
   if (loading) {
     // console.log("loading");
-    return <LoadSpinners />;
+    return (
+      <div style={{ height: "100vh" }}>
+        <LoadSpinners />
+      </div>
+    );
   }
 
   return (
     <body>
-      <Suspense fallback={<div>Loading.....</div>}>
-        <div className="main" id="section1">
+      <div className="main" id="section1">
+        <div style={{ height: "117vh" }}>
           <Carousel />
         </div>
-      </Suspense>
+      </div>
+
       {/*       
       <div class="main" id="section2">
         <h1 className="page-title">Available BTOs</h1>
