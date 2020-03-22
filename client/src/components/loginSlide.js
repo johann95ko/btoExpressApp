@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
-import Image from "react-bootstrap/Image";
-import Lari from "../Images/lariLiiiii.jpg";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
@@ -16,6 +14,7 @@ import axios from "axios";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import useGlobalState from "../customHooks/useGlobalState";
+import Dropdown from "react-bootstrap/Dropdown";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -65,6 +64,7 @@ const useStyles = makeStyles(theme => ({
 export const LoginDrawer = () => {
   const globalState = useGlobalState();
   const classes = useStyles();
+
   const [snackSuccess, setSnackSuccess] = React.useState("error");
   const [openSnack, setOpenSnack] = React.useState(false);
   const [openSnackReg, setOpenSnackReg] = React.useState(false);
@@ -141,11 +141,11 @@ export const LoginDrawer = () => {
       })
       .then(response => {
         let res = response.data;
-        if (res == "username or password does not exist") {
+        if (res === "username or password does not exist") {
           setOpenSnack(true);
-        } else if (res == "login success") {
-          loginsetState({ ...loginState, [props]: logged });
-          setState({ ...state, right: false });
+        } else if (res === "login success") {
+          loginsetState({ ...loginState, loggedIn: true });
+          setState({ ...state, right: true });
           globalState.setLog({ loggedIn: true });
           localStorage.setItem("loggedIn", true);
           localStorage.setItem("username", userValue);
@@ -166,7 +166,7 @@ export const LoginDrawer = () => {
       })
       .then(response => {
         let res = response.data;
-        if (res == "user registration successful") {
+        if (res === "user registration successful") {
           setOpenSnackReg(true);
           setRegisterError(res);
           setSnackSuccess("success");
@@ -180,10 +180,33 @@ export const LoginDrawer = () => {
       });
   };
 
+  const logOutToggle = () => {
+    loginsetState({ ...loginState, loggedIn: false });
+    globalState.setLog({ loggedIn: false });
+    localStorage.setItem("loggedIn", false);
+  
+  };
+
   const loggedInFunction = () => {
-    if (localStorage.getItem("loggedIn")) {
-      return <div id="user-name">{localStorage.getItem("username")}</div>;
-    }
+    return (
+      <Dropdown>
+        <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
+          {localStorage.getItem("username")}
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item>
+            <Button
+              onClick={() => {
+                logOutToggle();
+              }}
+            >
+              Log Out
+            </Button>
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+    );
   };
 
   const list = anchor => {
@@ -230,6 +253,7 @@ export const LoginDrawer = () => {
             variant="contained"
             color="primary"
             onClick={loginToggle("loggedIn", true)}
+            style={{backgroundColor:"firebrick", border:"none"}}
           >
             Log In
           </Button>
@@ -304,6 +328,7 @@ export const LoginDrawer = () => {
             onClick={() => {
               registerToggle();
             }}
+            style={{backgroundColor:"firebrick", border:"none"}}
           >
             Register
           </Button>
@@ -312,36 +337,39 @@ export const LoginDrawer = () => {
     );
   };
 
-  return (
-    <div>
-      <React.Fragment key="right">
-        <Button id="logButton" onClick={toggleDrawer("right", true)}>
-          Login
-        </Button>
-        <Drawer
-          anchor="right"
-          open={state["right"]}
-          onClose={toggleDrawer("right", false)}
-        >
-          <AppBar position="static">
-            <Tabs
-              value={value}
-              onChange={handleChange}
-              aria-label="simple tabs example"
-            >
-              <Tab label="Log In" {...a11yProps(0)} />
-              <Tab label="Register" {...a11yProps(1)} />
-            </Tabs>
-          </AppBar>
-          <TabPanel value={value} index={0}>
-            {list("right")}
-          </TabPanel>
-          <TabPanel value={value} index={1}>
-            {fill("right")}
-          </TabPanel>
-        </Drawer>
-      </React.Fragment>
-      {loggedInFunction()}
-    </div>
-  );
+  if (localStorage.getItem("loggedIn") == "true" || globalState.log.loggedIn) {
+    return <div>{loggedInFunction()}</div>;
+  } else {
+    return (
+      <div>
+        <React.Fragment key="right">
+          <Button id="logButton" onClick={toggleDrawer("right", true)}>
+            Login
+          </Button>
+          <Drawer
+            anchor="right"
+            open={state["right"]}
+            onClose={toggleDrawer("right", false)}
+          >
+            <AppBar position="static">
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                aria-label="simple tabs example"
+              >
+                <Tab style={{backgroundColor:"firebrick", border:"none"}} label="Log In" {...a11yProps(0)} />
+                <Tab style={{backgroundColor:"firebrick", border:"none"}} label="Register" {...a11yProps(1)} />
+              </Tabs>
+            </AppBar>
+            <TabPanel value={value} index={0}>
+              {list("right")}
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              {fill("right")}
+            </TabPanel>
+          </Drawer>
+        </React.Fragment>
+      </div>
+    );
+  }
 };

@@ -3,6 +3,7 @@ import "./pages.css";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import FormG from "../components/GrantCalc";
+import {Footer} from "../components/Footer";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,16 +20,22 @@ const useStyles = makeStyles(theme => ({
 const GrantPage = () => {
   const classes = useStyles();
   return (
-    <div id="grantForm">
-      
-        <Paper elevation= {24} id="formContent">
-          
-        <h2 id="grantTitle">How much grant can I get?</h2>
-       <FormG/>
+    <body>
+      <div className="main" style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#DDDDDD", textAlign:"center"}}>
+        <h2 className="page-title">Grant Calculator</h2>
+        <p className="sub-title">How much grant can I get?</p>
+      </div>
+
+      <div id="grantForm" style={{paddingBottom:"80px"}}>
         
-      </Paper>
-      
-    </div>
+          <Paper elevation= {24} id="formContent">
+        <FormG/>
+          
+        </Paper>
+        
+      </div>
+    </body>
+
   );
 };
 

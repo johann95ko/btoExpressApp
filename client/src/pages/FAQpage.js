@@ -11,7 +11,7 @@ export const FAQpage = () => {
   return ( // printed on screen
     <body>
         <div class="FAQbox">
-          <h1 align="center" font-family="monserrat">Ask us!</h1>
+          <h1 align="center" font-family="montserrat">Ask us!</h1>
         <Accordion defaultActiveKey="0">
   <Card>
     <Card.Header>

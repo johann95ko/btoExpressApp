@@ -61,11 +61,10 @@ export const LocationPage = () => {
   return (
     <body id="locationBody">
       <div className="main" id="locationInstructions">
-        <h2 className="page-title">Location Calculator</h2>
-        <p className="sub-title">
-          Let us show you the BTOs that are nearest to your preferred location!
-        </p>
-
+          <h2 className="page-title">Location Calculator</h2>
+          <p className="sub-title">
+            Let us show you the BTOs that are nearest to your preferred location!
+          </p>
         <MapsForm
           handleSubmit={handleSubmit}
           handleChange={handleChange}

@@ -12,11 +12,11 @@ const frontCarousel = props => {
   return (
     <Carousel>
       <Carousel.Item>
-        <img className="d-block w-100" src={BTOfront} alt="First slide" />
-        
+        <img className="d-block w-100"  src={BTOfront} alt="First slide" />
+  
         <Carousel.Caption>
           <div>
-            <Button id="BTOCaption" variant="outline-danger" href="#section2">
+            <Button id="BTOCaption" variant="outline-danger" href="/compare">
               {" "}
               View All BTOs
             </Button>

@@ -16,7 +16,7 @@ export const MapsForm = props => {
             placeholder="Orchard Road"
           />
         </label>
-        <Button variant="danger" type="submit" value="submit">
+        <Button style={{backgroundColor:"firebrick", border:"none", marginLeft:"20px"}} variant="danger" type="submit" value="submit">
           Search
         </Button>
       </form>
