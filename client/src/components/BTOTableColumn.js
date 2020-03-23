@@ -198,21 +198,6 @@ export const BTOTableColumn = props => {
             </div>
           </TableCell>
         </TableBody>
-        <TableBody>
-          <TableCell
-            align="center"
-            component="th"
-            scope="row"
-            style={{ height: "8.5em" }}
-          >
-            <div className="flexRowCompareDiv">
-              <p>
-                <b>Area Temperature readings</b>
-              </p>{" "}
-              {props.tempIndex}
-            </div>
-          </TableCell>
-        </TableBody>
       </Table>
     </TableContainer>
   );
