@@ -19,7 +19,7 @@ export const ComparePage = () => {
 
   return (
     <body>
-      <div style={{ height: "250vh" }}>
+      <div style={{ height: "400vh" }}>
         <div
           className="main"
           style={{
