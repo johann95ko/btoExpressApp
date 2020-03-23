@@ -8,10 +8,10 @@ export const MapsForm = props => {
     <div id="searchBar">
       <Form onSubmit={props.handleSubmit}>
         <Form.Row controlId="formLocation">
-          <Form.Label column sm="3">
+          <Form.Label column sm="3" style={{marginRight: "-10px"}}>
             Enter a Location:
           </Form.Label>
-          <Col sm="5">
+          <Col sm="6">
             <Form.Control 
             type="text" 
             value={props.formValue}
