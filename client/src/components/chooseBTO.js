@@ -80,7 +80,7 @@ const useStyles = makeStyles({
         <div id="addButton">
           
             <React.Fragment key='bottom'>
-              <Button  style={{backgroundColor:"firebrick", border:"none"}} variant="contained" color="primary" onClick={toggleDrawer('bottom', true)}>Add BTOs to Compare</Button>
+              <Button  style={{backgroundColor:"firebrick", border:"none"}} variant="contained" color="primary" onClick={toggleDrawer('bottom', true)}> + Add BTOs to Compare</Button>
               <Drawer anchor='bottom' open={state['bottom']} onClose={toggleDrawer('bottom', false)}>
               {list('bottom')}
               </Drawer>
