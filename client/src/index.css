@@ -5,9 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #EEEEEE !important;
-  background: 
-    url("./Images/skyscraper.png") bottom;
+  background-color: white !important;
+  background: url("./Images/skyscraper.png") bottom;
   background-repeat: no-repeat;
   background-size: contain;
 }
