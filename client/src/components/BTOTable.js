@@ -63,7 +63,7 @@ export const BTOTable = props => {
     return <LoadSpinners />;
   }
   return (
-    <div className="flexRowDiv" style={{ marginTop: "180px" }}>
+    <div className="flexRowDiv" style={{ marginTop: "140px" }}>
       <div className="flexRowBTO">
         {house.map(eachBTO => {
           for (const [eachHouseKey, eachHouseVal] of Object.entries(props.displayHouseState)) {

@@ -79,3 +79,8 @@
 .mapFormButton{
   margin-left:5px; 
 }
+
+.BTOcontainer {
+  position: relative;
+  min-height: 100vh;
+}
