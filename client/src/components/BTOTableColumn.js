@@ -16,7 +16,8 @@ export const BTOTableColumn = props => {
   // const classes = useStyles();
 
   return (
-    <TableContainer style={{ height:"1590px" , width: "20vw" }} component={Paper}>
+    <div className="BTOcontainer">
+    <TableContainer style={{ height:"2000px" , width: "20vw", overflow:"hidden"}} component={Paper}>
         <TableBody>
           <TableCell 
             class="MuiTableCell-paddingNone"
@@ -151,7 +152,32 @@ export const BTOTableColumn = props => {
             </div>
           </TableCell>
         </TableBody>
+        <TableBody>
+          <TableCell
+            align="center"
+            component="th"
+            scope="row"
+            style={{ height: "8.5em" }}
+          >
+            <div className="flexRowCompareDiv">
+              <p><b>Hourly Region PM2.5 readings</b></p> {props.pm25Index}
+            </div>
+          </TableCell>
+        </TableBody>
+        <TableBody>
+          <TableCell
+            align="center"
+            component="th"
+            scope="row"
+            style={{ height: "8.5em" }}
+          >
+            <div className="flexRowCompareDiv">
+              <p><b>Region Temperature readings</b></p> {props.tempIndex}
+            </div>
+          </TableCell>
+        </TableBody>
       </Table>
     </TableContainer>
+    </div>
   );
 };
