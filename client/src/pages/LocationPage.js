@@ -65,12 +65,12 @@ export const LocationPage = () => {
           <p className="sub-title">
             Let us show you the BTOs that are nearest to your preferred location!
           </p>
-        <MapsForm
+      </div>        
+      <MapsForm
           handleSubmit={handleSubmit}
           handleChange={handleChange}
           formValue={formValue}
-        />
-      </div>
+      />
       <div className="main" id="map">
         <StaticMap />
       </div>
