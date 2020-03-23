@@ -16,6 +16,7 @@ export const BTOTableColumn = props => {
   // const classes = useStyles();
 
   return (
+    <div className="BTOcontainer">
     <TableContainer style={{ height:"2000px" , width: "20vw", overflow:"hidden"}} component={Paper}>
         <TableBody>
           <TableCell 
@@ -177,5 +178,6 @@ export const BTOTableColumn = props => {
         </TableBody>
       </Table>
     </TableContainer>
+    </div>
   );
 };
