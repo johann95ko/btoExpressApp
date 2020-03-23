@@ -48,8 +48,10 @@
 .mr-auto{
   position: relative;
   left: 40px;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: montserrat;
   font-size: 18px;
+  font-weight: bold;
+  color: white;
 }
 
 .mr-auto .tab {
@@ -61,43 +63,56 @@
 }
 
 .navColour .logo-title{
-  font-size: x-large;
+  /* font-size: x-large; */
+  font-family: montserrat;
+  font-weight: bold;
+  padding: 1%;
+}
+
+.Navbar img{
+  margin-right: 10px;
+  margin-bottom: 5px;
 }
 
 .Navbar{
-  font-family: Georgia;
+  font-family: montserrat;
   font-size: 40px;
+  
 }
 
 .view-bto-button{
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+  font-family: montserrat;
 }
 
 .page-title{
-  font-family: "HelveticaNeue", "Helvetica Neue Light", Helvetica, sans-serif;
+  font-family: montserrat;
   text-align: center;
   font-size: 45px;
   padding-top: 30px;
   margin-bottom: 30px;
 }
+
+
 .sub-title{
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+  font-family: montserrat;
   margin-top: -20px;
 }
 
 .bto-name{
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+  font-family: montserrat;
   font-size: 30px !important;
 }
 
 .bto-text{
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, sans-serif;
+  font-family: montserrat;
   text-align: left;
 }
 
 .bto-card{
   border: none;
 }
+
+
 
 
 .carousel-caption p {
@@ -136,8 +151,9 @@
 
 #locationInstructions{
   text-align: center;
-  background-color: rgba(162, 162, 190, 0.356);
-  padding: 40px;
+  background-color: #dddddd;
+  
+  
   
 }
 
@@ -154,7 +170,9 @@
 
 #BTOCaption{
     float: left;
-    transform: translateX(-29%);
+    transform: translateX(-35%);
+    margin-left: 5%;
+    margin-bottom: 15%;
 }
 
 
@@ -174,6 +192,8 @@
 
 #addButton{
   text-align: center;
+  border:none;
+  color: firebrick;
 
 }
 
@@ -188,27 +208,44 @@
 
 
 #login{
-  background-color: white;
+  background-color:white;
   text-align: center;
   padding-top: 50px;
+  font-family: montserrat;
+
 }
+
+#simple-tab-1{
+  background-color:firebrick;
+}
+#simple-tab-0{
+  background-color: firebrick;
+}
+
+
 
 #loginButton{
   margin:30px;
+  font-family: montserrat;
+  background-color: firebrick;
 }
 
 #logButton{
   color: azure;
+  font-family: montserrat;
 }
 
 #register{
   background-color: white;
   text-align: center;
   padding-top: 50px;
+  font-family: montserrat;
 }
 
 #registerButton{
   margin:30px;
+  background-color: firebrick;
+  font-family: montserrat;
 }
 
 
@@ -278,8 +315,8 @@
   padding: 15px;
   width:400;
   border-radius: 12px;
-
 }
+
 
 #locationButton{
   /* background-color: white; */
