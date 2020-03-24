@@ -5,6 +5,7 @@ export const NoPageFound = () => {
   return (
     <div className="pageContainer">
       <a href="/">Page Not Found</a>
+      
     </div>
   );
 };
