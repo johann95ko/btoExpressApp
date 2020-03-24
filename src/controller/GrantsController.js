@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
 const BtoGrantsCalculator = require("../models/BtoGrantsCalculator");
+const GrantsStrategy = require("../models/GrantsStrategy");
+const FTG = require("../models/FTGstrategy");
 const Joi = require("joi");
 
 /* GET grants. */
@@ -21,11 +23,22 @@ router.route("/bto").post((req, res) => {
       const spouseFirstTimeApplicant = req.body.spouseFirstTimeApplicant;
       const employmentStatus = req.body.employmentStatus;
 
+      // const FTGstrat = new FTG()
+
+      // const grantsStrategy = new GrantsStrategy(
+      //   incomeLevel,
+      //   firstTimeApplicant,
+      //   spouseFirstTimeApplicant,
+      //   employmentStatus,
+      //   FTGstrat
+      // );
+
       const btoGrantsCalculator = new BtoGrantsCalculator(
         incomeLevel,
         firstTimeApplicant,
         spouseFirstTimeApplicant,
-        employmentStatus
+        employmentStatus,
+        
       );
 
       res.send(btoGrantsCalculator.calculateGrants().toString());

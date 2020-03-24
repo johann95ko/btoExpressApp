@@ -59,8 +59,9 @@ export const LocationPage = () => {
   };
 
   return (
-    <body id="locationBody">
-      <div className="main" id="locationInstructions" style={{padding:"30px", paddingBottom:"30px", backgroundColor:"#DDDDDD", textAlign:"center"}}>
+    <body>
+      <div className="main" id="locationInstructions" 
+      style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#fff", textAlign:"center"}}>
           <h2 className="page-title">Location Calculator</h2>
           <p className="sub-title">
             Let us show you the BTOs that are nearest to your preferred location!

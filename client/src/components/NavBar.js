@@ -10,13 +10,13 @@ export const NavBar = () => {
     <div className="Navbar">
       <Navbar className="navColour" variant="dark" fixed="top">
         <Navbar.Brand className="logo-title" href="/">
-          <img src={Logo} alt="BTO Logo" width="50" height="45" />
+          <img src={Logo} alt="BTO Logo" width="40" height="35" />
           BTOAnywhere
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="/compare">Compare</Nav.Link>
-          <Nav.Link href="/grant">Grant Calculator</Nav.Link>
-          <Nav.Link href="/location">Location Calculator</Nav.Link>
+          <Nav.Link href="/compare">Houses</Nav.Link>
+          <Nav.Link href="/grant">Grants</Nav.Link>
+          <Nav.Link href="/location">Locations</Nav.Link>
           <Nav.Link href="/FAQ">FAQ</Nav.Link>
         </Nav>
         <LoginDrawer />

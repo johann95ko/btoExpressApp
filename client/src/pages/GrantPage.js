@@ -21,7 +21,7 @@ const GrantPage = () => {
   const classes = useStyles();
   return (
     <body>
-      <div className="main" style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#DDDDDD", textAlign:"center"}}>
+      <div className="main" style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#fff", textAlign:"center"}}>
         <h2 className="page-title">Grant Calculator</h2>
         <p className="sub-title">How much grant can I get?</p>
       </div>
