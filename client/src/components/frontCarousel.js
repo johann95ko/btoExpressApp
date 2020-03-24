@@ -2,7 +2,7 @@ import React from "react";
 import "./components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Carousel } from "react-bootstrap";
-import BTOfront from "../Images/BTOfront.png";
+import BTOfront from "../Images/BTOExpress1-01.png";
 import Grants from "../Images/Grants.jpg";
 import LocationCalc from "../Images/Location.jpg";
 import Button from "react-bootstrap/Button";
@@ -12,7 +12,7 @@ const frontCarousel = props => {
   return (
     <Carousel>
       <Carousel.Item>
-        <img className="d-block w-100"  src={BTOfront} alt="First slide" />
+        <img className="d-block w-100" src={BTOfront} alt="First slide" />
   
         <Carousel.Caption>
           <div>

@@ -23,12 +23,12 @@ export const HomePage = () => {
   }
 
   return (
-    <body>
-      <div className="main" id="section1">
-        <div style={{ height: "112vh" }}>
+  
+      // <div className="main" id="section1">
+        // <div style={{ height: "112vh" }}>
           <Carousel />
-        </div>
-      </div>
-    </body>
+        /* </div> */
+      // </div>
+    
   );
 };

@@ -47,6 +47,9 @@ export const MapsTable = props => {
           ))}
         </TableBody>
       </Table>
+          
     </TableContainer>
+    
+    
   );
 };

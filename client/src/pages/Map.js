@@ -4,6 +4,7 @@ import Geocode from "react-geocode";
 import Autocomplete from 'react-google-autocomplete';
 import PlacesAutoComplete, { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 
+
 Geocode.setApiKey( "AIzaSyA_WObUiYD7YpoYufR84re1LZHAJeAGXkY" );
 Geocode.enableDebug();
 
@@ -290,9 +291,10 @@ class Map extends Component{
 			</div>
 		} else {
 			map = <div style={{height: this.props.height}} />
-    }
+	}
+	
     
-    return( map )
+    return(map)
 	}
 }
 export default Map;

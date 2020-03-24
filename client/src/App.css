@@ -169,6 +169,7 @@
   margin: auto;
   width: 70vw;
   min-height: 50vh;
+  
 }
 
 #map{
@@ -335,6 +336,18 @@
 
 }
 
+#locationInstructions
+{
+  background-color: white !important;
+  background: url("./Images/undraw_my_location_f9pr.svg") bottom;
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: right;
+  background-position-y: 100%;
+  background-position-x: 90%;
+  
+}
+
 #BTOCaption{
    /* background-color: white; */
   /* opacity:0.8; */
@@ -356,3 +369,4 @@
 .landscape{
   margin-top: -50px;
 }
+
