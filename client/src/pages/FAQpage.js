@@ -11,10 +11,10 @@ export const FAQpage = () => {
   
   return ( // printed on screen
     <body>
-        <div class="FAQbox">
-          <h1 align="center" font-family="montserrat">Ask us!</h1>
-        <Accordion defaultActiveKey="0">
-  <Card>
+        <div class="main" style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#fff", textAlign:"center"}}>
+          <h3 className="page-title">Ask us!</h3>
+        <Accordion defaultActiveKey="0" style={{padding:"100px", paddingTop:"30px", textAlign:"left"}}>
+  <Card >
     <Card.Header>
       <Accordion.Toggle as={Button} variant="link" eventKey="0">
         How is the Grant calculated?

@@ -48,9 +48,9 @@
 .mr-auto{
   position: relative;
   left: 40px;
-  font-family: montserrat;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: lighter;
   color: white;
 }
 
@@ -59,13 +59,20 @@
 }
 
 .navColour{
+  /* background-color: firebrick; */
   background-color: firebrick;
 }
 
-.navColour .logo-title{
+.navColour .tle{
   /* font-size: x-large; */
-  font-family: montserrat;
-  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  padding: 1%;
+}
+
+.logo-title{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
   padding: 1%;
 }
 
@@ -75,17 +82,17 @@
 }
 
 .Navbar{
-  font-family: montserrat;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 40px;
   
 }
 
 .view-bto-button{
-  font-family: montserrat;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .page-title{
-  font-family: montserrat;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 45px;
   padding-top: 30px;
@@ -94,17 +101,17 @@
 
 
 .sub-title{
-  font-family: montserrat;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: -20px;
 }
 
 .bto-name{
-  font-family: montserrat;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 30px !important;
 }
 
 .bto-text{
-  font-family: montserrat;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: left;
 }
 
@@ -130,9 +137,9 @@
   background-color: rgba(236, 236, 236, 0.5)
 } */
 
-#locationBody{
+/* #locationBody{
   padding-top: 70px;
-}
+} */
 
 #searchBar{
   margin: auto;
@@ -211,7 +218,7 @@
   background-color:white;
   text-align: center;
   padding-top: 50px;
-  font-family: montserrat;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 }
 
@@ -226,26 +233,26 @@
 
 #loginButton{
   margin:30px;
-  font-family: montserrat;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: firebrick;
 }
 
 #logButton{
   color: azure;
-  font-family: montserrat;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #register{
   background-color: white;
   text-align: center;
   padding-top: 50px;
-  font-family: montserrat;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #registerButton{
   margin:30px;
   background-color: firebrick;
-  font-family: montserrat;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 
@@ -264,7 +271,7 @@
 
 
 .page-title{
-  font-family: "weather";
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: bold;
   font-weight: 400;
   padding-top:2em;
@@ -284,7 +291,7 @@
 }
 
 #cardtitle{
-  font-family: "weather";
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: bold;
 }
 
@@ -338,7 +345,7 @@
 }
 
 #grantCaption{
-  font-family: "weather";
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 
