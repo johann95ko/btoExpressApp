@@ -67,7 +67,7 @@ The buyers can check the status of the Request for Value via HDB Resale Portal.<
   </Card>
 </Accordion>
 
-<img src={faqlogo}></img>
+<img src={faqlogo} width="100%"></img>
         </div>
 
       
