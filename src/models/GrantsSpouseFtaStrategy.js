@@ -1,6 +1,6 @@
 const GrantsStrategy = require("./GrantsStrategyInterface");
 
-class GrantsCoupleFtaStrategy extends GrantsStrategy {
+class GrantsSpouseFtaStrategy extends GrantsStrategy {
     constructor (incomeLevel){
         super();
         this.incomeLevel = incomeLevel;
@@ -11,4 +11,4 @@ class GrantsCoupleFtaStrategy extends GrantsStrategy {
     }
 }
 
-module.exports = GrantsCoupleFtaStrategy;
+module.exports = GrantsSpouseFtaStrategy;
