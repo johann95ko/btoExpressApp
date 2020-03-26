@@ -24,7 +24,7 @@ class BtoGrantsCalculator extends GrantsCalculatorInterface {
       return this.grantStrategy.calculateGrants();
     } 
       
-    if ((this.firstTimeApplication === true) || (this.spouseFTA === true)) {
+    if ((this.firstTimeApplication === true) ^ (this.spouseFTA === true)) {
       if (this.incomeLevel / 2 > 4500) {return 0}; 
       if (this.incomeLevel / 2 < 751) {return 40000};
       
