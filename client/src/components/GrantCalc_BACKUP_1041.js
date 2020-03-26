@@ -14,7 +14,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const FormG = () => {
   const [FTAstate, FTAsetState] = React.useState({
-    firstTimeApplicant: true
+    firstTimeApplicant: false
   });
   const [SFTAstate, SFTAsetState] = React.useState({
     spouseFirstTimeApplicant: true
@@ -32,19 +32,14 @@ const FormG = () => {
   const [open, setOpen] = React.useState(false);
 
   const handleFTA = () => event => {
-    if(event.target.value === "true"){
-      FTAsetState({ ...FTAstate, firstTimeApplicant: true });
-    } else {
-      FTAsetState({ ...FTAstate, firstTimeApplicant: false });
-    }
+    FTAsetState({ ...FTAstate, firstTimeApplicant: event.target.value });
   };
 
   const handleSFTA = () => event => {
-    if(event.target.value === "true"){
-      SFTAsetState({ ...SFTAstate, spouseFirstTimeApplicant: true });
-    } else {
-      SFTAsetState({ ...SFTAstate, spouseFirstTimeApplicant: false });
-    }
+    SFTAsetState({
+      ...SFTAstate,
+      spouseFirstTimeApplicant: event.target.value
+    });
   };
 
   const handleIncome = () => event => {
@@ -55,11 +50,10 @@ const FormG = () => {
   };
 
   const handleEmployed = () => event => {
-    if(event.target.value === "employed"){
-      employmentsetState({ ...employmentstate, employmentStatus: true });
-    } else {
-      employmentsetState({ ...employmentstate, employmentStatus: false });
-    }
+    employmentsetState({
+      ...employmentstate,
+      employmentStatus: event.target.value
+    });
   };
 
   const handleClickOpen = () => {
@@ -86,8 +80,6 @@ const FormG = () => {
       .catch(error => {
         console.log(error);
       });
-    
-    console.log([FTAstate, SFTAstate, incomestate, employmentstate, grantstate]);
   };
 
   return (
@@ -133,6 +125,7 @@ const FormG = () => {
           </Form.Control>
         </Form.Group>
 
+<<<<<<< HEAD
           <Form.Group controlId="formEmployment">
             <Form.Label>Employment status</Form.Label>
             <Form.Control as="select" onChange={handleEmployed()}>
@@ -142,6 +135,17 @@ const FormG = () => {
           </Form.Group>
           <div id="formButton">
           <Button style={{backgroundColor:"firebrick", border:"none"}} variant="danger" type="submit" onClick={handleClickOpen}>
+=======
+        <Form.Group controlId="formEmployment">
+          <Form.Label>Employment status</Form.Label>
+          <Form.Control as="select" onChange={handleEmployed()}>
+            <option value="employed">Employed</option>
+            <option value="unemployed">Unemployed</option>
+          </Form.Control>
+        </Form.Group>
+        <div id="formButton">
+          <Button variant="danger" type="submit" onClick={handleClickOpen}>
+>>>>>>> origin/master
             Check my grant
           </Button>
         </div>

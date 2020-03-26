@@ -6,6 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: white !important;
+  background: url("./Images/skyscraper.png") bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 code {
