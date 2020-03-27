@@ -62,11 +62,13 @@ export const LocationPage = () => {
     <body>
       <div className="main" id="locationInstructions" 
       style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#fff", textAlign:"center"}}>
+        <div className="locationheader">
           <h2 className="page-title">Location Calculator</h2>
           <p className="sub-title">
             Let us show you the BTOs that are nearest to your preferred location!
           </p>
-      </div>        
+      </div>      
+      </div>  
       <MapsForm
           handleSubmit={handleSubmit}
           handleChange={handleChange}

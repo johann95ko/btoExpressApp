@@ -4,7 +4,7 @@ import { Accordion, Card, Button, Row, Col, Image, Container} from "react-bootst
 import "./pages.css";
 // import FAQbutton from '../components/FAQbutton';
 import { Footer } from "../components/Footer";
-import faqlogo from "../Images/undraw_questions_75e0.svg";
+import faqlogo from "../Images/undraw_questions_75e0-01.svg";
 import FAQbutton from "../components/FAQbutton";
 
 export const FAQpage = () => {
@@ -12,9 +12,10 @@ export const FAQpage = () => {
   return ( // printed on screen
     <body>
         <div class="main" style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#fff", textAlign:"center"}}>
-          <h3 className="page-title">Ask us!
-          <img src={faqlogo} width="150px"></img></h3>
-            
+          <div class="faqheader">
+          <h2 className="page-title">Ask us!</h2>
+          <p className="sub-title">We will answer all your burning questions!</p>
+            </div>
         <Accordion defaultActiveKey="0" style={{padding:"100px", paddingTop:"30px", textAlign:"left"}}>
   <Card >
     <Card.Header>
