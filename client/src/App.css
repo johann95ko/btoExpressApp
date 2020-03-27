@@ -47,7 +47,7 @@
 
 .mr-auto{
   position: relative;
-  left: 40px;
+  left: 10px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 20px;
   font-weight: bolder;
@@ -102,9 +102,20 @@
   margin-bottom: 30px;
 
 
-
 }
 
+.page-title{
+
+  background-color: white !important;
+  background: url("./Images/undraw_choosing_house_v37h-01.svg");
+  background-repeat: no-repeat;
+  background-size: 800px;
+  /* background-position: right; */
+  background-position-y: 50%;
+  background-position-x: 80%;
+
+
+}
 
 .page-title img{
   height:100px;
@@ -126,7 +137,9 @@
 
 .sub-title{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-top: -20px;
+  font-size: 18px;
+  margin-top: 45px;
+  
 
 }
 
