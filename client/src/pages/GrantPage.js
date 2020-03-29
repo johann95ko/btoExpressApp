@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import FormG from "../components/GrantCalc";
 import {Footer} from "../components/Footer";
+import grantlogo from "../Images/undraw_wallet_aym5.svg";
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,7 +24,9 @@ const GrantPage = () => {
   return (
     <body>
       <div className="main" style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#fff", textAlign:"center"}}>
-        <h2 className="page-title">Grant Calculator</h2>
+      
+        <h2 className="page-title">Grant Calculator
+        <img src={grantlogo} width="150px"></img></h2>
         <p className="sub-title">How much grant can I get?</p>
       </div>
 
