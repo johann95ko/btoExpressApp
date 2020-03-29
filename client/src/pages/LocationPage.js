@@ -9,7 +9,7 @@ import { Footer } from "../components/Footer";
 
 let btoLocations = [
   "Choa Chu Kang Grove, Keat Hong Link",
-  "Bukit Batok Road, Tegah Park Avenue",
+  "West Plains @ Bukit Batok, 464B Bukit Batok West Ave 8, Singapore 652464",
   "Pasir Ris Drive, Pasir Ris Green",
   "Tampines Street 96, Tampines Street 92"
 ];
@@ -60,17 +60,25 @@ export const LocationPage = () => {
 
   return (
     <body>
-      <div className="main" id="locationInstructions" 
-      style={{padding:"100px", paddingBottom:"30px", backgroundColor:"#fff", textAlign:"center"}}>
-          <h2 className="page-title">Location Calculator</h2>
-          <p className="sub-title">
-            Let us show you the BTOs that are nearest to your preferred location!
-          </p>
-      </div>        
+      <div
+        className="main"
+        id="locationInstructions"
+        style={{
+          padding: "100px",
+          paddingBottom: "30px",
+          backgroundColor: "#fff",
+          textAlign: "center"
+        }}
+      >
+        <h2 className="page-title">Location Calculator</h2>
+        <p className="sub-title">
+          Let us show you the BTOs that are nearest to your preferred location!
+        </p>
+      </div>
       <MapsForm
-          handleSubmit={handleSubmit}
-          handleChange={handleChange}
-          formValue={formValue}
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+        formValue={formValue}
       />
       <div className="main" id="map">
         <StaticMap />
