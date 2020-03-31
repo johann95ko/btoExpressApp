@@ -71,11 +71,11 @@ The buyers can check the status of the Request for Value via HDB Resale Portal.<
 
   <Card>
     <Card.Header>
-      <Accordion.Toggle as={Button} variant="link" eventKey="3">
+      <Accordion.Toggle as={Button} variant="link" eventKey="4">
        What is balloting?
       </Accordion.Toggle>
     </Card.Header>
-    <Accordion.Collapse eventKey="3">
+    <Accordion.Collapse eventKey="4">
       <Card.Body>First, you’ll have to check the HDB website regularly for news of upcoming sales launches. From May 2019, BTO launches will be announced 6 months prior rather than 3 months, which will give you ample time to plan for the location you want.  
 
 When you see a launch in an area that interests you, pay $10 to ballot for it. How many tries it takes you to get a flat depends on your luck. Some people get it on the first or second try, others have to try 10 times. Expect to wait 3 weeks to know if you’ve been successful or not. The balloting period will be shortened from 6 weeks to 3 weeks from May 2019.
@@ -83,7 +83,9 @@ When you see a launch in an area that interests you, pay $10 to ballot for it. H
 </Card.Body>
     </Accordion.Collapse>
   </Card>
+
 </Accordion>
+
 
         </div>
 
