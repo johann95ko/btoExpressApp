@@ -67,7 +67,7 @@ export const LocationPage = () => {
           <p className="sub-title">
             Let us show you the BTOs that are nearest to your preferred location!
           </p>
-      </div>      
+        </div>      
       </div>  
       <MapsForm
           handleSubmit={handleSubmit}

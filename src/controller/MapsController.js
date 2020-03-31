@@ -4,9 +4,10 @@ const Maps = require("../models/Maps");
 
 let btoLocations = [
   "Choa Chu Kang Grove, Keat Hong Link",
-  "Bukit Batok Road, Tegah Park Avenue",
+  "Bukit Batok Road, Tengah Park Avenue",
   "Pasir Ris Drive, Pasir Ris Green",
-  "Tampines Street 96, Tampines Street 92"
+  "Tampines Street 96, Tampines Street 92",
+  "458B Sengkang W Rd, Fernvale Woods"
 ];
 
 /* GET users listing. */
