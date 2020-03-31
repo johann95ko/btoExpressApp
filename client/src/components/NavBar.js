@@ -8,7 +8,7 @@ import { LoginDrawer } from "../components/loginSlide";
 export const NavBar = () => {
   return (
     <div className="Navbar">
-      <Navbar className="navColour" variant="dark" fixed="top">
+      <Navbar className="navColour" variant="light" fixed="top">
         <Navbar.Brand className="logo-title" href="/">
           <img src={Logo} alt="BTO Logo" width="40" height="35" />
           BTOAnywhere
