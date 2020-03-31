@@ -24,7 +24,7 @@ export const HomePage = () => {
 
   return (
     // <div className="main" id="section1">
-    <div style={{ height: "112vh" }}>
+    <div style={{ height: "114vh" }}>
       <Carousel />
     </div>
     // </div>

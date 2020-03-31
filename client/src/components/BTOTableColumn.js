@@ -17,7 +17,7 @@ export const BTOTableColumn = props => {
 
   return (
     <TableContainer
-      style={{ height: "2000px", width: "20vw", overflow: "hidden" }}
+      style={{ height: "1720px", width: "20vw", overflow: "hidden" }}
       component={Paper}
     >
       <TableBody>

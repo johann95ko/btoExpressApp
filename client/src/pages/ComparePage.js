@@ -19,7 +19,7 @@ export const ComparePage = () => {
 
   return (
     <body>
-      <div style={{ height: "300vh" }}>
+      <div style={{ height: "340vh" }}>
         <div
           className="main"
           style={{
@@ -29,16 +29,15 @@ export const ComparePage = () => {
 
             textAlign: "center"
           }}
-          >
-            <div class="compareheader">
-          <h2 className="page-title">Compare BTOs
-          <p className="sub-title">
-            We help you choose the right home with ease.
-          </p>
-        </h2>
-        </div>
-        
-          
+        >
+          <div class="compareheader">
+            <h2 className="page-title">
+              Compare BTOs
+              <p className="sub-title">
+                We help you choose the right home with ease.
+              </p>
+            </h2>
+          </div>
         </div>
         <div className="flexRow">
           <ChooseBto />
