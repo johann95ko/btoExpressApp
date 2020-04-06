@@ -2,7 +2,7 @@ import React from "react";
 import "./components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Carousel } from "react-bootstrap";
-import BTOfront from "../Images/BTOfront.png";
+import BTOfront from "../Images/BTOfront-01.png";
 import Grants from "../Images/Grants.jpg";
 import LocationCalc from "../Images/Location.jpg";
 import Button from "react-bootstrap/Button";

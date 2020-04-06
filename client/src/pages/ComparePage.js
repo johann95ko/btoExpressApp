@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer";
 import { useFetch } from "../customHooks/useFetch";
 import { LoadSpinners } from "../components/LoadSpinners";
 import useGlobalState from "../customHooks/useGlobalState";
-import comparelogo from "../Images/undraw_choosing_house_v37h.svg";
+import comparelogo from "../Images/undraw_choosing_house_v37h-01.svg";
 export const ComparePage = () => {
   const { data, loading } = useFetch("/api/bto");
 
@@ -30,11 +30,12 @@ export const ComparePage = () => {
           }}
           >
           <h2 className="page-title">Compare BTOs
-          <img src={comparelogo} width="150px"></img></h2>
-        
           <p className="sub-title">
             We help you choose the right home with ease.
           </p>
+        </h2>
+        
+          
         </div>
         <div className="flexRow">
           <ChooseBto />
