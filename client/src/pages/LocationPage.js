@@ -9,7 +9,7 @@ import { Footer } from "../components/Footer";
 
 let btoLocations = [
   "Choa Chu Kang Grove, Keat Hong Link",
-  "West Plains @ Bukit Batok, 464B Bukit Batok West Ave 8, Singapore 652464",
+  "West Scape @ Bukit Batok, 433A Bukit Batok West Ave 8, Singapore 651433",
   "Pasir Ris Drive, Pasir Ris Green",
   "Tampines Street 96, Tampines Street 92"
 ];
@@ -70,10 +70,13 @@ export const LocationPage = () => {
           textAlign: "center"
         }}
       >
-        <h2 className="page-title">Location Calculator</h2>
-        <p className="sub-title">
-          Let us show you the BTOs that are nearest to your preferred location!
-        </p>
+        <div className="locationheader">
+          <h2 className="page-title">Location Calculator</h2>
+          <p className="sub-title">
+            Let us show you the BTOs that are nearest to your preferred
+            location!
+          </p>
+        </div>
       </div>
       <MapsForm
         handleSubmit={handleSubmit}

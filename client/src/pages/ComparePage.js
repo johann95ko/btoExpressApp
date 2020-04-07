@@ -19,23 +19,25 @@ export const ComparePage = () => {
 
   return (
     <body>
-      <div style={{ height: "300vh" }}>
+      <div style={{ height: "340vh" }}>
         <div
           className="main"
           style={{
             padding: "100px",
             paddingBottom: "30px",
             backgroundColor: "#fff",
+
             textAlign: "center"
           }}
-          >
-          <h2 className="page-title">Compare BTOs
-          <p className="sub-title">
-            We help you choose the right home with ease.
-          </p>
-        </h2>
-        
-          
+        >
+          <div class="compareheader">
+            <h2 className="page-title">
+              Compare BTOs
+              <p className="sub-title">
+                We help you choose the right home with ease.
+              </p>
+            </h2>
+          </div>
         </div>
         <div className="flexRow">
           <ChooseBto />

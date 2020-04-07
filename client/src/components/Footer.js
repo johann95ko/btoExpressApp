@@ -8,6 +8,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import EmailIcon from "@material-ui/icons/Email";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import TelegramIcon from "@material-ui/icons/Telegram";
+import footer from "../Images/BTOlogowhite.png";
 
 export const Footer = () => {
   return (
@@ -15,7 +16,10 @@ export const Footer = () => {
       <div className="footer-middle">
         <div className="container">
           <div className="row2">
-            <h4>BTOAnywhere</h4>
+            <h4>
+              <img src={footer} alt="BTO Logo" width="40" height="35" />{" "}
+              BTOAnywhere
+            </h4>
             <hr />
           </div>
           <div className="row">
@@ -73,7 +77,7 @@ export const Footer = () => {
                 <li>
                   {" "}
                   <a href="https://esales.hdb.gov.sg/bp25/launch/open/OPEN_page_7142/home.html">
-                    Open Booking of Flats
+                    Apply For BTO
                   </a>
                 </li>
               </ul>
