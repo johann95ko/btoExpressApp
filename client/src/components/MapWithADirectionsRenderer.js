@@ -8,7 +8,7 @@ import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker
+  Marker,
 } from "react-google-maps";
 
 import * as btoData from "../data/btoData.json";
@@ -24,7 +24,7 @@ const MapWithADirectionsRenderer = compose(
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyA_WObUiYD7YpoYufR84re1LZHAJeAGXkY",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `50vh` }} />,
-    mapElement: <div style={{ height: `100%` }} />
+    mapElement: <div style={{ height: `100%` }} />,
   }),
   withScriptjs,
   withGoogleMap,
@@ -33,7 +33,7 @@ const MapWithADirectionsRenderer = compose(
       this.setState({
         newDirections: [],
         durationDetails: [],
-        distanceDetails: []
+        distanceDetails: [],
       });
     },
     componentDidUpdate(prevProps, prevState) {
@@ -43,7 +43,7 @@ const MapWithADirectionsRenderer = compose(
           directions1: null,
           directions2: null,
           directions3: null,
-          newDirections: []
+          newDirections: [],
         });
         this.drawRoutes();
       }
@@ -58,7 +58,7 @@ const MapWithADirectionsRenderer = compose(
         "Choa Chu Kang, Singapore",
         "Tengah, Singapore",
         "Pasir Ris, Singapore",
-        "Tampines, Singapore"
+        "Tampines, Singapore",
       ];
 
       const DirectionsService = new google.maps.DirectionsService();
@@ -66,17 +66,19 @@ const MapWithADirectionsRenderer = compose(
         {
           origin: this.props.origin,
           destination: destinations[0],
-          travelMode: google.maps.TravelMode.TRANSIT
+          travelMode: google.maps.TravelMode.TRANSIT,
         },
         (result, status) => {
           if (status === google.maps.DirectionsStatus.OK) {
+
             locationNames.push(result.request.destination.query);
             distanceDetails.push(result.routes[0].legs[0].distance.text);
             durationDetails.push(result.routes[0].legs[0].duration.text);
 
-            console.log(result.routes[0].bounds.Za.i);
-            console.log(result.routes[0].bounds.Ua.j);
-            inlocation.push(result.routes[0].bounds.Za.i);
+            // console.log(result.routes[0].bounds.Za.i);
+            // console.log(result.routes[0].bounds.Ua.j);
+
+            inlocation.push(result.routes[0].bounds.Ya.i);
             inlocation.push(result.routes[0].bounds.Ua.j);
             // console.log(inlocation[inlocation.length - 1]);
             // console.log(inlocation[-2]);
@@ -85,7 +87,7 @@ const MapWithADirectionsRenderer = compose(
 
             this.setState({
               directions: result,
-              newDirections: this.state.newDirections.concat([result])
+              newDirections: this.state.newDirections.concat([result]),
             });
           } else {
             console.error(`error fetching directions ${result}`);
@@ -97,7 +99,7 @@ const MapWithADirectionsRenderer = compose(
         {
           origin: this.props.origin,
           destination: destinations[1],
-          travelMode: google.maps.TravelMode.TRANSIT
+          travelMode: google.maps.TravelMode.TRANSIT,
         },
         (result, status) => {
           if (status === google.maps.DirectionsStatus.OK) {
@@ -105,12 +107,12 @@ const MapWithADirectionsRenderer = compose(
             distanceDetails.push(result.routes[0].legs[0].distance.text);
             durationDetails.push(result.routes[0].legs[0].duration.text);
 
-            console.log(result.routes[0].bounds.Za.i);
+            console.log(result.routes[0].bounds.Ya.i);
             console.log(result.routes[0].bounds.Ua.j);
 
             this.setState({
               directions1: result,
-              newDirections: this.state.newDirections.concat([result])
+              newDirections: this.state.newDirections.concat([result]),
             });
           } else {
             console.error(`error fetching directions ${result}`);
@@ -122,7 +124,7 @@ const MapWithADirectionsRenderer = compose(
         {
           origin: this.props.origin,
           destination: destinations[2],
-          travelMode: google.maps.TravelMode.DRIVING
+          travelMode: google.maps.TravelMode.DRIVING,
         },
         (result, status) => {
           if (status === google.maps.DirectionsStatus.OK) {
@@ -130,15 +132,15 @@ const MapWithADirectionsRenderer = compose(
             distanceDetails.push(result.routes[0].legs[0].distance.text);
             durationDetails.push(result.routes[0].legs[0].duration.text);
 
-            console.log(result.routes[0].bounds.Za.i);
-            console.log(result.routes[0].bounds.Ua.j);
+            // console.log(result.routes[0].bounds.Za.i);
+            // console.log(result.routes[0].bounds.Ua.j);
 
-            console.log("Here");
+            // console.log("Here");
             //   console.log(inlocation)
 
             this.setState({
               directions2: result,
-              newDirections: this.state.newDirections.concat([result])
+              newDirections: this.state.newDirections.concat([result]),
             });
           } else {
             console.error(`error fetching directions ${result}`);
@@ -150,7 +152,7 @@ const MapWithADirectionsRenderer = compose(
         {
           origin: this.props.origin,
           destination: destinations[3],
-          travelMode: google.maps.TravelMode.DRIVING
+          travelMode: google.maps.TravelMode.DRIVING,
         },
         (result, status) => {
           if (status === google.maps.DirectionsStatus.OK) {
@@ -159,21 +161,21 @@ const MapWithADirectionsRenderer = compose(
             distanceDetails.push(result.routes[0].legs[0].distance.text);
             durationDetails.push(result.routes[0].legs[0].duration.text);
 
-            console.log(result.routes[0].bounds.Za.i);
-            console.log(result.routes[0].bounds.Ua.j);
+            // console.log(result.routes[0].bounds.Za.i);
+            // console.log(result.routes[0].bounds.Ua.j);
 
             this.setState({
               directions3: result,
-              newDirections: this.state.newDirections.concat([result])
+              newDirections: this.state.newDirections.concat([result]),
             });
           } else {
             console.error(`error fetching directions ${result}`);
           }
         }
       );
-    }
+    },
   })
-)(props => (
+)((props) => (
   <div>
     <GoogleMap
       defaultZoom={11.5}
@@ -192,20 +194,20 @@ const MapWithADirectionsRenderer = compose(
       <Marker
         position={{
           lat: inlocation[inlocation.length - 2],
-          lng: inlocation[inlocation.length - 1]
+          lng: inlocation[inlocation.length - 1],
         }}
       />
 
-      {btoData.features.map(bto => (
+      {btoData.features.map((bto) => (
         <Marker
           key={bto.properties.PARK_ID}
           position={{
             lat: bto.geometry.coordinates[1],
-            lng: bto.geometry.coordinates[0]
+            lng: bto.geometry.coordinates[0],
           }}
           icon={{
             url: "/Building.svg",
-            scaledSize: new window.google.maps.Size(40, 40)
+            scaledSize: new window.google.maps.Size(40, 40),
           }}
         />
       ))}
