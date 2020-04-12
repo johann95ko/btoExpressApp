@@ -5,14 +5,14 @@ class BtoDAO {
     this.modelData = modelData;
   }
 
-  getBto(req, res) {
+  readBto(req, res) {
     this.modelData
       .find()
       .then(eachHouse => res.send(eachHouse))
       .catch(err => res.status(400).json("Error: " + err));
   }
 
-  setBto(req, res) {
+  createBto(req, res) {
     const KeyName = req.body.KeyName;
     const Name = req.body.Name;
     const Address = req.body.Address;
@@ -49,6 +49,14 @@ class BtoDAO {
       .save()
       .then(() => res.json("BTO added"))
       .catch(err => res.status(400).json("Error: " + err));
+  }
+
+  updateBto(req, res) {
+    //unimplemented till required
+  }
+
+  deleteBto(req, res) {
+    //unimplemented till required
   }
 }
 

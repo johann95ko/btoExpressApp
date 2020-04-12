@@ -6,12 +6,12 @@ const btoDao = new BtoDao(BTOData);
 
 /* GET users listing. */
 router.route("/").get((req, res) => {
-  btoDao.getBto(req, res);
+  btoDao.readBto(req, res);
 });
 
 /* ADD users listing. */
 router.route("/add").post((req, res) => {
-  btoDao.setBto(req, res);
+  btoDao.createBto(req, res);
 });
 
 module.exports = router;

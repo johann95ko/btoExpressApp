@@ -15,10 +15,10 @@ require('./config/passport')(passport)
 // // EJS
 app.use(express.urlencoded({ extended: false }));
 
-var grantRouter = require("./controller/GrantsController");
-var btoRouter = require("./controller/BtoController");
-var loginRouter = require("./controller/LoginController");
-var mapRouter = require("./controller/MapsController");
+var grantRouter = require("./controller/GrantsManager");
+var btoRouter = require("./controller/BtoManager");
+var loginRouter = require("./controller/LoginManager");
+var mapRouter = require("./controller/MapsManager");
 
 app.use(cors());
 

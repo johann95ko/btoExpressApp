@@ -17,7 +17,7 @@ router.route("/register").post((req, res) => {
 
 /* Sign in Handler. */
 router.route("/verify").post((req, res, next) => {
-  userDao.verifyuser(req, res, next);
+  userDao.verifyUser(req, res, next);
 });
 
 /* Log out Handler. */

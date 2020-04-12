@@ -75,7 +75,7 @@ class UserDao {
     });
   }
 
-  verifyuser(req, res, next) {
+  verifyUser(req, res, next) {
     passport.authenticate("local", function(err, user, info) {
       if (err) {
         return next(err);
