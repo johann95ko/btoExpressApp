@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "client-install": "cd client && npm install",
-    "start": "node src/server.js",
+    "start": "concurrently \"node src/server.js --silent\" \"npm run client --silent\"",
     "server": "nodemon src/server.js",
-    "client": "npm start --prefix client",
+    "client": "cd client && npx react-scripts start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "jest"
   },
