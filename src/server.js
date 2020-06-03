@@ -10,16 +10,6 @@ var app = express();
 const passport = require("passport");
 var mongoose = require("mongoose");
 
-// Set static folder
-app.use("/", express.static(path.join(__dirname, "../client/build")));
-
-// app.use(express.static("../client/build"));
-// app.use(express.static(path.join(__dirname, "../client/build")));
-
-app.get("*", (req, res) =>
-  res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"))
-);
-
 // Passport config
 require("./config/passport")(passport);
 
@@ -30,6 +20,21 @@ var grantRouter = require("./controller/GrantsManager");
 var btoRouter = require("./controller/BtoManager");
 var loginRouter = require("./controller/LoginManager");
 var mapRouter = require("./controller/MapsManager");
+
+app.use("/api/bto", btoRouter);
+app.use("/api/grants", grantRouter);
+app.use("/api/login", loginRouter);
+app.use("/api/map", mapRouter);
+
+// Set static folder
+app.use("/", express.static(path.join(__dirname, "../client/build")));
+
+// app.use(express.static("../client/build"));
+// app.use(express.static(path.join(__dirname, "../client/build")));
+
+app.get("*", (req, res) =>
+  res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"))
+);
 
 app.use(cors());
 
@@ -57,11 +62,6 @@ app.use(
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.use("/api/bto", btoRouter);
-app.use("/api/grants", grantRouter);
-app.use("/api/login", loginRouter);
-app.use("/api/map", mapRouter);
 
 // catch 404 and forward to error handler
 // app.use(function (req, res, next) {
