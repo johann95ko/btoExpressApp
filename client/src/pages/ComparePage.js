@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./pages.css";
 import { ChooseBto } from "../components/chooseBTO";
 import { Footer } from "../components/Footer";
@@ -18,35 +18,37 @@ export const ComparePage = () => {
   // }
 
   return (
-    <body>
-      <div style={{ height: "340vh" }}>
-        <div
-          className="main"
-          style={{
-            padding: "100px",
-            paddingBottom: "30px",
-            backgroundColor: "#fff",
+    <Fragment>
+      <body>
+        <div style={{ height: "240vh" }}>
+          <div
+            className="main"
+            style={{
+              padding: "100px",
+              paddingBottom: "30px",
+              backgroundColor: "#fff",
 
-            textAlign: "center",
-          }}
-        >
-          <div class="compareheader">
-            <h2 className="page-title">
-              Compare BTOs
-              <p className="sub-title">
-                We help you choose the right home with ease.
-              </p>
-            </h2>
+              textAlign: "center",
+            }}
+          >
+            <div class="compareheader">
+              <h2 className="page-title">
+                Compare BTOs
+                <p className="sub-title">
+                  We help you choose the right home with ease.
+                </p>
+              </h2>
+            </div>
+          </div>
+          <div className="flexRow">
+            <ChooseBto />
           </div>
         </div>
-        <div className="flexRow">
-          <ChooseBto />
-        </div>
-      </div>
-      {/* <div>
+        {/* <div>
         <img className="landscape" src="https://cdn.clipart.email/3644262fb7ec3f9b40361e0329af3faa_houston-vector-skyline-singapore-picture-1104648-houston-vector-_2496-752.png" 
         style={{opacity:0.4, maxWidth:"100%", marginBottom:"-4%"}}></img>
       </div> */}
-    </body>
+      </body>
+    </Fragment>
   );
 };

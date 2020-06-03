@@ -23,10 +23,10 @@ export const HomePage = () => {
   // }
 
   return (
-    // <div className="main" id="section1">
-    <div style={{ height: "vh" }}>
-      <Carousel />
+    <div className="main" id="section1">
+      <div style={{ height: "94.5vh" }}>
+        <Carousel />
+      </div>
     </div>
-    // </div>
   );
 };
