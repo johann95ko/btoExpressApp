@@ -1,9 +1,8 @@
 var express = require("express");
 var router = express.Router();
 let userData = require("../database/UserDb");
-const UserDAO = require("../models/UserDao");
+const UserDAO = require("../models/UserDAO");
 const userDao = new UserDAO(userData);
-
 
 /* See Users in Database */
 router.route("/").get((req, res) => {

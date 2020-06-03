@@ -6,9 +6,10 @@ var logger = require("morgan");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 var session = require("express-session");
-var app = express();
 const passport = require("passport");
 var mongoose = require("mongoose");
+
+var app = express();
 
 // Set static folder
 app.use("/", express.static(path.join(__dirname, "../client/build")));
