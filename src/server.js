@@ -6,10 +6,9 @@ var logger = require("morgan");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 var session = require("express-session");
+var app = express();
 const passport = require("passport");
 var mongoose = require("mongoose");
-
-var app = express();
 
 // Set static folder
 app.use("/", express.static(path.join(__dirname, "../client/build")));
@@ -18,7 +17,7 @@ app.use("/", express.static(path.join(__dirname, "../client/build")));
 // app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.get("*", (req, res) =>
-  res.sendFile(path.resolve(__dirname, "../client", "public", "index.html"))
+  res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"))
 );
 
 // Passport config
