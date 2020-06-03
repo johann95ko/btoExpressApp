@@ -2,6 +2,7 @@
   "name": "btoexpressapp",
   "version": "0.0.0",
   "private": true,
+  "main": "src/server.js",
   "scripts": {
     "client-install": "cd client && npm install",
     "start": "concurrently \"node src/server.js --silent\" \"npm run client --silent\"",
