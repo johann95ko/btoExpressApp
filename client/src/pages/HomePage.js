@@ -13,18 +13,18 @@ export const HomePage = () => {
   const { data, loading } = useFetch("/api/bto");
   const globalState = useGlobalState();
 
-  if (loading) {
-    // console.log("loading");
-    return (
-      <div style={{ height: "100vh" }}>
-        <LoadSpinners />
-      </div>
-    );
-  }
+  // if (loading) {
+  //   // console.log("loading");
+  //   return (
+  //     <div style={{ height: "100vh" }}>
+  //       <LoadSpinners />
+  //     </div>
+  //   );
+  // }
 
   return (
     // <div className="main" id="section1">
-    <div style={{ height: "114vh" }}>
+    <div style={{ height: "vh" }}>
       <Carousel />
     </div>
     // </div>

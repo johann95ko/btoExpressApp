@@ -9,13 +9,13 @@ import comparelogo from "../Images/undraw_choosing_house_v37h-01.svg";
 export const ComparePage = () => {
   const { data, loading } = useFetch("/api/bto");
 
-  if (loading) {
-    return (
-      <div style={{ height: "100vh" }}>
-        <LoadSpinners />
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div style={{ height: "100vh" }}>
+  //       <LoadSpinners />
+  //     </div>
+  //   );
+  // }
 
   return (
     <body>
@@ -27,7 +27,7 @@ export const ComparePage = () => {
             paddingBottom: "30px",
             backgroundColor: "#fff",
 
-            textAlign: "center"
+            textAlign: "center",
           }}
         >
           <div class="compareheader">
