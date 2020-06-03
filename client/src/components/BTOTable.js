@@ -5,7 +5,7 @@ import { LoadSpinners } from "./LoadSpinners";
 import axios from "axios";
 import "./components.css";
 
-export const BTOTable = props => {
+export const BTOTable = (props) => {
   const [house, setHouse] = useState([]);
   const [psi, setPsi] = useState(0);
   const [pm25, setPm25] = useState(0);
@@ -19,7 +19,7 @@ export const BTOTable = props => {
 
   const getLink = async () => {
     try {
-      const response1 = await axios("http://localhost:5000/api/bto");
+      const response1 = await axios("/api/bto");
       const response2 = await axios(
         "https://api.data.gov.sg/v1/environment/psi"
       );
@@ -28,7 +28,7 @@ export const BTOTable = props => {
       );
 
       for (const eachBTO of response1.data) {
-        setHouse(curRows => [
+        setHouse((curRows) => [
           ...curRows,
           {
             key: eachBTO.KeyName,
@@ -42,8 +42,8 @@ export const BTOTable = props => {
             nearestMrt: eachBTO.NearestMrt,
             nearestMall: eachBTO.NearestMall,
             nearestMarket: eachBTO.NearestMarket,
-            region: eachBTO.Region
-          }
+            region: eachBTO.Region,
+          },
         ]);
       }
 
@@ -55,7 +55,7 @@ export const BTOTable = props => {
         central:
           response2.data.items[0].readings.psi_twenty_four_hourly.central,
         national:
-          response2.data.items[0].readings.psi_twenty_four_hourly.national
+          response2.data.items[0].readings.psi_twenty_four_hourly.national,
       });
 
       setPm25({
@@ -64,7 +64,7 @@ export const BTOTable = props => {
         south: response3.data.items[0].readings.pm25_one_hourly.south,
         north: response3.data.items[0].readings.pm25_one_hourly.north,
         central: response3.data.items[0].readings.pm25_one_hourly.central,
-        national: response3.data.items[0].readings.pm25_one_hourly.national
+        national: response3.data.items[0].readings.pm25_one_hourly.national,
       });
 
       setLoading(false);
@@ -78,7 +78,7 @@ export const BTOTable = props => {
   return (
     <div className="flexRowDiv" style={{ marginTop: "140px" }}>
       <div className="flexRowBTO">
-        {house.map(eachBTO => {
+        {house.map((eachBTO) => {
           for (const [eachHouseKey, eachHouseVal] of Object.entries(
             props.displayHouseState
           )) {
