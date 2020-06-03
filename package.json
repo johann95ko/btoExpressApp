@@ -5,11 +5,14 @@
   "main": "src/server.js",
   "scripts": {
     "client-install": "cd client && npm install",
-    "start": "concurrently \"node src/server.js --silent\" \"npm run client --silent\"",
-    "server": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "server": "nodemon server.js",
     "client": "cd client && npx react-scripts start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "jest"
+    "test": "jest",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --preflix client",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install"
   },
   "dependencies": {
     "@google/maps": "1.1.0",
